@@ -25,8 +25,8 @@ public class NewWindow {
      * @param library      The library.
      */
     public NewWindow(String fxmlResource, Event event, String title, Library library) {
-        final int windowHeight = 600;
-        final int windowWidth = 700;
+        final int windowHeight = 800;
+        final int windowWidth = 1000;
 
         Parent root;
 
@@ -46,6 +46,7 @@ public class NewWindow {
             stage.setMaxHeight(windowHeight);
             stage.setMinWidth(windowWidth);
             stage.setMaxWidth(windowWidth);
+//            stage.setMaximized(true);
 
             stage.show();
             ((Node) (event.getSource())).getScene().getWindow().hide();

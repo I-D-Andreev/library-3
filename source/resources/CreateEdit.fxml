@@ -17,23 +17,24 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateEditController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateEditController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="611.0" minWidth="10.0" prefWidth="611.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="82.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="760.8" minWidth="10.0" prefWidth="680.8000244140625" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="0.0" prefWidth="20.799975585937545" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="99.2000732421875" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="126.0" minHeight="0.0" prefHeight="37.199995040893555" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="471.0" minHeight="10.0" prefHeight="456.00000495910643" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="126.0" minHeight="0.0" prefHeight="46.6" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="487.79999999999995" minHeight="10.0" prefHeight="480.0" vgrow="SOMETIMES" />
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="3">
+      <TabPane prefHeight="552.0" prefWidth="646.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2" GridPane.rowIndex="1" GridPane.rowSpan="3">
         <tabs>
           <Tab fx:id="createBookTab" text="Create Book">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="388.0" prefWidth="600.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="531.0" prefWidth="646.0">
                      <children>
                         <TextField fx:id="titleBookTextField" layoutX="181.0" layoutY="55.0" />
                         <TextField fx:id="yearBookTextField" layoutX="181.0" layoutY="97.0" />
@@ -326,7 +327,7 @@
             </Label>
          </children>
       </HBox>
-      <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="58.0" text="Back" GridPane.columnIndex="1">
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="58.0" text="Back" GridPane.columnIndex="2">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin>
