@@ -19,6 +19,26 @@ public abstract class User implements Serializable {
     private final String username;
 
     /**
+     * The encoded password of the user.
+     */
+    private String password;
+
+    /**
+     * The email of the user.
+     */
+    private String email;
+
+    /**
+     * The secret question of the user.
+     */
+    private String secretQuestion;
+
+    /**
+     * The encoded secret answer of the user.
+     */
+    private String secretAnswer;
+
+    /**
      * The id if the user.
      */
     private String id;
@@ -69,6 +89,25 @@ public abstract class User implements Serializable {
         this.username = user;
         this.phoneNumber = phone;
         this.profileImagePath = imagePath;
+        this.address = address;
+
+        // set the creation date to the current date
+        this.creationDate = new Date();
+
+        this.setID();
+    }
+
+    public User(String username, String password, String email, String secretQuestion, String secretAnswer,
+                String firstName, String lastName, String phoneNumber, String profileImagePath, Address address) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.secretQuestion = secretQuestion;
+        this.secretAnswer = secretAnswer;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.profileImagePath = profileImagePath;
         this.address = address;
 
         // set the creation date to the current date
@@ -226,6 +265,54 @@ public abstract class User implements Serializable {
      */
     public static void setNextID(int nextID) {
         User.nextID = nextID;
+    }
+
+    /**
+     * Get the encoded password.
+     * @return The encoded password.
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * Change the password.
+     * @param password The new encoded password.
+     */
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    /**
+     * Get the email.
+     * @return The email of the user.
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * Change the email.
+     * @param email The new email.
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
+     * Get the secret question.
+     * @return The secret question.
+     */
+    public String getSecretQuestion() {
+        return secretQuestion;
+    }
+
+    /**
+     * Get the secret answer.
+     * @return Encoded secret answer.
+     */
+    public String getSecretAnswer() {
+        return secretAnswer;
     }
 
     /**

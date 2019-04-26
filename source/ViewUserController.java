@@ -45,6 +45,43 @@ public class ViewUserController extends Controller {
     private TextField usernameTextField;
 
     /**
+     * The password field.
+     */
+    @FXML
+    private TextField passwordTextField;
+
+    /**
+     * The repeat password field.
+     */
+    @FXML
+    private TextField repeatPasswordTextField;
+
+    /**
+     * The email field.
+     */
+    @FXML
+    private TextField emailTextField;
+
+    /**
+     * The repeat email field.
+     */
+    @FXML
+    private TextField repeatEmailTextField;
+
+    /**
+     * The secret question field.
+     */
+    @FXML
+    private TextField secretQuestionTextField;
+
+    /**
+     * The secret answer field.
+     */
+    @FXML
+    private TextField secretAnswerTextField;
+
+
+    /**
      * The field showing first name.
      */
     @FXML
@@ -85,18 +122,6 @@ public class ViewUserController extends Controller {
      */
     @FXML
     private TextField addressPostcodeTextField;
-
-    /**
-     * Shows the date the librarian was employed.
-     */
-    @FXML
-    private DatePicker employmentDatePicker;
-
-    /**
-     * Field showing the stuff ID number.
-     */
-    @FXML
-    private TextField staffNumberTextField;
 
     /**
      * Button to choose profile image.
@@ -201,10 +226,22 @@ public class ViewUserController extends Controller {
     public void addUserButtonClicked(ActionEvent event) {
         // mandatory info - username, first name,last name, phone number, address line 1, city,
         // country, postcode, librarian / user radio button/ image path one of the two
+        // + password, repeat password, email, repeat email, secret question, secret answer
         // optional info - address line 2
 
         // gather info
         String username = usernameTextField.getText();
+        //might need to change to encoded version
+        String password = passwordTextField.getText();
+        String repeatPassword = repeatPasswordTextField.getText();
+        String emailAddress = emailTextField.getText();
+        String repeatEmailAddress = repeatEmailTextField.getText();
+        String secretQuestion = secretQuestionTextField.getText();
+
+        // might need to change to encoded version
+        String secretAnswer = secretAnswerTextField.getText();
+
+
         String firstName = firstNameTextField.getText();
         String lastName = surnameTextField.getText();
         String phoneNumber = phoneNumberTextField.getText();
@@ -220,14 +257,25 @@ public class ViewUserController extends Controller {
         // check if info is filled in
         if (username.isEmpty() || firstName.isEmpty() || lastName.isEmpty()
                 || phoneNumber.isEmpty() || addressLine1.isEmpty() || city.isEmpty()
-                || country.isEmpty() || addressPostcode.isEmpty() //|| imagePath.isEmpty()
-                || (!isLibrarian && !isUser)   // has not selected any of the two radio buttons
+                || country.isEmpty() || addressPostcode.isEmpty() || imagePath.isEmpty()
+                || (!isLibrarian && !isUser    // has not selected any of the two radio buttons
+                || password.isEmpty() || repeatPassword.isEmpty() || emailAddress.isEmpty()
+                || repeatEmailAddress.isEmpty() || secretQuestion.isEmpty()
+                || secretAnswer.isEmpty())
         ) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
                     ButtonType.OK);
             alert.show();
         } else if (getLibrary().getUserManager().getUserByUsername(username) != null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Username already taken.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!password.equals(repeatPassword)){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Passwords must match.",
+                    ButtonType.OK);
+            alert.show();
+        } else if(!emailAddress.equals(repeatEmailAddress)){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Emails must match.",
                     ButtonType.OK);
             alert.show();
         } else {
