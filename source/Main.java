@@ -34,7 +34,7 @@ public class Main extends Application {
      */
     public void start(Stage primaryStage) {
         // window size constraints
-        final int windowHeight = 800;
+        final int windowHeight = 900;
         final int windowWidth = 1000;
 
         // load the library info

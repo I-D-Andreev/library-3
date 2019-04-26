@@ -25,7 +25,7 @@ public class NewWindow {
      * @param library      The library.
      */
     public NewWindow(String fxmlResource, Event event, String title, Library library) {
-        final int windowHeight = 800;
+        final int windowHeight = 900;
         final int windowWidth = 1000;
 
         Parent root;
