@@ -48,13 +48,13 @@ public class ViewUserController extends Controller {
      * The password field.
      */
     @FXML
-    private TextField passwordTextField;
+    private PasswordField passwordTextField;
 
     /**
      * The repeat password field.
      */
     @FXML
-    private TextField repeatPasswordTextField;
+    private PasswordField repeatPasswordTextField;
 
     /**
      * The email field.

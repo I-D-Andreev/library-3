@@ -105,6 +105,56 @@ public class EditAccountController extends Controller {
     private Button deleteAccountButton;
 
     /**
+     * Textfield for old password.
+     */
+    @FXML
+    private PasswordField oldPasswordTextfield;
+
+    /**
+     * Textfield for new password.
+     */
+    @FXML
+    private PasswordField newPasswordTextfield;
+
+    /**
+     * Textfield for repeating the new password.
+     */
+    @FXML
+    private PasswordField repeatNewPasswordTextfield;
+
+    /**
+     * Button to change the password.
+     */
+    @FXML
+    private Button changePasswordButton;
+
+
+    /**
+     * Textfield for new email when changing email address.
+     */
+    @FXML
+    private TextField newEmailTextfield;
+
+    /**
+     * Textfield to repeat new email when changing email address.
+     */
+    @FXML
+    private TextField repeatNewEmailTextfield;
+
+    /**
+     * Password field when changing email address.
+     */
+    @FXML
+    private PasswordField passwordTextfield;
+
+    /**
+     * Button to change email address.
+     */
+    @FXML
+    private Button changeEmailButton;
+
+
+    /**
      * Calls method to fill fields with data.
      */
     @Override
@@ -264,6 +314,28 @@ public class EditAccountController extends Controller {
                 Platform.exit();
             }
         }
+    }
+
+
+    /**
+     * Changes the password.
+     * @param event Clicking the change password button.
+     */
+    @FXML
+    public void changePasswordButtonClicked(ActionEvent event) {
+       // newPasswordTextfield, repeatNewPasswordTextfield, oldPasswordTextfield
+        // all mandatory
+    }
+
+
+    /**
+     * Changes the email.
+     * @param event Clicking on the change email button.
+     */
+    @FXML
+    public void changeEmailButtonClicked(ActionEvent event) {
+       // passwordTextfield, newEmailTextfield, repeatNewEmailTextfield
+        // all mandatory
     }
 }
 
