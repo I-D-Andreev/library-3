@@ -231,14 +231,14 @@ public class ViewUserController extends Controller {
 
         // gather info
         String username = usernameTextField.getText();
-        //might need to change to encoded version
+        //might need to change to encoded version !!!!!!!!!!!!!!!!!!
         String password = passwordTextField.getText();
         String repeatPassword = repeatPasswordTextField.getText();
         String emailAddress = emailTextField.getText();
         String repeatEmailAddress = repeatEmailTextField.getText();
         String secretQuestion = secretQuestionTextField.getText();
 
-        // might need to change to encoded version
+        // might need to change to encoded version !!!!!!!!!!!!!!!!!!!
         String secretAnswer = secretAnswerTextField.getText();
 
 

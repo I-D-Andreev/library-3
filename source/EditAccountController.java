@@ -324,7 +324,7 @@ public class EditAccountController extends Controller {
     @FXML
     public void changePasswordButtonClicked(ActionEvent event) {
        // newPasswordTextfield, repeatNewPasswordTextfield, oldPasswordTextfield
-        // all mandatory
+        // all mandatory !!!!!!!!!!!!!!!!!!!!!
     }
 
 
@@ -335,7 +335,7 @@ public class EditAccountController extends Controller {
     @FXML
     public void changeEmailButtonClicked(ActionEvent event) {
        // passwordTextfield, newEmailTextfield, repeatNewEmailTextfield
-        // all mandatory
+        // all mandatory!!!!!!!!!!!!!!!!!!!!!!!
     }
 }
 
