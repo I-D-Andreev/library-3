@@ -80,17 +80,18 @@ public abstract class User implements Serializable {
 
     /**
      * Creates a user profile with the basic information common to all types of users.
-     * @param username The user's account username.
-     * @param password The users (encrypted) password.
-     * @param securitySalting The salt used for encrypting the password.
-     * @param email The user's email.
-     * @param secretQuestion The user's secret question for password recovery.
-     * @param secretAnswer The user's (encoded) secret answer for password recovery.
-     * @param firstName The user's first name.
-     * @param lastName  The user's last name.
-     * @param phoneNumber     The user's phone number.
+     *
+     * @param username         The user's account username.
+     * @param password         The users (encrypted) password.
+     * @param securitySalting  The salt used for encrypting the password.
+     * @param email            The user's email.
+     * @param secretQuestion   The user's secret question for password recovery.
+     * @param secretAnswer     The user's (encoded) secret answer for password recovery.
+     * @param firstName        The user's first name.
+     * @param lastName         The user's last name.
+     * @param phoneNumber      The user's phone number.
      * @param profileImagePath The user's profile image.
-     * @param address   The user's home address.
+     * @param address          The user's home address.
      */
     public User(String username, String password, String securitySalting,
                 String email, String secretQuestion, String secretAnswer,
@@ -266,6 +267,7 @@ public abstract class User implements Serializable {
 
     /**
      * Get the encoded password.
+     *
      * @return The encoded password.
      */
     public String getPassword() {
@@ -274,6 +276,7 @@ public abstract class User implements Serializable {
 
     /**
      * Change the password.
+     *
      * @param password The new encoded password.
      */
     public void setPassword(String password) {
@@ -282,6 +285,7 @@ public abstract class User implements Serializable {
 
     /**
      * Get the email.
+     *
      * @return The email of the user.
      */
     public String getEmail() {
@@ -290,6 +294,7 @@ public abstract class User implements Serializable {
 
     /**
      * Change the email.
+     *
      * @param email The new email.
      */
     public void setEmail(String email) {
@@ -298,6 +303,7 @@ public abstract class User implements Serializable {
 
     /**
      * Get the secret question.
+     *
      * @return The secret question.
      */
     public String getSecretQuestion() {
@@ -306,6 +312,7 @@ public abstract class User implements Serializable {
 
     /**
      * Get the secret answer.
+     *
      * @return Encoded secret answer.
      */
     public String getSecretAnswer() {
@@ -314,6 +321,7 @@ public abstract class User implements Serializable {
 
     /**
      * Get the random salting for this particular account.
+     *
      * @return The salt added to the password.
      */
     public String getSecuritySalting() {

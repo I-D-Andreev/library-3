@@ -14,26 +14,22 @@ public class NormalUser extends User implements Serializable {
     private History transactionHistory;
     private final int resourceCap;
 
-    /**
-     * Creates a normal users account with the inputted information.
-     *
-     * @param firstName        The users first name.
-     * @param lastName         The users last name.
-     * @param username         The users account username.
-     * @param phoneNumber      The users phone number.
-     * @param profileImagePath The users profile image.
-     * @param address          The users home address.
-     */
-    public NormalUser(String firstName, String lastName, String username,
-                      String phoneNumber, String profileImagePath, Address address) {
-        super(firstName, lastName, username, phoneNumber, profileImagePath, address);
-        this.balance = 0;
-        this.transactionHistory = new History();
-        this.borrowedCopies = new ArrayList<>();
-        this.newAdditions = new ArrayList<>();
-        this.resourceCap = 5;
-    }
 
+    /**
+     * Creates a normal user account with the inputted information.
+     *
+     * @param username         The user's account username.
+     * @param password         The users (encrypted) password.
+     * @param securitySalting  The salt used for encrypting the password.
+     * @param email            The user's email.
+     * @param secretQuestion   The user's secret question for password recovery.
+     * @param secretAnswer     The user's (encoded) secret answer for password recovery.
+     * @param firstName        The user's first name.
+     * @param lastName         The user's last name.
+     * @param phoneNumber      The user's phone number.
+     * @param profileImagePath The user's profile image.
+     * @param address          The user's home address.
+     */
     public NormalUser(String username, String password, String securitySalting,
                       String email, String secretQuestion, String secretAnswer,
                       String firstName, String lastName, String phoneNumber, String profileImagePath, Address address) {
