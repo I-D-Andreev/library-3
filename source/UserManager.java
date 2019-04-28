@@ -220,7 +220,7 @@ public class UserManager implements Serializable {
         this.addUser(new NormalUser("1", Security.generatePassword("1", salt),
                 salt, "iivvaann.andreev@gmail.com",
                 "It's abc", Security.generatePassword("abc", salt),
-                "Ivan", "Andreev", "1234567",
+                "User", "Ivan", "1234567",
                 "resources/avatar1.png",
                 new Address("Bay Campus", "Student Accomodation",
                         "Swansea", "UK", "SA18EP")));
@@ -237,7 +237,7 @@ public class UserManager implements Serializable {
         this.addUser(new Librarian("2", Security.generatePassword("1", salt),
                 salt, "iivvaann.andreev@gmail.com",
                 "It's abc", Security.generatePassword("abc", salt),
-                "Ivan", "Andreev", "1234567",
+                "Librarian", "Ivan", "1234567",
                 "resources/avatar1.png",
                 new Address("Bay Campus", "Student Accomodation",
                         "Swansea", "UK", "SA18EP")));

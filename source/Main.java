@@ -17,6 +17,10 @@ public class Main extends Application {
         //Launches the application - do not remove.
         launch(args);
 
+        // users - 1, ivan
+        // librarian - 2
+        // password across all accounts - 1
+
 //        if you want to run the program and there are errors
 //        you might need to run this code
 //        more in the README file
