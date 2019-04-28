@@ -323,6 +323,14 @@ public abstract class User implements Serializable {
     }
 
     /**
+     * Get the random salting for this particular account.
+     * @return The salt added to the password.
+     */
+    public String getSecuritySalting() {
+        return securitySalting;
+    }
+
+    /**
      * Checks that the user is an object of type user and gets its ID.
      *
      * @param obj The user to be checked.
