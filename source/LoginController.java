@@ -1,17 +1,6 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-
-import java.io.IOException;
-import java.util.ArrayList;
+import javafx.scene.control.*;
 
 /**
  * @author Chris McAuley, Sian Pike.
@@ -27,6 +16,12 @@ public class LoginController extends Controller {
     private TextField usernameTextField;
 
     /**
+     * Textfield for the password.
+     */
+    @FXML
+    private PasswordField passwordTextfield;
+
+    /**
      * The button for logging in.
      */
     @FXML
@@ -40,18 +35,23 @@ public class LoginController extends Controller {
     @FXML
     private void loginButtonClicked(ActionEvent event) {
         String username = usernameTextField.getText();
-        User existingUser = getLibrary().getUserManager().getUserByUsername(username);
+        User user = getLibrary().getUserManager().getUserByUsername(username);
 
         //Checks whether the user exists.
-        if (existingUser == null) {
+        if (user == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Username " + username + " doesn't exist.",
+                    ButtonType.OK);
+            alert.show();
+
+        } else if (!Security.checkPassword(passwordTextfield.getText(), user.getSecuritySalting(), user.getPassword())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong username or password.",
                     ButtonType.OK);
             alert.show();
         } else {
             // set the currently logged in user
-            getLibrary().setCurrentUserLoggedIn(existingUser);
+            getLibrary().setCurrentUserLoggedIn(user);
             //Checks whether the user is a librarian.
-            if (existingUser.hasAdminAccess()) {
+            if (user.hasAdminAccess()) {
 
                 new NewWindow("resources/LibrarianDashboard.fxml", event,
                         "Dashboard - TaweLib", getLibrary());
@@ -64,3 +64,4 @@ public class LoginController extends Controller {
         }
     }
 }
+

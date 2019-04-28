@@ -28,7 +28,7 @@ public class Main extends Application {
 //        Library l = new Library();
 //        l.save();
 
-//        System.exit(0);
+        System.exit(0);
     }
 
     /**
