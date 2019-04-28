@@ -6,7 +6,14 @@ import java.util.Date;
  * @author Christina Meggs
  */
 public class Librarian extends User {
+    /**
+     * A librarian's staff number.
+     */
     private String staffNumber;
+
+    /**
+     * The librarian's employment date.
+     */
     private Date employmentDate;
 
 
