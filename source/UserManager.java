@@ -216,20 +216,30 @@ public class UserManager implements Serializable {
     // Might be needed to rebuild the program if it is crashing.
     // More in the README file.
     public void selfPopulate1() {
-        this.addUser(new NormalUser("Sian", "Pike", "sianspike",
-                "07813931066", "", new Address("14 Bryn Y Mor Crescent",
-                "Swansea", "Wales", "SA14QT")));
+        String salt = Security.generateSalt();
+        this.addUser(new NormalUser("1", Security.generatePassword("1", salt),
+                salt, "iivvaann.andreev@gmail.com",
+                "It's abc", Security.generatePassword("abc", salt),
+                "Ivan", "Andreev", "1234567",
+                "resources/avatar1.png",
+                new Address("Bay Campus", "Student Accomodation",
+                        "Swansea", "UK", "SA18EP")));
 
-        this.addUser(new NormalUser("Sian", "Pike", "ivan",
-                "07813931066", "", new Address("14 Bryn Y Mor Crescent",
-                "Swansea", "Wales", "SA14QT")));
+        this.addUser(new NormalUser("ivan", Security.generatePassword("1", salt),
+                salt, "iivvaann.andreev@gmail.com",
+                "It's abc", Security.generatePassword("abc", salt),
+                "Ivan", "Andreev", "1234567",
+                "resources/avatar1.png",
+                new Address("Bay Campus", "Student Accomodation",
+                        "Swansea", "UK", "SA18EP")));
 
-        this.addUser(new NormalUser("Spoof", "Borrowings", "spoof",
-                "07813931066", "", new Address("14 Bryn Y Mor Crescent",
-                "Swansea", "Wales", "SA14QT")));
 
-        this.addUser(new Librarian("Joe", "Bloggs", "librarian1",
-                "12345678", "", new Address("Somewhere", "Cardiff", "Wales",
-                "AB12CD")));
+        this.addUser(new Librarian("2", Security.generatePassword("1", salt),
+                salt, "iivvaann.andreev@gmail.com",
+                "It's abc", Security.generatePassword("abc", salt),
+                "Ivan", "Andreev", "1234567",
+                "resources/avatar1.png",
+                new Address("Bay Campus", "Student Accomodation",
+                        "Swansea", "UK", "SA18EP")));
     }
 }
