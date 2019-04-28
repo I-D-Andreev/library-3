@@ -51,5 +51,10 @@ public class Security {
         return null;
     }
 
+    public static boolean checkPassword(String plainTextPassword, String salt, String encodedPassword){
+        String generatedPassword = Security.generatePassword(plainTextPassword, salt);
+        return generatedPassword == null ? false : generatedPassword.equals(encodedPassword);
+    }
+
 
 }
