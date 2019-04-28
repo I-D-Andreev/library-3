@@ -34,6 +34,17 @@ public class NormalUser extends User implements Serializable {
         this.resourceCap = 5;
     }
 
+    public NormalUser(String username, String password, String email, String secretQuestion, String secretAnswer,
+                      String firstName, String lastName, String phoneNumber, String profileImagePath, Address address) {
+        super(username, password, email, secretQuestion, secretAnswer, firstName,
+                lastName, phoneNumber, profileImagePath, address);
+
+        this.balance = 0;
+        this.transactionHistory = new History();
+        this.borrowedCopies = new ArrayList<>();
+        this.newAdditions = new ArrayList<>();
+        this.resourceCap = 5;
+    }
 
     /**
      * Gets the user's account balance.
