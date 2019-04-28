@@ -234,6 +234,7 @@ public class ViewUserController extends Controller {
 
         // gather info
         String username = usernameTextField.getText();
+        // passwords are stored encoded so we don't have them in their plain text format at any time
         String encodedPassword = Security.generatePassword(passwordTextField.getText(),accountSalt);
         String encodedRepeatPassword = Security.generatePassword(passwordTextField.getText(),accountSalt);
         String emailAddress = emailTextField.getText();
