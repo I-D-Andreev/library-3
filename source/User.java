@@ -79,29 +79,19 @@ public abstract class User implements Serializable {
     private Address address;
 
     /**
-     * Creates a user profile with the basic information within all types of users.
-     *
+     * Creates a user profile with the basic information common to all types of users.
+     * @param username The user's account username.
+     * @param password The users (encrypted) password.
+     * @param securitySalting The salt used for encrypting the password.
+     * @param email The user's email.
+     * @param secretQuestion The user's secret question for password recovery.
+     * @param secretAnswer The user's (encoded) secret answer for password recovery.
      * @param firstName The user's first name.
      * @param lastName  The user's last name.
-     * @param user      The user's account username.
-     * @param phone     The user's phone number.
-     * @param imagePath The user's profile image.
+     * @param phoneNumber     The user's phone number.
+     * @param profileImagePath The user's profile image.
      * @param address   The user's home address.
      */
-    public User(String firstName, String lastName, String user, String phone, String imagePath, Address address) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.username = user;
-        this.phoneNumber = phone;
-        this.profileImagePath = imagePath;
-        this.address = address;
-
-        // set the creation date to the current date
-        this.creationDate = new Date();
-
-        this.setID();
-    }
-
     public User(String username, String password, String securitySalting,
                 String email, String secretQuestion, String secretAnswer,
                 String firstName, String lastName, String phoneNumber, String profileImagePath, Address address) {
