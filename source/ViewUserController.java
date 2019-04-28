@@ -284,10 +284,12 @@ public class ViewUserController extends Controller {
 
             String typeOfAccount = "";
             if (isLibrarian) {
+                ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 getLibrary().getUserManager().addUser(new Librarian(firstName, lastName, username, phoneNumber,
                         imagePath, address));
                 typeOfAccount = "Librarian";
             } else if (isUser) {
+                ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 getLibrary().getUserManager().addUser(new NormalUser(firstName, lastName, username, phoneNumber,
                         imagePath, address));
                 typeOfAccount = "User";
@@ -308,6 +310,12 @@ public class ViewUserController extends Controller {
     private void clearAllCreateAccountFields() {
         usernameTextField.clear();
         firstNameTextField.clear();
+        passwordTextField.clear();
+        repeatPasswordTextField.clear();
+        emailTextField.clear();
+        repeatEmailTextField.clear();
+        secretQuestionTextField.clear();
+        secretAnswerTextField.clear();
         surnameTextField.clear();
         phoneNumberTextField.clear();
         addressTextField1.clear();
