@@ -34,9 +34,10 @@ public class NormalUser extends User implements Serializable {
         this.resourceCap = 5;
     }
 
-    public NormalUser(String username, String password, String email, String secretQuestion, String secretAnswer,
+    public NormalUser(String username, String password, String securitySalting,
+                      String email, String secretQuestion, String secretAnswer,
                       String firstName, String lastName, String phoneNumber, String profileImagePath, Address address) {
-        super(username, password, email, secretQuestion, secretAnswer, firstName,
+        super(username, password, securitySalting, email, secretQuestion, secretAnswer, firstName,
                 lastName, phoneNumber, profileImagePath, address);
 
         this.balance = 0;

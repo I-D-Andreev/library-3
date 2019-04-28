@@ -24,6 +24,11 @@ public abstract class User implements Serializable {
     private String password;
 
     /**
+     * Salting for encoding passwords and the secret question.
+     */
+    private String securitySalting;
+
+    /**
      * The email of the user.
      */
     private String email;
@@ -97,10 +102,12 @@ public abstract class User implements Serializable {
         this.setID();
     }
 
-    public User(String username, String password, String email, String secretQuestion, String secretAnswer,
+    public User(String username, String password, String securitySalting,
+                String email, String secretQuestion, String secretAnswer,
                 String firstName, String lastName, String phoneNumber, String profileImagePath, Address address) {
         this.username = username;
         this.password = password;
+        this.securitySalting = securitySalting;
         this.email = email;
         this.secretQuestion = secretQuestion;
         this.secretAnswer = secretAnswer;

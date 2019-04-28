@@ -28,9 +28,10 @@ public class Librarian extends User {
         this.employmentDate = new Date();
     }
 
-    public Librarian(String username, String password, String email, String secretQuestion, String secretAnswer,
+    public Librarian(String username, String password, String securitySalting,
+                     String email, String secretQuestion, String secretAnswer,
                      String firstName, String lastName, String phoneNumber, String profileImagePath, Address address) {
-        super(username, password, email, secretQuestion, secretAnswer, firstName, lastName,
+        super(username, password, securitySalting, email, secretQuestion, secretAnswer, firstName, lastName,
                 phoneNumber, profileImagePath, address);
         this.setStaffNumber();
         this.employmentDate = new Date();
