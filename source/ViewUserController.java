@@ -229,18 +229,17 @@ public class ViewUserController extends Controller {
         // + password, repeat password, email, repeat email, secret question, secret answer
         // optional info - address line 2
 
+        // generate salting for the account
+        String accountSalt = Security.generateSalt();
+
         // gather info
         String username = usernameTextField.getText();
-        //might need to change to encoded version !!!!!!!!!!!!!!!!!!
-        String password = passwordTextField.getText();
-        String repeatPassword = repeatPasswordTextField.getText();
+        String encodedPassword = Security.generatePassword(passwordTextField.getText(),accountSalt);
+        String encodedRepeatPassword = Security.generatePassword(passwordTextField.getText(),accountSalt);
         String emailAddress = emailTextField.getText();
         String repeatEmailAddress = repeatEmailTextField.getText();
         String secretQuestion = secretQuestionTextField.getText();
-
-        // might need to change to encoded version !!!!!!!!!!!!!!!!!!!
-        String secretAnswer = secretAnswerTextField.getText();
-
+        String encodedSecretAnswer = Security.generatePassword(secretAnswerTextField.getText(), accountSalt);
 
         String firstName = firstNameTextField.getText();
         String lastName = surnameTextField.getText();
@@ -259,9 +258,9 @@ public class ViewUserController extends Controller {
                 || phoneNumber.isEmpty() || addressLine1.isEmpty() || city.isEmpty()
                 || country.isEmpty() || addressPostcode.isEmpty() || imagePath.isEmpty()
                 || (!isLibrarian && !isUser    // has not selected any of the two radio buttons
-                || password.isEmpty() || repeatPassword.isEmpty() || emailAddress.isEmpty()
+                || encodedPassword.isEmpty() || encodedRepeatPassword.isEmpty() || emailAddress.isEmpty()
                 || repeatEmailAddress.isEmpty() || secretQuestion.isEmpty()
-                || secretAnswer.isEmpty())
+                || encodedSecretAnswer.isEmpty())
         ) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Please fill in all the required fields.",
                     ButtonType.OK);
@@ -270,7 +269,7 @@ public class ViewUserController extends Controller {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Username already taken.",
                     ButtonType.OK);
             alert.show();
-        } else if (!password.equals(repeatPassword)){
+        } else if (!encodedPassword.equals(encodedRepeatPassword)){
             Alert alert = new Alert(Alert.AlertType.ERROR, "Passwords must match.",
                     ButtonType.OK);
             alert.show();
@@ -284,14 +283,15 @@ public class ViewUserController extends Controller {
 
             String typeOfAccount = "";
             if (isLibrarian) {
-                ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                getLibrary().getUserManager().addUser(new Librarian(firstName, lastName, username, phoneNumber,
+                getLibrary().getUserManager().addUser(new Librarian(username, encodedPassword, accountSalt,
+                        emailAddress, secretQuestion, encodedSecretAnswer, firstName, lastName, phoneNumber,
                         imagePath, address));
                 typeOfAccount = "Librarian";
             } else if (isUser) {
-                ///!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                getLibrary().getUserManager().addUser(new NormalUser(firstName, lastName, username, phoneNumber,
+                getLibrary().getUserManager().addUser(new NormalUser(username, encodedPassword, accountSalt,
+                        emailAddress, secretQuestion, encodedSecretAnswer, firstName, lastName, phoneNumber,
                         imagePath, address));
+
                 typeOfAccount = "User";
             }
 
