@@ -9,25 +9,22 @@ public class Librarian extends User {
     private String staffNumber;
     private Date employmentDate;
 
+
     /**
      * Creates a librarian account with the inputted information.
      *
-     * @param firstName   The librarians first name.
-     * @param lastName    The librarians last name.
-     * @param username    The librarians account username.
-     * @param phoneNumber The librarians phone number.
-     * @param imagePath   The librarians profile image.
-     * @param address     The librarians home address.
+     * @param username         The user's account username.
+     * @param password         The users (encrypted) password.
+     * @param securitySalting  The salt used for encrypting the password.
+     * @param email            The user's email.
+     * @param secretQuestion   The user's secret question for password recovery.
+     * @param secretAnswer     The user's (encoded) secret answer for password recovery.
+     * @param firstName        The user's first name.
+     * @param lastName         The user's last name.
+     * @param phoneNumber      The user's phone number.
+     * @param profileImagePath The user's profile image.
+     * @param address          The user's home address.
      */
-    public Librarian(String firstName, String lastName,
-                     String username, String phoneNumber, String imagePath, Address address) {
-        super(firstName, lastName, username, phoneNumber, imagePath, address);
-        this.setStaffNumber();
-
-        // Sets the date to the current date.
-        this.employmentDate = new Date();
-    }
-
     public Librarian(String username, String password, String securitySalting,
                      String email, String secretQuestion, String secretAnswer,
                      String firstName, String lastName, String phoneNumber, String profileImagePath, Address address) {
