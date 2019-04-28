@@ -13,6 +13,10 @@ public class Security {
     private static final int LENGTH_OF_KEY = 512;
     private static final String ENCODING_ALGORITHM = "PBKDF2WithHmacSHA512";
 
+    /**
+     * Generates password salt of random length.
+     * @return The password salt.
+     */
     public static String generateSalt() {
         // generates a random length between 40-59
         int length = secureRandom.nextInt(20) + 40;
@@ -22,6 +26,12 @@ public class Security {
         return Base64.getEncoder().encodeToString(saltBytes);
     }
 
+    /**
+     * Generates an encoded password.
+     * @param plainTextPassword The password in plain text format.
+     * @param salt The salt.
+     * @return The encoded password.
+     */
     public static String generatePassword(String plainTextPassword, String salt) {
         // convert the data to the needed format
         char[] passwordChar = plainTextPassword.toCharArray();
@@ -51,6 +61,13 @@ public class Security {
         return null;
     }
 
+    /**
+     * Checks whether a password is correct.
+     * @param plainTextPassword The plain text password.
+     * @param salt The salt.
+     * @param encodedPassword The encoded password.
+     * @return True if the plain text password equals the encoded password when encrypted, false otherwise.
+     */
     public static boolean checkPassword(String plainTextPassword, String salt, String encodedPassword){
         String generatedPassword = Security.generatePassword(plainTextPassword, salt);
         return generatedPassword == null ? false : generatedPassword.equals(encodedPassword);
