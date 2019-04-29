@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import javax.crypto.spec.PBEKeySpec;
 import java.util.Optional;
 
 
@@ -73,6 +74,14 @@ public class EditAccountController extends Controller {
      */
     @FXML
     private TextField postcodeTextField;
+
+    /**
+     * The field for the email address.
+     */
+    @FXML
+    private TextField emailTextField;
+
+
 
     /**
      * The button for choosing a profile image.
@@ -177,6 +186,7 @@ public class EditAccountController extends Controller {
         countryTextField.setText(user.getAddress().getCountry());
         postcodeTextField.setText(user.getAddress().getPostcode());
         imagePathTextField.setText(user.getProfileImagePath());
+        emailTextField.setText(user.getEmail());
 
     }
 
@@ -319,23 +329,78 @@ public class EditAccountController extends Controller {
 
     /**
      * Changes the password.
+     *
      * @param event Clicking the change password button.
      */
     @FXML
     public void changePasswordButtonClicked(ActionEvent event) {
-       // newPasswordTextfield, repeatNewPasswordTextfield, oldPasswordTextfield
+        // newPasswordTextfield, repeatNewPasswordTextfield, oldPasswordTextfield
         // all mandatory !!!!!!!!!!!!!!!!!!!!!
+        String salt = getLibrary().getCurrentUserLoggedIn().getSecuritySalting();
+
+        if (!Security.checkPassword(oldPasswordTextfield.getText(), salt,
+                getLibrary().getCurrentUserLoggedIn().getPassword())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong password!",
+                    ButtonType.OK);
+            alert.show();
+        } else if (newPasswordTextfield.getText().equals("")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Password can't be empty!",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!newPasswordTextfield.getText().equals(repeatNewPasswordTextfield.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "New password must match!",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // successful change
+            getLibrary().getCurrentUserLoggedIn().setPassword(
+                    Security.generatePassword(newPasswordTextfield.getText(), salt));
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "New password set successfully!",
+                    ButtonType.OK);
+            alert.show();
+        }
+
+        // clear fields
+        oldPasswordTextfield.clear();
+        newPasswordTextfield.clear();
+        repeatNewPasswordTextfield.clear();
+
     }
 
 
     /**
      * Changes the email.
+     *
      * @param event Clicking on the change email button.
      */
     @FXML
     public void changeEmailButtonClicked(ActionEvent event) {
-       // passwordTextfield, newEmailTextfield, repeatNewEmailTextfield
+        // passwordTextfield, newEmailTextfield, repeatNewEmailTextfield
         // all mandatory!!!!!!!!!!!!!!!!!!!!!!!
+        if (passwordTextfield.getText().isEmpty() || newEmailTextfield.getText().isEmpty()
+                || repeatNewEmailTextfield.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "All fields must be filled in!",
+                    ButtonType.OK);
+            alert.show();
+        } else if(!newEmailTextfield.getText().equals(repeatNewEmailTextfield.getText())){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Emails must match!",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // success
+            getLibrary().getCurrentUserLoggedIn().setEmail(newEmailTextfield.getText());
+
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "New email set successfully!",
+                    ButtonType.OK);
+            alert.show();
+        }
+
+        // clear fields
+        passwordTextfield.clear();
+        newEmailTextfield.clear();
+        repeatNewEmailTextfield.clear();
+
     }
 }
 

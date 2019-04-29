@@ -10,20 +10,21 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="901.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
    <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="701.0" minWidth="10.0" prefWidth="701.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="999.6" minWidth="10.0" prefWidth="999.6" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="0.0" prefWidth="0.0" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints maxHeight="322.0" minHeight="10.0" prefHeight="184.8" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="525.6" minHeight="0.0" prefHeight="415.2" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="364.8000183105469" minHeight="10.0" prefHeight="364.8000183105469" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="600.2666717529297" minHeight="0.0" prefHeight="535.9999816894531" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <VBox prefHeight="498.0" prefWidth="702.0" GridPane.rowIndex="1">
+      <VBox prefHeight="570.0" prefWidth="1000.0" GridPane.rowIndex="1">
          <children>
-            <HBox alignment="CENTER" prefHeight="26.0" prefWidth="590.0">
+            <HBox alignment="CENTER" prefHeight="26.0">
                <children>
                   <Label prefHeight="18.0" prefWidth="74.0" text="Username:" />
                   <TextField fx:id="usernameTextField">
@@ -35,7 +36,7 @@
             </HBox>
             <HBox alignment="CENTER" layoutX="10.0" layoutY="128.0">
                <children>
-                  <Label prefHeight="27.0" prefWidth="74.0" text="Password:    " HBox.hgrow="NEVER">
+                  <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="74.0" text="Password:" HBox.hgrow="NEVER">
                      <padding>
                         <Insets top="10.0" />
                      </padding>
@@ -49,7 +50,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <HBox alignment="CENTER" prefHeight="93.0" prefWidth="1000.0">
                <children>
                   <Button fx:id="loginButton" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="66.0" prefWidth="138.0" text="Login">
                      <HBox.margin>
@@ -68,11 +69,17 @@
                      <HBox.margin>
                         <Insets left="20.0" top="10.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="25.0" />
+                     </font>
                   </Label>
                   <Label text="Login">
                      <HBox.margin>
                         <Insets left="20.0" top="10.0" />
                      </HBox.margin>
+                     <font>
+                        <Font size="26.0" />
+                     </font>
                   </Label>
                </children>
             </HBox>

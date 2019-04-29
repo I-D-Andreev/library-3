@@ -170,6 +170,20 @@
                                     </TextField>
                                  </children>
                               </HBox>
+                              <HBox layoutX="10.0" layoutY="290.0" prefHeight="33.0" prefWidth="622.0">
+                                 <children>
+                                    <Label minWidth="120.0" text="Email">
+                                       <HBox.margin>
+                                          <Insets left="190.0" top="9.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <TextField fx:id="emailTextField" disable="true" prefHeight="26.0" prefWidth="243.0">
+                                       <HBox.margin>
+                                          <Insets left="15.0" top="5.0" />
+                                       </HBox.margin>
+                                    </TextField>
+                                 </children>
+                              </HBox>
                               <HBox prefHeight="48.0" prefWidth="570.0">
                                  <children>
                                     <Button fx:id="chooseProfileImageButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#chooseProfileImageButtonClicked" prefHeight="27.0" prefWidth="167.0" text="Choose Profile Image">
