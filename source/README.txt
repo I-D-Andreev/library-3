@@ -8,8 +8,12 @@ That is what I have been following to get it to load from the ZIP file from scra
 	- select JDK - 1.8 (our is 1.8.0_45)
 	- select Project language level - 8
 	- set project compiler output to the "out" folder (or another if you have named it differently)
-5. Add the controlfx library to the project by extracting the controlsfx-8.40.14.zip (in the source folder), 
+5. Add the libraries to the project. Extract the controlsfx-8.40.14.zip (in the source folder) if not already extracted.
 	File -> Project Structure -> Libraries -> + -> controlsfx-8.40.14.jar
+	File -> Project Structure -> Libraries -> + -> mail-1.4.jar
+    File -> Project Structure -> Libraries -> + -> activation-1.1.1.jar
+
+
 6. Click source/resources/ Main.java 
 7. From the top menu, select Run -> Run... and choose Main
 
