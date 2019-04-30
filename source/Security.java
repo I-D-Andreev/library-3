@@ -6,6 +6,10 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
 import java.util.Base64;
 
+/**
+ * A class to deal with password encryption and security.
+ * @author Ivan Andreev 
+ */
 public class Security {
     private static final SecureRandom secureRandom = new SecureRandom();
 
