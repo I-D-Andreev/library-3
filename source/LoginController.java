@@ -1,6 +1,9 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 /**
  * @author Chris McAuley, Sian Pike.
@@ -61,6 +64,27 @@ public class LoginController extends Controller {
                 new NewWindow("resources/UserDashboard.fxml", event,
                         "Dashboard - TaweLib", getLibrary());
             }
+        }
+    }
+
+    /**
+     * Handles clicking on the forgotten password label.
+     * @param event Clicking on the label.
+     */
+    @FXML
+    public void forgottenPasswordCliecked(MouseEvent event) {
+        System.out.println("test");
+    }
+
+    /**
+     * Tries to do a login operation when Enter is pressed.
+     * @param event Pressing Enter
+     */
+    @FXML
+    public void onKeyPressed(KeyEvent event) {
+        // if pressed key is enter
+        if(event.getCode().compareTo(KeyCode.ENTER) == 0){
+            loginButtonClicked(new ActionEvent(event.getSource(), event.getTarget()));
         }
     }
 }
