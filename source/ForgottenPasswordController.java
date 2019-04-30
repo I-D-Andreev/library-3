@@ -77,9 +77,20 @@ public class ForgottenPasswordController extends Controller {
 
             // send the email to the user with the new password
             String messageText = "Hello." + System.lineSeparator() + "Your new password is: " + newPassword
-                    + "Best regards, " + System.lineSeparator() + "TaweLib team";
+                    + System.lineSeparator() +  "Best regards, " + System.lineSeparator() + "TaweLib team";
 
             MailSender.sendEmail(user.getEmail(), "Tawe-Lib new password", messageText);
+
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "New password sent to email " +
+                    user.getEmail() + " !",
+                    ButtonType.OK);
+            alert.show();
+
+            //  clear the fields
+            usernameTextfield.clear();
+            secretQuestionTextfield.clear();
+            secretAnswerTextfield.clear();
         }
     }
 
