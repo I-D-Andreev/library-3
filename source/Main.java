@@ -21,7 +21,6 @@ public class Main extends Application {
         // librarian - 2
         // password across all accounts - 1
 
-//        MailSender.sendEmail("955058@swansea.ac.uk", "hi", "hello world!");
 //        if you want to run the program and there are errors
 //        you might need to run this code
 //        more in the README file
