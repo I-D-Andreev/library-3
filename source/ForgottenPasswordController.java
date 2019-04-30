@@ -59,7 +59,28 @@ public class ForgottenPasswordController extends Controller {
 
     @FXML
     public void emailPasswordButtonClicked(ActionEvent event) {
+        // check if the secret answer matches (secret answer is saved as a password)
+        User user =  getLibrary().getUserManager().getUserByUsername(usernameTextfield.getText());
+        if(!Security.checkPassword(secretAnswerTextfield.getText(),
+                user.getSecuritySalting(), user.getSecretAnswer())){
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong security answer!",
+                    ButtonType.OK);
+            alert.show();
+        } else {
+            // successfully answers the secret question
 
+            // generate a new password
+            String newPassword = Security.generateRandomUnencodedPassword();
+
+            // set the password (encoded) to the user
+            user.setPassword(Security.generatePassword(newPassword, user.getSecuritySalting()));
+
+            // send the email to the user with the new password
+            String messageText = "Hello." + System.lineSeparator() + "Your new password is: " + newPassword
+                    + "Best regards, " + System.lineSeparator() + "TaweLib team";
+
+            MailSender.sendEmail(user.getEmail(), "Tawe-Lib new password", messageText);
+        }
     }
 
     /**
@@ -79,6 +100,7 @@ public class ForgottenPasswordController extends Controller {
         } else {
             // user is found
             secretQuestionTextfield.setText(user.getSecretQuestion());
+            usernameTextfield.setDisable(true);
         }
     }
 

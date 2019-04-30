@@ -73,7 +73,8 @@ public class LoginController extends Controller {
      */
     @FXML
     public void forgottenPasswordCliecked(MouseEvent event) {
-        System.out.println("test");
+        new NewWindow("resources/ForgottenPassword.fxml", event,
+                "TaweLib - Forgotten Password", getLibrary());
     }
 
     /**

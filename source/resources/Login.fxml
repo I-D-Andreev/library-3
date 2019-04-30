@@ -66,7 +66,7 @@
                <children>
                   <Label onMouseClicked="#forgottenPasswordCliecked" style="-fx-underline: true;" text="Forgotten password" textFill="#d21111">
                      <font>
-                        <Font name="System Bold" size="13.0" />
+                        <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
                </children>

@@ -78,4 +78,17 @@ public class Security {
     }
 
 
+    /**
+     * Generates a random unencoded password.
+     * @return A string containing the password.
+     */
+    public static String generateRandomUnencodedPassword(){
+        // generate random bytes, then convert them to base64
+        // and use that random string as password
+        byte[] bytes = new byte[7];
+        secureRandom.nextBytes(bytes);
+        return Base64.getEncoder().encodeToString(bytes);
+    }
+
+
 }
