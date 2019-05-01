@@ -96,7 +96,9 @@ public class EmailNotificationSender {
                 + "Title: " + returnCopy.getCopyOf().getTitle() + System.lineSeparator()
                 + "Type: " + returnCopy.getCopyOf().getType() + System.lineSeparator() + System.lineSeparator()
 
-                + "DUE DATE: " + returnCopy.getDueDate() + System.lineSeparator() + System.lineSeparator()
+                // the due date should be displayed BOLD and RED
+                + "<b style='color:red;'>DUE DATE: " + returnCopy.getDueDate() + "</b>"
+                + System.lineSeparator() + System.lineSeparator()
 
                 + "A fine of " + returnCopy.getCopyOf().getLateReturnFinePerDay() + " pounds will apply for each"
                 + " day that you are late, up to a maximum of " + returnCopy.getCopyOf().getMaxFineAmount()
