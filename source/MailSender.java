@@ -44,7 +44,7 @@ public class MailSender {
             mimeMessage.addRecipients(Message.RecipientType.TO, recipient);
             mimeMessage.setFrom(new InternetAddress(SENDER_NAME));
             mimeMessage.setSubject(subject);
-            mimeMessage.setText(message);
+            mimeMessage.setText(message,"utf-8", "html");
 
             // send message
             Transport.send(mimeMessage);

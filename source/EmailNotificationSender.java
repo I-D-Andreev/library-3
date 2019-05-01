@@ -9,7 +9,7 @@ public class EmailNotificationSender {
     private static final String hello = "Hello." + System.lineSeparator();
 
     private static final String bestRegards = System.lineSeparator() + "Best regards,"
-            + System.lineSeparator() + "The Tawe-Lib team";
+            + System.lineSeparator() + "The Tawe-Lib Team";
 
     private static final String unsubscribeInfo = System.lineSeparator() + " You can unsubscribe from these emails"
             + " in the Tawe-Lib application/Edit account/Notifications";
@@ -27,10 +27,10 @@ public class EmailNotificationSender {
         }
 
         String message = hello + "A new event has been added. More details below: " + System.lineSeparator()
-                + "title: " + event.getTitle() + System.lineSeparator()
-                + "description: " + event.getDescription() + System.lineSeparator()
-                + "max number of attendees: " + event.getMaxAttendees() + System.lineSeparator()
-                + "start time: " + event.getStartDate() + " " + event.getStartTime()
+                + "Title: " + event.getTitle() + System.lineSeparator()
+                + "Description: " + event.getDescription() + System.lineSeparator()
+                + "Max number of attendees: " + event.getMaxAttendees() + System.lineSeparator()
+                + "Start time: " + event.getStartDate() + " " + event.getStartTime() + System.lineSeparator()
                 + bestRegards + unsubscribeInfo;
 
         MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Event", message);
@@ -50,7 +50,7 @@ public class EmailNotificationSender {
 
         String message = hello + "A new resource has been added. More details below: " + System.lineSeparator()
                 + "Title: " + newResource.getTitle() + System.lineSeparator()
-                + "Type: " + newResource.getType()
+                + "Type: " + newResource.getType() + System.lineSeparator()
                 + bestRegards + unsubscribeInfo;
 
         MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Resource Added", message);
@@ -71,7 +71,7 @@ public class EmailNotificationSender {
         String message = hello
                 + "A new resource has been reserved for you. More details below:" + System.lineSeparator()
                 + "Title: " + reservedResource.getTitle() + System.lineSeparator()
-                + "Type: " + reservedResource.getType()
+                + "Type: " + reservedResource.getType() + System.lineSeparator()
                 + bestRegards + unsubscribeInfo;
 
         MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Resource Reserved For You", message);
@@ -100,7 +100,7 @@ public class EmailNotificationSender {
 
                 + "A fine of " + returnCopy.getCopyOf().getLateReturnFinePerDay() + " pounds will apply for each"
                 + " day that you are late, up to a maximum of " + returnCopy.getCopyOf().getMaxFineAmount()
-                + " pounds total."
+                + " pounds total." + System.lineSeparator()
                 + bestRegards;
 
         MailSender.sendEmail(recipient.getEmail(),
