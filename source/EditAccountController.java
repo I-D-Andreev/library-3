@@ -76,6 +76,30 @@ public class EditAccountController extends Controller {
     private TextField postcodeTextField;
 
     /**
+     * The checkbox for returning a resource notifications.
+     */
+    @FXML
+    private CheckBox returnResourceCheckbox;
+
+    /**
+     * The checkbox for new resources notifications.
+     */
+    @FXML
+    private CheckBox newResourceAddedCheckbox;
+
+    /**
+     * The checkbox for new reserved resource notifications.
+     */
+    @FXML
+    private CheckBox newReservedResourceCheckbox;
+
+    /**
+     * The checkbox for new event notifications.
+     */
+    @FXML
+    private CheckBox newEventCheckbox;
+
+    /**
      * The field for the email address.
      */
     @FXML
@@ -161,6 +185,12 @@ public class EditAccountController extends Controller {
      */
     @FXML
     private Button changeEmailButton;
+
+    /**
+     * Button to save notification preferences.
+     */
+    @FXML
+    private Button savePreferencesButton;
 
 
     /**
@@ -400,6 +430,16 @@ public class EditAccountController extends Controller {
         passwordTextfield.clear();
         newEmailTextfield.clear();
         repeatNewEmailTextfield.clear();
+
+    }
+
+
+    /**
+     * Saves the user's new notification preferences.
+     * @param event Clicking the save preferences button.
+     */
+    @FXML
+    public void savePreferencesButtonClicked(ActionEvent event) {
 
     }
 }

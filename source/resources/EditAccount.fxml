@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Tab?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EditAccountController">
    <children>
@@ -42,7 +43,6 @@
                      <center>
                         <VBox prefHeight="414.0" prefWidth="642.0" BorderPane.alignment="CENTER">
                            <children>
-                              <Line endX="599.2929077148438" endY="-1.1670589447021484E-4" startX="-100.0" />
                               <HBox prefHeight="9.0" prefWidth="622.0" />
                               <HBox layoutX="10.0" layoutY="12.0" prefHeight="33.0" prefWidth="622.0">
                                  <children>
@@ -297,6 +297,40 @@
                      </children>
                   </AnchorPane>
               </content>
+            </Tab>
+            <Tab text="Notifications">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="148.0" layoutY="42.0" prefHeight="26.0" prefWidth="466.0" text="Tick the boxes for which you would like to receive emails:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <CheckBox fx:id="returnResourceCheckbox" disable="true" layoutX="148.0" layoutY="80.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="254.0" selected="true" style="-fx-text-fill: black;" text="Prompt To Return A Resource">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="newResourceAddedCheckbox" layoutX="148.0" layoutY="130.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="220.0" style="-fx-text-fill: black;" text="New Resources Added">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="newReservedResourceCheckbox" layoutX="148.0" layoutY="180.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="265.0" style="-fx-text-fill: black;" text="New Reserved Resource For You">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </CheckBox>
+                        <CheckBox fx:id="newEventCheckbox" layoutX="148.0" layoutY="230.0" mnemonicParsing="false" onAction="#newEventCheckbox" prefHeight="34.0" prefWidth="265.0" style="-fx-text-fill: black;" text="New Event">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </CheckBox>
+                        <Button fx:id="savePreferencesButton" layoutX="189.0" layoutY="300.0" mnemonicParsing="false" onAction="#savePreferencesButtonClicked" prefHeight="62.0" prefWidth="159.0" text="Save preferences" />
+                     </children>
+                  </AnchorPane>
+               </content>
             </Tab>
         </tabs>
       </TabPane>
