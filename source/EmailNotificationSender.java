@@ -1,3 +1,5 @@
+import java.text.SimpleDateFormat;
+
 /**
  * A class to send notification emails.
  *
@@ -123,6 +125,10 @@ public class EmailNotificationSender {
             return;
         }
 
+        // format the due date nicely
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm dd/MM/yyyy");
+        String dueDate = simpleDateFormat.format(returnCopy.getDueDate());
+
         String message = hello +
                 "A resource you have borrowed should soon be returned. More information below:" + newLine
                 + "ID: " + returnCopy.getUniqueCopyID() + newLine
@@ -130,7 +136,7 @@ public class EmailNotificationSender {
                 + "Type: " + returnCopy.getCopyOf().getType() + newLine + newLine
 
                 // the due date should be displayed BOLD and RED
-                + "<b style='color:red;'>DUE DATE: " + returnCopy.getDueDate() + "</b>" + newLine
+                + "<b style='color:red;'>DUE DATE: " + dueDate + "</b>" + newLine
 
                 + "A fine of " + returnCopy.getCopyOf().getLateReturnFinePerDay() + " pounds will apply for each"
                 + " day that you are late, up to a maximum of " + returnCopy.getCopyOf().getMaxFineAmount()
@@ -138,7 +144,7 @@ public class EmailNotificationSender {
                 + bestRegards;
 
         MailSender.sendEmail(recipient.getEmail(),
-                "Tawe-Lib A Resource Should Be Returned By " + returnCopy.getDueDate(),
+                "Tawe-Lib A Resource Should Be Returned By " + dueDate,
                 message);
     }
 
