@@ -12,11 +12,12 @@ public class EmailNotificationSender {
 
     private static final String hello = "Hello." + newLine;
 
-    private static final String bestRegards = newLine + "Best regards,"
-            + newLine + "The Tawe-Lib Team";
+    private static final String bestRegards = newLine + "<b>Best regards,</b>"
+            + newLine + "<b>The Tawe-Lib Team</b>";
 
-    private static final String unsubscribeInfo = newLine + " You can unsubscribe from these emails"
-            + " in the Tawe-Lib application/Edit account/Notifications";
+    private static final String unsubscribeInfo = "<p style='color:red;'>You can unsubscribe from these" +
+            " emails in: Tawe Lib application/Edit account/Notifications </p>";
+
 
     /**
      * Sends a notification for a new event in Tawe-Lib. The user will only receive the notification if they
@@ -26,11 +27,11 @@ public class EmailNotificationSender {
      * @param event     The new event.
      */
     public static void sendNewEventNotification(NormalUser recipient, Event event) {
-        if (!recipient.getNotificationPreferences().getReceiveNewEventNotification()) {
+        if (!recipient.getNotificationPreferences().getReceiveEventNotification()) {
             return;
         }
 
-        String message = hello + "A new event has been added. More details below: <p>"
+        String message = hello + "A new event has been added. More details below: " + newLine
                 + "Title: " + event.getTitle() + newLine
                 + "Description: " + event.getDescription() + newLine
                 + "Max number of attendees: " + event.getMaxAttendees() + newLine
@@ -38,6 +39,34 @@ public class EmailNotificationSender {
                 + bestRegards + unsubscribeInfo;
 
         MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Event", message);
+    }
+
+    /**
+     * Sends a notification for a new event in Tawe-Lib. The user will only receive the notification if they
+     * have allowed this event types of notifications in their preferences.
+     *
+     * @param recipient The user that will receive the notification.
+     * @param oldEvent  The old information about the event.
+     * @param newEvent  The new information about the event.
+     */
+    public static void sendEventChangedNotification(NormalUser recipient, Event oldEvent, Event newEvent) {
+        // This notification about event changes goes in the same preference as New Events, so users
+        // do not miss out on an event in case of a change in the time/date.
+
+        if (!recipient.getNotificationPreferences().getReceiveEventNotification()) {
+            return;
+        }
+
+        String message = hello + "An existing event has been changed. More details below: " + newLine
+                + "Title: " + oldEvent.getTitle() + "  --> " + newEvent.getTitle() + newLine
+                + "Description: " + oldEvent.getDescription() + "  --> " + newEvent.getDescription() + newLine
+                + "Max number of attendees: " + oldEvent.getMaxAttendees() + "  --> " + newEvent.getMaxAttendees() + newLine
+                + "Start time: " + oldEvent.getStartDate() + " " + oldEvent.getStartTime()
+                + "  --> " + newEvent.getStartDate() + " " + newEvent.getStartTime() + newLine
+                + bestRegards + unsubscribeInfo;
+
+        MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib Event Changed", message);
+
     }
 
     /**
@@ -101,8 +130,7 @@ public class EmailNotificationSender {
                 + "Type: " + returnCopy.getCopyOf().getType() + newLine + newLine
 
                 // the due date should be displayed BOLD and RED
-                + "<b style='color:red;'>DUE DATE: " + returnCopy.getDueDate() + "</b>"
-                + newLine + newLine
+                + "<b style='color:red;'>DUE DATE: " + returnCopy.getDueDate() + "</b>" + newLine
 
                 + "A fine of " + returnCopy.getCopyOf().getLateReturnFinePerDay() + " pounds will apply for each"
                 + " day that you are late, up to a maximum of " + returnCopy.getCopyOf().getMaxFineAmount()

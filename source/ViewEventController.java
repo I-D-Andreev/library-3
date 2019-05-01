@@ -263,11 +263,24 @@ public class ViewEventController extends Controller {
 
             LocalTime time = LocalTime.of(Integer.parseInt(timeTextSplit[0]), Integer.parseInt(timeTextSplit[1]));
 
+            // copy the old info into oldEvent
+            Event oldEvent = new Event(clickedEvent.getTitle(), clickedEvent.startDate, clickedEvent.startTime,
+                    clickedEvent.getMaxAttendees(), clickedEvent.getDescription());
+
             clickedEvent.setTitle(titleTextField.getText());
             clickedEvent.setStartDate(datePicker.getValue());
             clickedEvent.setStartTime(time);
             clickedEvent.setMaxAttendees(Integer.parseInt(maxAttendeesTextField.getText()));
             clickedEvent.setDescription(descriptionTextArea.getText());
+
+            // send notifications for the change
+            // notification is sent to all users in case some users who couldn't visit before
+            // can now visit due to time/date change
+            for(User user : getLibrary().getUserManager().getAllUsers()){
+                if(user instanceof NormalUser){
+                    EmailNotificationSender.sendEventChangedNotification(((NormalUser) user), oldEvent, clickedEvent);
+                }
+            }
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Event edited successfully.", ButtonType.OK);
             alert.show();

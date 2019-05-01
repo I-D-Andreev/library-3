@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-import javax.crypto.spec.PBEKeySpec;
 import java.util.Optional;
 
 
@@ -249,7 +248,7 @@ public class EditAccountController extends Controller {
                     normalUser.getNotificationPreferences().getReceiveNewAdditionsNotification());
 
             newEventCheckbox.setSelected(
-                    normalUser.getNotificationPreferences().getReceiveNewEventNotification());
+                    normalUser.getNotificationPreferences().getReceiveEventNotification());
 
             newReservedResourceCheckbox.setSelected(
                     normalUser.getNotificationPreferences().getReceiveNewReservedResourceNotification());
@@ -486,7 +485,7 @@ public class EditAccountController extends Controller {
             // change the preferences
             notificationPreferences.setReceiveReturnResourceNotification(returnResourceCheckbox.isSelected());
             notificationPreferences.setReceiveNewAdditionsNotification(newResourceAddedCheckbox.isSelected());
-            notificationPreferences.setReceiveNewEventNotification(newEventCheckbox.isSelected());
+            notificationPreferences.setReceiveEventNotification(newEventCheckbox.isSelected());
             notificationPreferences.setReceiveNewReservedResourceNotification(newReservedResourceCheckbox.isSelected());
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "Preferences saved.",

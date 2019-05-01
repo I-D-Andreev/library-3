@@ -322,7 +322,7 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="newEventCheckbox" layoutX="148.0" layoutY="230.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="265.0" style="-fx-text-fill: black;" text="New Event">
+                        <CheckBox fx:id="newEventCheckbox" layoutX="148.0" layoutY="230.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="265.0" style="-fx-text-fill: black;" text="New Event/Change In Events">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>

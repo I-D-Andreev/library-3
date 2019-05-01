@@ -24,7 +24,7 @@ public class NotificationPreferences implements Serializable {
     /**
      * Whether a user would like to receive notification for new events.
      */
-    private boolean receiveNewEventNotification;
+    private boolean receiveEventNotification;
 
     /**
      * Creates a user's default notification preferences.
@@ -36,7 +36,7 @@ public class NotificationPreferences implements Serializable {
         // not so important, so false by default, so as not to annoy users
         receiveNewAdditionsNotification = false;
         receiveNewReservedResourceNotification = false;
-        receiveNewEventNotification = false;
+        receiveEventNotification = false;
     }
 
     /**
@@ -97,15 +97,15 @@ public class NotificationPreferences implements Serializable {
      *
      * @return True if Yes, false otherwise.
      */
-    public boolean getReceiveNewEventNotification() {
-        return receiveNewEventNotification;
+    public boolean getReceiveEventNotification() {
+        return receiveEventNotification;
     }
 
     /**
      * Change the receive "new event" notification settings.
-     * @param receiveNewEventNotification True if would like to receive, false - otherwise.
+     * @param receiveEventNotification True if would like to receive, false - otherwise.
      */
-    public void setReceiveNewEventNotification(boolean receiveNewEventNotification) {
-        this.receiveNewEventNotification = receiveNewEventNotification;
+    public void setReceiveEventNotification(boolean receiveEventNotification) {
+        this.receiveEventNotification = receiveEventNotification;
     }
 }
