@@ -6,12 +6,16 @@
 // main usage is that it prepares the message text
 public class EmailNotificationSender {
     // some pre-written strings that will be used often in the messages
-    private static final String hello = "Hello." + System.lineSeparator();
 
-    private static final String bestRegards = System.lineSeparator() + "Best regards,"
-            + System.lineSeparator() + "The Tawe-Lib Team";
+    // as the messages are text/html the new line is the html's <p> attribute
+    private static final String newLine = "<p>";
 
-    private static final String unsubscribeInfo = System.lineSeparator() + " You can unsubscribe from these emails"
+    private static final String hello = "Hello." + newLine;
+
+    private static final String bestRegards = newLine + "Best regards,"
+            + newLine + "The Tawe-Lib Team";
+
+    private static final String unsubscribeInfo = newLine + " You can unsubscribe from these emails"
             + " in the Tawe-Lib application/Edit account/Notifications";
 
     /**
@@ -26,11 +30,11 @@ public class EmailNotificationSender {
             return;
         }
 
-        String message = hello + "A new event has been added. More details below: " + System.lineSeparator()
-                + "Title: " + event.getTitle() + System.lineSeparator()
-                + "Description: " + event.getDescription() + System.lineSeparator()
-                + "Max number of attendees: " + event.getMaxAttendees() + System.lineSeparator()
-                + "Start time: " + event.getStartDate() + " " + event.getStartTime() + System.lineSeparator()
+        String message = hello + "A new event has been added. More details below: <p>"
+                + "Title: " + event.getTitle() + newLine
+                + "Description: " + event.getDescription() + newLine
+                + "Max number of attendees: " + event.getMaxAttendees() + newLine
+                + "Start time: " + event.getStartDate() + " " + event.getStartTime() + newLine
                 + bestRegards + unsubscribeInfo;
 
         MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Event", message);
@@ -48,9 +52,9 @@ public class EmailNotificationSender {
             return;
         }
 
-        String message = hello + "A new resource has been added. More details below: " + System.lineSeparator()
-                + "Title: " + newResource.getTitle() + System.lineSeparator()
-                + "Type: " + newResource.getType() + System.lineSeparator()
+        String message = hello + "A new resource has been added. More details below: " + newLine
+                + "Title: " + newResource.getTitle() + newLine
+                + "Type: " + newResource.getType() + newLine
                 + bestRegards + unsubscribeInfo;
 
         MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Resource Added", message);
@@ -69,9 +73,9 @@ public class EmailNotificationSender {
         }
 
         String message = hello
-                + "A new resource has been reserved for you. More details below:" + System.lineSeparator()
-                + "Title: " + reservedResource.getTitle() + System.lineSeparator()
-                + "Type: " + reservedResource.getType() + System.lineSeparator()
+                + "A new resource has been reserved for you. More details below:" + newLine
+                + "Title: " + reservedResource.getTitle() + newLine
+                + "Type: " + reservedResource.getType() + newLine
                 + bestRegards + unsubscribeInfo;
 
         MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Resource Reserved For You", message);
@@ -91,18 +95,18 @@ public class EmailNotificationSender {
         }
 
         String message = hello +
-                "A resource you have borrowed should soon be returned. More information below:" + System.lineSeparator()
-                + "ID: " + returnCopy.getUniqueCopyID() + System.lineSeparator()
-                + "Title: " + returnCopy.getCopyOf().getTitle() + System.lineSeparator()
-                + "Type: " + returnCopy.getCopyOf().getType() + System.lineSeparator() + System.lineSeparator()
+                "A resource you have borrowed should soon be returned. More information below:" + newLine
+                + "ID: " + returnCopy.getUniqueCopyID() + newLine
+                + "Title: " + returnCopy.getCopyOf().getTitle() + newLine
+                + "Type: " + returnCopy.getCopyOf().getType() + newLine + newLine
 
                 // the due date should be displayed BOLD and RED
                 + "<b style='color:red;'>DUE DATE: " + returnCopy.getDueDate() + "</b>"
-                + System.lineSeparator() + System.lineSeparator()
+                + newLine + newLine
 
                 + "A fine of " + returnCopy.getCopyOf().getLateReturnFinePerDay() + " pounds will apply for each"
                 + " day that you are late, up to a maximum of " + returnCopy.getCopyOf().getMaxFineAmount()
-                + " pounds total." + System.lineSeparator()
+                + " pounds total." + newLine
                 + bestRegards;
 
         MailSender.sendEmail(recipient.getEmail(),
