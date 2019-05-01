@@ -192,11 +192,16 @@ public class Copy implements Serializable {
 
     /**
      * Sets the user this copy is reserved for.
+     * Also sends a notification to the user that a copy has been reserved for them.
      *
      * @param user The new user a copy is due for.
      */
     public void setReservedFor(User user) {
         this.reservedFor = user;
+        if(user instanceof NormalUser){
+            SendNotificationEmail.sendNewResourceReservedNotification(((NormalUser) user), this.copyOf);
+        }
+
     }
 
     /**
