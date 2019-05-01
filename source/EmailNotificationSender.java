@@ -4,7 +4,7 @@
  * @author Ivan Andreev
  */
 // main usage is that it prepares the message text
-public class SendNotificationEmail {
+public class EmailNotificationSender {
     // some pre-written strings that will be used often in the messages
     private static final String hello = "Hello." + System.lineSeparator();
 
@@ -102,7 +102,7 @@ public class SendNotificationEmail {
                 + " day that you are late, up to a maximum of " + returnCopy.getCopyOf().getMaxFineAmount()
                 + " pounds total."
                 + bestRegards;
-        
+
         MailSender.sendEmail(recipient.getEmail(),
                 "Tawe-Lib A Resource Should Be Returned By " + returnCopy.getDueDate(),
                 message);

@@ -144,7 +144,7 @@ public class ResourceManager implements Serializable {
         for(User user : library.getUserManager().getAllUsers()){
                 if(user instanceof NormalUser){
                     NormalUser normalUser = (NormalUser) user;
-                    SendNotificationEmail.sendNewResourceAddedNotification(normalUser, resource);
+                    EmailNotificationSender.sendNewResourceAddedNotification(normalUser, resource);
                 }
         }
     }

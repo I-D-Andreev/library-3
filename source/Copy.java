@@ -199,7 +199,7 @@ public class Copy implements Serializable {
     public void setReservedFor(User user) {
         this.reservedFor = user;
         if(user instanceof NormalUser){
-            SendNotificationEmail.sendNewResourceReservedNotification(((NormalUser) user), this.copyOf);
+            EmailNotificationSender.sendNewResourceReservedNotification(((NormalUser) user), this.copyOf);
         }
 
     }

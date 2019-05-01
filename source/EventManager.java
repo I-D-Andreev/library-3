@@ -129,7 +129,7 @@ public class EventManager implements Serializable {
         for(User user: library.getUserManager().getAllUsers()){
             if(user instanceof NormalUser){
                 NormalUser normalUser = (NormalUser) user;
-                SendNotificationEmail.sendNewEventNotification(normalUser, event);
+                EmailNotificationSender.sendNewEventNotification(normalUser, event);
             }
         }
     }

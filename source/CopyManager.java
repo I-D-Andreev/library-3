@@ -255,7 +255,7 @@ public class CopyManager implements Serializable {
 
             // send email to the borrower to return the copy
             if(oldestCopy.getBorrowedBy() instanceof NormalUser){
-                SendNotificationEmail.sendNewReturnAResourceNotification(
+                EmailNotificationSender.sendNewReturnAResourceNotification(
                         ((NormalUser) oldestCopy.getBorrowedBy()), oldestCopy);
             }
 
