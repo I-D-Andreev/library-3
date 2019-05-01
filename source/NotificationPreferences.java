@@ -1,9 +1,11 @@
+import java.io.Serializable;
+
 /**
  * A class to model a user's notification preferences.
  *
  * @author Ivan Andreev
  */
-public class NotificationPreferences {
+public class NotificationPreferences implements Serializable {
     /**
      * Whether a user would like to receive notification for when to return a resource.
      */

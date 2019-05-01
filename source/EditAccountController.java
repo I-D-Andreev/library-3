@@ -22,6 +22,18 @@ public class EditAccountController extends Controller {
     private Button backButton;
 
     /**
+     * Reference to the whole tab pane.
+     */
+    @FXML
+    private TabPane tabPane;
+
+    /**
+     * Reference to the tab that needs to be hidden/shown.
+     */
+    @FXML
+    private Tab notificationsTab;
+
+    /**
      * The field for the username of the table.
      */
     @FXML
@@ -216,6 +228,32 @@ public class EditAccountController extends Controller {
         postcodeTextField.setText(user.getAddress().getPostcode());
         imagePathTextField.setText(user.getProfileImagePath());
         emailTextField.setText(user.getEmail());
+
+
+        // librarian doesn't have notifications
+        if (user instanceof Librarian) {
+            tabPane.getTabs().remove(notificationsTab);
+        }
+
+        // if it is a normal user and the tab pane isn't there
+        if (user instanceof NormalUser && tabPane.getTabs().indexOf(notificationsTab) == -1) {
+            tabPane.getTabs().add(notificationsTab);
+        }
+
+        if (user instanceof NormalUser) {
+            NormalUser normalUser = (NormalUser) user;
+            returnResourceCheckbox.setSelected(
+                    normalUser.getNotificationPreferences().getReceiveReturnResourceNotification());
+
+            newResourceAddedCheckbox.setSelected(
+                    normalUser.getNotificationPreferences().getReceiveNewAdditionsNotification());
+
+            newEventCheckbox.setSelected(
+                    normalUser.getNotificationPreferences().getReceiveNewEventNotification());
+
+            newReservedResourceCheckbox.setSelected(
+                    normalUser.getNotificationPreferences().getReceiveNewReservedResourceNotification());
+        }
 
     }
 
@@ -440,14 +478,21 @@ public class EditAccountController extends Controller {
      */
     @FXML
     public void savePreferencesButtonClicked(ActionEvent event) {
-        NotificationPreferences notificationPreferences =
-                ((NormalUser) getLibrary().getCurrentUserLoggedIn()).getNotificationPreferences();
+        // only normal users should have notifications
+        if (getLibrary().getCurrentUserLoggedIn() instanceof NormalUser) {
+            NotificationPreferences notificationPreferences =
+                    ((NormalUser) getLibrary().getCurrentUserLoggedIn()).getNotificationPreferences();
 
-        // change the preferences
-        notificationPreferences.setReceiveReturnResourceNotification(returnResourceCheckbox.isSelected());
-        notificationPreferences.setReceiveNewAdditionsNotification(newResourceAddedCheckbox.isSelected());
-        notificationPreferences.setReceiveNewEventNotification(newEventCheckbox.isSelected());
-        notificationPreferences.setReceiveNewReservedResourceNotification(newReservedResourceCheckbox.isSelected());
+            // change the preferences
+            notificationPreferences.setReceiveReturnResourceNotification(returnResourceCheckbox.isSelected());
+            notificationPreferences.setReceiveNewAdditionsNotification(newResourceAddedCheckbox.isSelected());
+            notificationPreferences.setReceiveNewEventNotification(newEventCheckbox.isSelected());
+            notificationPreferences.setReceiveNewReservedResourceNotification(newReservedResourceCheckbox.isSelected());
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "Preferences saved.",
+                    ButtonType.OK);
+            alert.show();
+        }
     }
 }
 
