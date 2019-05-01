@@ -11,14 +11,23 @@ import java.util.ArrayList;
  */
 public class EventManager implements Serializable {
 
+    /**
+     * List of events.
+     */
     private ArrayList<Event> events;
+
+    /**
+     * Reference of the library.
+     */
+    private Library library;
 
     /**
      * Initializes the event manager.
      */
-    public EventManager() {
-        events = new ArrayList<>();
+    public EventManager(Library library) {
+        this.library = library;
 
+        events = new ArrayList<>();
         this.selfPopulate();
     }
 
@@ -109,11 +118,20 @@ public class EventManager implements Serializable {
 
     /**
      * Adds an event to the event manager.
+     * Sends an email notification to the users that a new event has been added.
      *
      * @param event The event to be added.
      */
     public void addEvent(Event event) {
         this.events.add(event);
+
+        // send email notification
+        for(User user: library.getUserManager().getAllUsers()){
+            if(user instanceof NormalUser){
+                NormalUser normalUser = (NormalUser) user;
+                SendNotificationEmail.sendNewEventNotification(normalUser, event);
+            }
+        }
     }
 
     /**
