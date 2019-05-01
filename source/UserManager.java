@@ -218,7 +218,7 @@ public class UserManager implements Serializable {
     public void selfPopulate1() {
         String salt = Security.generateSalt();
         this.addUser(new NormalUser("1", Security.generatePassword("1", salt),
-                salt, "iivvaann.andreev@gmail.com",
+                salt, "",
                 "It's abc", Security.generatePassword("abc", salt),
                 "User", "Ivan", "1234567",
                 "resources/avatar1.png",
@@ -234,8 +234,8 @@ public class UserManager implements Serializable {
                         "Swansea", "UK", "SA18EP")));
 
 
-        this.addUser(new Librarian("2", Security.generatePassword("1", salt),
-                salt, "iivvaann.andreev@gmail.com",
+        this.addUser(new Librarian("lib", Security.generatePassword("1", salt),
+                salt, "",
                 "It's abc", Security.generatePassword("abc", salt),
                 "Librarian", "Ivan", "1234567",
                 "resources/avatar1.png",

@@ -139,6 +139,14 @@ public class ResourceManager implements Serializable {
     public void addResource(Resource resource) {
         this.resources.add(resource);
         this.updateNewAdditions(resource);
+
+        // send notifications
+        for(User user : library.getUserManager().getAllUsers()){
+                if(user instanceof NormalUser){
+                    NormalUser normalUser = (NormalUser) user;
+                    SendNotificationEmail.sendNewResourceAddedNotification(normalUser, resource);
+                }
+        }
     }
 
     // Adds the new resource as a New Addition to the users
