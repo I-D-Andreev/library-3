@@ -24,7 +24,7 @@ public class Main extends Application {
 //        if you want to run the program and there are errors
 //        you might need to run this code
 //        more in the README file
-//        ---------------------------------
+//        --------------------------------
 //        Library l = new Library();
 //        l.save();
 
