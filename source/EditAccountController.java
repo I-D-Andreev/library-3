@@ -106,7 +106,6 @@ public class EditAccountController extends Controller {
     private TextField emailTextField;
 
 
-
     /**
      * The button for choosing a profile image.
      */
@@ -413,7 +412,7 @@ public class EditAccountController extends Controller {
             Alert alert = new Alert(Alert.AlertType.ERROR, "All fields must be filled in!",
                     ButtonType.OK);
             alert.show();
-        } else if(!newEmailTextfield.getText().equals(repeatNewEmailTextfield.getText())){
+        } else if (!newEmailTextfield.getText().equals(repeatNewEmailTextfield.getText())) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Emails must match!",
                     ButtonType.OK);
             alert.show();
@@ -436,11 +435,19 @@ public class EditAccountController extends Controller {
 
     /**
      * Saves the user's new notification preferences.
+     *
      * @param event Clicking the save preferences button.
      */
     @FXML
     public void savePreferencesButtonClicked(ActionEvent event) {
+        NotificationPreferences notificationPreferences =
+                ((NormalUser) getLibrary().getCurrentUserLoggedIn()).getNotificationPreferences();
 
+        // change the preferences
+        notificationPreferences.setReceiveReturnResourceNotification(returnResourceCheckbox.isSelected());
+        notificationPreferences.setReceiveNewAdditionsNotification(newResourceAddedCheckbox.isSelected());
+        notificationPreferences.setReceiveNewEventNotification(newEventCheckbox.isSelected());
+        notificationPreferences.setReceiveNewReservedResourceNotification(newReservedResourceCheckbox.isSelected());
     }
 }
 

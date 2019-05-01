@@ -47,6 +47,14 @@ public class NotificationPreferences {
     }
 
     /**
+     * Change the receive "return a resource" notification settings.
+     * @param receiveReturnResourceNotification True if Yes, false otherwise.
+     */
+    public void setReceiveReturnResourceNotification(boolean receiveReturnResourceNotification) {
+        this.receiveReturnResourceNotification = receiveReturnResourceNotification;
+    }
+
+    /**
      * Get whether a user wants to receive "new additions" notifications.
      *
      * @return True if Yes, false otherwise.

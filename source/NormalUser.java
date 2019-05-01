@@ -8,11 +8,35 @@ import java.util.Date;
  * @author Christina Meggs, Ivan Andreev
  */
 public class NormalUser extends User implements Serializable {
+    /**
+     * The amount of money the user owes to the library.
+     */
     private double balance;
+
+    /**
+     * List of borrowed copies.
+     */
     private ArrayList<Copy> borrowedCopies;
+
+    /**
+     * List of new additions for the particular user.
+     */
     private ArrayList<Resource> newAdditions;
+
+    /**
+     * The user's money transaction history.
+     */
     private History transactionHistory;
+
+    /**
+     * The number of resources a user can borrow.
+     */
     private final int resourceCap;
+
+    /**
+     * A user's notification preferences.
+     */
+    private NotificationPreferences notificationPreferences;
 
 
     /**
@@ -41,6 +65,7 @@ public class NormalUser extends User implements Serializable {
         this.borrowedCopies = new ArrayList<>();
         this.newAdditions = new ArrayList<>();
         this.resourceCap = 5;
+        this.notificationPreferences = new NotificationPreferences();
     }
 
     /**
@@ -153,8 +178,19 @@ public class NormalUser extends User implements Serializable {
         return hasOverdueCopies;
     }
 
+    /**
+     * Get the new additions of the user.
+     * @return A list of newly added resources.
+     */
     public ArrayList<Resource> getNewAdditions() {
         return newAdditions;
     }
 
+    /**
+     * Get a user's notification preferences.
+     * @return The user's notification preferences.
+     */
+    public NotificationPreferences getNotificationPreferences() {
+        return notificationPreferences;
+    }
 }
