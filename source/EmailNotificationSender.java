@@ -37,8 +37,8 @@ public class EmailNotificationSender {
                 + "Title: " + event.getTitle() + newLine
                 + "Description: " + event.getDescription() + newLine
                 + "Max number of attendees: " + event.getMaxAttendees() + newLine
-                + "Start time: " + event.getStartDate() + " " + event.getStartTime() + newLine
-                + bestRegards + unsubscribeInfo;
+                + "Start time (year/month/day hour:minute):  " + event.getStartDate() + " " + event.getStartTime()
+                + newLine + bestRegards + unsubscribeInfo;
 
         MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Event", message);
     }
@@ -63,7 +63,7 @@ public class EmailNotificationSender {
                 + "Title: " + oldEvent.getTitle() + "  --> " + newEvent.getTitle() + newLine
                 + "Description: " + oldEvent.getDescription() + "  --> " + newEvent.getDescription() + newLine
                 + "Max number of attendees: " + oldEvent.getMaxAttendees() + "  --> " + newEvent.getMaxAttendees() + newLine
-                + "Start time: " + oldEvent.getStartDate() + " " + oldEvent.getStartTime()
+                + "Start time (year/month/day hour:minute): " + oldEvent.getStartDate() + " " + oldEvent.getStartTime()
                 + "  --> " + newEvent.getStartDate() + " " + newEvent.getStartTime() + newLine
                 + bestRegards + unsubscribeInfo;
 
@@ -126,7 +126,7 @@ public class EmailNotificationSender {
         }
 
         // format the due date nicely
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("hh:mm dd/MM/yyyy");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm");
         String dueDate = simpleDateFormat.format(returnCopy.getDueDate());
 
         String message = hello +
@@ -136,7 +136,7 @@ public class EmailNotificationSender {
                 + "Type: " + returnCopy.getCopyOf().getType() + newLine + newLine
 
                 // the due date should be displayed BOLD and RED
-                + "<b style='color:red;'>DUE DATE: " + dueDate + "</b>" + newLine
+                + "<b style='color:red;'>DUE DATE (year/month/day hour:minute): " + dueDate + "</b>" + newLine
 
                 + "A fine of " + returnCopy.getCopyOf().getLateReturnFinePerDay() + " pounds will apply for each"
                 + " day that you are late, up to a maximum of " + returnCopy.getCopyOf().getMaxFineAmount()
