@@ -227,10 +227,9 @@ public class CopyManager implements Serializable {
 
     /**
      * Find the oldest borrowed copy with no due date set
-     * and set its due date.
+     * and set its due date. Sends notification to the borrower to return the copy.
      */
     private void setDueDateOfOldestBorrowedCopy() {
-        // ** There is the possibility that all copies' due dates are already set.
         Copy oldestCopy = null;
         for (Copy copy : listOfAllCopies) {
             // we are only interested in copies with unset due dates
@@ -253,6 +252,13 @@ public class CopyManager implements Serializable {
 
         if (oldestCopy != null) {
             oldestCopy.setDueDate();
+
+            // send email to the borrower to return the copy
+            if(oldestCopy.getBorrowedBy() instanceof NormalUser){
+                SendNotificationEmail.sendNewReturnAResourceNotification(
+                        ((NormalUser) oldestCopy.getBorrowedBy()), oldestCopy);
+            }
+
         }
     }
 
