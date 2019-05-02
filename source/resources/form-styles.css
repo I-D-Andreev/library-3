@@ -1,0 +1,33 @@
+GridPane {
+    -fx-background-color: lightblue;
+}
+
+
+Button {
+    -fx-background-color :  #fff7a0;
+}
+
+Label, RadioButton {
+    -fx-font-weight : bold;
+}
+
+.tab-pane *.tab-header-background {
+        -fx-background-color: #c45ae8;
+}
+
+.tab-pane .tab {
+    -fx-pref-height : 25;
+    -fx-right-margin : 3;
+
+    -fx-background-color: transparent, #5ae87d , #5ae87d;
+    -fx-background-insets: 0, 0 3 0 0, 0 5 0 0 ;
+}
+
+.tab-pane .tab:selected {
+    -fx-pref-height : 25;
+    -fx-right-margin : 3;
+
+    -fx-background-color: transparent, #f44259 , #f44259;
+    -fx-background-insets: 0, 0 3 0 0, 0 5 0 0;
+    -fx-focus-color : transparent;
+}

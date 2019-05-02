@@ -41,7 +41,10 @@ public class NewWindow {
             Stage stage = new Stage();
 
             stage.setTitle(title);
-            stage.setScene(new Scene(root));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add("resources/form-styles.css");
+            stage.setScene(scene);
+
             stage.setMinHeight(windowHeight);
             stage.setMaxHeight(windowHeight);
             stage.setMinWidth(windowWidth);
