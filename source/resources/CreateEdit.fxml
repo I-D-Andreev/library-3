@@ -17,11 +17,10 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Text?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateEditController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CreateEditController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="760.8" minWidth="10.0" prefWidth="680.8000244140625" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="0.0" prefWidth="20.799975585937545" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="292.0" minWidth="10.0" prefWidth="99.2000732421875" />
   </columnConstraints>
   <rowConstraints>
     <RowConstraints maxHeight="126.0" minHeight="0.0" prefHeight="46.6" vgrow="SOMETIMES" />
@@ -327,7 +326,7 @@
             </Label>
          </children>
       </HBox>
-      <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="34.0" prefWidth="58.0" text="Back" GridPane.columnIndex="2">
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="58.0" prefWidth="117.0" text="Back" GridPane.columnIndex="1">
          <GridPane.margin>
             <Insets left="10.0" />
          </GridPane.margin>

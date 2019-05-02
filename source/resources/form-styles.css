@@ -1,4 +1,4 @@
-GridPane {
+GridPane, AnchorPane {
     -fx-background-color: lightblue;
 }
 
@@ -7,7 +7,7 @@ Button {
     -fx-background-color :  #fff7a0;
 }
 
-Label, RadioButton {
+Label, RadioButton, CheckBox {
     -fx-font-weight : bold;
 }
 

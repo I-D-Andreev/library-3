@@ -9,18 +9,18 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="699.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BorrowedResourcesController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BorrowedResourcesController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="529.6000366210938" minHeight="10.0" prefHeight="455.1999816894531" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="196.0" minHeight="10.0" prefHeight="92.80001831054688" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="707.466650390625" minHeight="10.0" prefHeight="707.466650390625" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="196.0" minHeight="10.0" prefHeight="18.933349609375" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+      <HBox alignment="CENTER_RIGHT" prefHeight="315.0" prefWidth="1000.0" GridPane.rowIndex="1">
          <children>
-            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="45.0" prefWidth="62.0" text="OK">
+            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="76.0" prefWidth="143.0" text="Back">
                <HBox.margin>
                   <Insets right="60.0" />
                </HBox.margin>

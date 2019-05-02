@@ -10,28 +10,29 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="599.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CopyHistoryController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CopyHistoryController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-      <RowConstraints maxHeight="344.0" minHeight="6.800000000000001" prefHeight="10.59999485015869" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="344.0" minHeight="10.0" prefHeight="78.99999389648437" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="439.2000061035156" minHeight="10.0" prefHeight="439.2000061035156" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="344.0" minHeight="6.800000000000001" prefHeight="110.53333587646483" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="694.6666641235352" minHeight="10.0" prefHeight="694.6666641235352" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="196.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
          <children>
-            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="39.0" prefWidth="89.0" text="OK">
+            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="62.0" prefWidth="156.0" text="Back">
                <HBox.margin>
                   <Insets right="40.0" />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <TableView fx:id="copyHistoryTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+      <TableView fx:id="copyHistoryTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="20.0" right="20.0" top="20.0" />
          </GridPane.margin>
@@ -41,28 +42,35 @@
             <TableColumn fx:id="dateColumn" prefWidth="247.99996948242188" text="Date" />
          </columns>
       </TableView>
-      <HBox prefHeight="59.0" prefWidth="700.0" GridPane.rowIndex="1">
+      <VBox>
          <children>
-            <TextField fx:id="copyIDTextField">
-               <HBox.margin>
-                  <Insets left="250.0" top="45.0" />
-               </HBox.margin>
-            </TextField>
-            <Button fx:id="copySearchButton" mnemonicParsing="false" onAction="#copySearchButtonClicked" prefHeight="26.0" prefWidth="93.0" text="Search">
-               <HBox.margin>
-                  <Insets left="15.0" top="45.0" />
-               </HBox.margin>
-            </Button>
+            <HBox alignment="CENTER" prefHeight="49.0" prefWidth="1000.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="50.0" prefWidth="100.0" text="Copy ID">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="20.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="58.0" prefWidth="1000.0">
+               <children>
+                  <TextField fx:id="copyIDTextField" prefHeight="35.0" prefWidth="206.0">
+                     <HBox.margin>
+                        <Insets left="110.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <Button fx:id="copySearchButton" mnemonicParsing="false" onAction="#copySearchButtonClicked" prefHeight="33.0" prefWidth="118.0" text="Search">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
          </children>
-      </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0">
-         <children>
-            <Label text="Copy ID">
-               <HBox.margin>
-                  <Insets left="310.0" top="70.0" />
-               </HBox.margin>
-            </Label>
-         </children>
-      </HBox>
+      </VBox>
    </children>
 </GridPane>
