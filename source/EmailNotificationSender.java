@@ -10,7 +10,7 @@ public class EmailNotificationSender {
     // some pre-written strings that will be used often in the messages
 
     // as the messages are text/html the new line is the html's <p> attribute
-    private static final String newLine = "<p>";
+    private static final String newLine = "<br>";
 
     private static final String hello = "Hello." + newLine;
 

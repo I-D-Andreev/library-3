@@ -75,9 +75,10 @@ public class ForgottenPasswordController extends Controller {
             // set the password (encoded) to the user
             user.setPassword(Security.generatePassword(newPassword, user.getSecuritySalting()));
 
+            String newLine = "<br>";
             // send the email to the user with the new password
-            String messageText = "Hello." + System.lineSeparator() + "Your new password is: " + newPassword
-                    + System.lineSeparator() +  "Best regards, " + System.lineSeparator() + "TaweLib team";
+            String messageText = "Hello." + newLine + "Your new password is: " + newPassword
+                    + newLine +  "Best regards, " + newLine + "TaweLib team";
 
             MailSender.sendEmail(user.getEmail(), "Tawe-Lib new password", messageText);
 
