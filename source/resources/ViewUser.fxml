@@ -24,8 +24,8 @@
   </columnConstraints>
   <rowConstraints>
       <RowConstraints />
-    <RowConstraints maxHeight="86.13332672119141" minHeight="10.0" prefHeight="86.13332672119141" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="748.8000076293945" minHeight="10.0" prefHeight="718.6666732788086" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="220.79998626708985" minHeight="10.0" prefHeight="76.79998779296875" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="823.2000122070312" minHeight="10.0" prefHeight="823.2000122070312" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2" GridPane.rowIndex="2">
@@ -92,7 +92,7 @@
                      <children>
                         <TextField fx:id="usernameTextField" alignment="CENTER" prefHeight="26.0" prefWidth="648.0" promptText="Username">
                            <VBox.margin>
-                              <Insets left="20.0" right="20.0" top="5.0" />
+                              <Insets left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                         </TextField>
                         <PasswordField fx:id="passwordTextField" alignment="CENTER" promptText="Password">

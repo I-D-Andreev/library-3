@@ -38,9 +38,9 @@
          </GridPane.margin></Button>
       <HBox alignment="CENTER" GridPane.columnIndex="2">
          <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Browse Resources" wrappingWidth="161.57177734375">
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Browse Resources" wrappingWidth="217.57177734375">
                <HBox.margin>
-                  <Insets left="130.0" top="27.0" />
+                  <Insets left="130.0" top="19.0" />
                </HBox.margin>
                <font>
                   <Font size="20.0" />

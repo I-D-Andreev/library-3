@@ -18,9 +18,9 @@
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-      <RowConstraints maxHeight="344.0" minHeight="6.800000000000001" prefHeight="110.53333587646483" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="694.6666641235352" minHeight="10.0" prefHeight="694.6666641235352" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="196.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="344.0" minHeight="6.800000000000001" prefHeight="81.13333435058593" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="750.666667175293" minHeight="10.0" prefHeight="695.3333862304687" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="196.0" minHeight="10.0" prefHeight="117.46661376953125" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">

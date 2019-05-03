@@ -22,6 +22,7 @@
   <rowConstraints>
     <RowConstraints maxHeight="518.4" minHeight="0.0" prefHeight="109.80001831054688" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="789.5999816894531" minHeight="0.0" prefHeight="789.5999816894531" vgrow="SOMETIMES" />
+      <RowConstraints />
   </rowConstraints>
    <children>
       <Label text="TaweLib">
@@ -46,7 +47,7 @@
                <content>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <TableView fx:id="upcomingEventsTable" prefHeight="571.0" prefWidth="999.0">
+                        <TableView fx:id="upcomingEventsTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="553.0" prefWidth="944.0">
                           <columns>
                             <TableColumn fx:id="upcomingTitleColumn" prefWidth="165.33333027362823" text="Title" />
                             <TableColumn fx:id="upcomingDateColumn" prefWidth="138.66676330566406" text="Date" />
@@ -54,6 +55,9 @@
                               <TableColumn fx:id="upcomingMaxAttendeesColumn" prefWidth="126.93325805664062" text="Max Attendees" />
                               <TableColumn fx:id="upcomingDescriptionColumn" prefWidth="433.06671142578125" text="Description" />
                           </columns>
+                           <VBox.margin>
+                              <Insets left="21.0" top="23.0" />
+                           </VBox.margin>
                         </TableView>
                         <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
                            <children>

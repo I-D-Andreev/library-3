@@ -7,7 +7,7 @@ Button {
     -fx-background-color :  #fff7a0;
 }
 
-Label, RadioButton, CheckBox, Text {
+Label, RadioButton, CheckBox, Text, TextArea {
     -fx-font-weight : bold;
 }
 
