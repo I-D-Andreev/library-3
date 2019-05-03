@@ -11,15 +11,16 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FineStatisticsController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FineStatisticsController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="550.9999450683594" minWidth="10.0" prefWidth="457.599951171875" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="345.20001220703125" minWidth="10.0" prefWidth="242.40004882812502" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="687.7333862304688" minWidth="10.0" prefWidth="635.4666625976563" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="345.20001220703125" minWidth="10.0" prefWidth="261.3333374023438" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="194.79999389648438" minHeight="10.0" prefHeight="46.99999084472656" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="486.400048828125" minHeight="10.0" prefHeight="463.2" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="353.0666839599609" minHeight="10.0" prefHeight="80.5332962036133" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="679.6667037963867" minHeight="10.0" prefHeight="679.6667037963867" vgrow="SOMETIMES" />
     <RowConstraints maxHeight="139.19998779296878" minHeight="10.0" prefHeight="90.39999999999998" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
@@ -30,29 +31,38 @@
          <GridPane.margin>
             <Insets left="20.0" top="10.0" />
          </GridPane.margin>
+         <font>
+            <Font size="16.0" />
+         </font>
       </Label>
-      <Button fx:id="backButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="38.0" prefWidth="73.0" text="Back" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Button fx:id="backButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="64.0" prefWidth="110.0" text="Back" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets bottom="15.0" left="130.0" />
          </GridPane.margin>
       </Button>
-      <LineChart fx:id="finesChart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="331.0" prefWidth="423.0" GridPane.rowIndex="1">
+      <LineChart fx:id="finesChart" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="603.0" GridPane.rowIndex="1">
         <xAxis>
           <CategoryAxis animated="false" side="BOTTOM" fx:id="xAxis" />
         </xAxis>
         <yAxis>
           <NumberAxis fx:id="yAxis" animated="false" side="LEFT" />
         </yAxis>
+         <GridPane.margin>
+            <Insets left="24.0" />
+         </GridPane.margin>
       </LineChart>
       <VBox prefHeight="474.0" prefWidth="197.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
             <HBox prefHeight="47.0" prefWidth="178.0">
                <children>
-                  <Label maxWidth="-Infinity" prefHeight="34.0" prefWidth="134.0" text="Number of fines :" />
+                  <Label maxWidth="-Infinity" prefHeight="34.0" prefWidth="134.0" text="Number of fines :">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Label>
                   <Label fx:id="numberOfFinesLabel" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="34.0" prefWidth="82.0" />
                </children>
                <VBox.margin>
-                  <Insets top="40.0" />
+                  <Insets top="114.0" />
                </VBox.margin>
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="52.0" prefWidth="178.0">

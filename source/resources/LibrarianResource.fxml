@@ -11,16 +11,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LibrarianResourceController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LibrarianResourceController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.4000244140625" minWidth="10.0" prefWidth="266.39996337890625" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="478.4000122070313" minWidth="10.0" prefWidth="432.8000366210938" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="774.4" minWidth="0.0" prefWidth="488.8666931152344" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="774.4" minWidth="0.0" prefWidth="510.7333068847656" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="35.999997711181635" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="483.2000022888184" minHeight="10.0" prefHeight="431.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="177.60001220703123" minHeight="10.0" prefHeight="132.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="460.26667938232424" minHeight="3.7333440542221012" prefHeight="72.26667175292968" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="721.3332885742187" minHeight="10.0" prefHeight="639.7333740234375" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="211.46671142578123" minHeight="10.0" prefHeight="186.6666259765625" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2">
@@ -29,6 +30,9 @@
                <HBox.margin>
                   <Insets left="20.0" top="20.0" />
                </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
             </Label>
          </children>
       </HBox>
@@ -38,10 +42,10 @@
          </GridPane.margin>
          <children>
             <ImageView fx:id="resourceImage" fitHeight="191.0" fitWidth="228.0" pickOnBounds="true" preserveRatio="true" />
-            <TableView fx:id="ratingReviewTable" prefHeight="210.0" prefWidth="227.0">
+            <TableView fx:id="ratingReviewTable" prefHeight="295.0" prefWidth="465.0">
               <columns>
-                <TableColumn fx:id="ratingsColumn" prefWidth="66.0" style="-fx-alignment: CENTER;" text="Ratings" />
-                <TableColumn fx:id="reviewsColumn" prefWidth="160.0" style="-fx-alignment: CENTER;" text="Reviews" />
+                <TableColumn fx:id="ratingsColumn" prefWidth="83.46671295166016" style="-fx-alignment: CENTER;" text="Ratings" />
+                <TableColumn fx:id="reviewsColumn" prefWidth="365.33326721191406" style="-fx-alignment: CENTER;" text="Reviews" />
               </columns>
                <VBox.margin>
                   <Insets right="20.0" top="20.0" />
@@ -51,12 +55,12 @@
       </VBox>
       <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <TableView fx:id="displayTable" prefHeight="446.0" prefWidth="446.0">
+            <TableView fx:id="displayTable" prefHeight="581.0" prefWidth="758.0">
               <columns>
-                <TableColumn fx:id="copyIDColumn" prefWidth="88.00005948543549" text="Copy ID" />
-                  <TableColumn fx:id="copyAvailableColumn" prefWidth="92.79999542236328" text="Availability" />
-                  <TableColumn fx:id="copyBorrowedByColumn" prefWidth="112.79995727539062" text="Borrowed By" />
-                  <TableColumn fx:id="copyReservedForColumn" prefWidth="120.0" text="Reserved For" />
+                <TableColumn fx:id="copyIDColumn" prefWidth="103.73330533504486" text="Copy ID" />
+                  <TableColumn fx:id="copyAvailableColumn" prefWidth="111.19988250732422" text="Availability" />
+                  <TableColumn fx:id="copyBorrowedByColumn" minWidth="0.0" prefWidth="133.60003662109375" text="Borrowed By" />
+                  <TableColumn fx:id="copyReservedForColumn" prefWidth="141.6000549316406" text="Reserved For" />
               </columns>
                <VBox.margin>
                   <Insets right="20.0" />
@@ -66,14 +70,14 @@
       </VBox>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
-            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="47.0" prefWidth="80.0" text="OK">
+            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="67.0" prefWidth="160.0" text="Back">
                <HBox.margin>
                   <Insets right="60.0" />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <Button fx:id="trailerButton" disable="false" mnemonicParsing="false" onAction="#trailerButtonClicked" text="Trailer" GridPane.rowIndex="2">
+      <Button fx:id="trailerButton" disable="false" mnemonicParsing="false" onAction="#trailerButtonClicked" prefHeight="67.0" prefWidth="160.0" text="Watch trailer" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets left="40.0" />
          </GridPane.margin>

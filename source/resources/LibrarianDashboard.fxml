@@ -9,26 +9,30 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LibrarianDashboardController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LibrarianDashboardController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="354.20001220703125" minWidth="10.0" prefWidth="251.0" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="373.00001525878906" minWidth="10.0" prefWidth="344.6" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="728.0" minWidth="10.0" prefWidth="460.2666931152344" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="570.6666564941406" minWidth="0.0" prefWidth="539.7333068847656" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="204.0" minHeight="7.0" prefHeight="66.40001525878907" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="396.3999877929687" minHeight="10.0" prefHeight="391.999951171875" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="364.0" minHeight="2.9999816894531364" prefHeight="113.40004882812502" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="204.0" minHeight="7.0" prefHeight="114.2" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="628.5333335876464" minHeight="10.0" prefHeight="545.5333129882813" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="364.0" minHeight="2.9999816894531364" prefHeight="235.66668701171875" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Label text="TaweLib">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
+         <font>
+            <Font size="16.0" />
+         </font>
       </Label>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
          <children>
-            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonClicked" prefHeight="34.0" prefWidth="81.0" text="Log Out">
+            <Button fx:id="logOutButton" mnemonicParsing="false" onAction="#logOutButtonClicked" prefHeight="54.0" prefWidth="143.0" text="Log Out">
                <HBox.margin>
                   <Insets right="20.0" />
                </HBox.margin>
@@ -37,57 +41,57 @@
       </HBox>
       <VBox prefHeight="71.0" prefWidth="597.0" GridPane.columnSpan="2" GridPane.rowIndex="2">
          <children>
-            <HBox prefHeight="43.0" prefWidth="596.0">
+            <HBox prefHeight="104.0" prefWidth="1001.0">
                <children>
-                  <Button fx:id="viewUserButton" minWidth="120.0" mnemonicParsing="false" onAction="#viewUserButtonClicked" text="Create/Check User">
+                  <Button fx:id="viewUserButton" minWidth="120.0" mnemonicParsing="false" onAction="#viewUserButtonClicked" prefHeight="57.0" prefWidth="120.0" text="Create/Check User">
                      <HBox.margin>
                         <Insets left="20.0" right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="usersBorrowing" minWidth="160.0" mnemonicParsing="false" onAction="#usersBorrowingButtonClicked" text="Users Currently Borrowing">
+                  <Button fx:id="usersBorrowing" mnemonicParsing="false" onAction="#usersBorrowingButtonClicked" prefHeight="57.0" prefWidth="160.0" text="Users Currently Borrowing">
                      <HBox.margin>
                         <Insets right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="overdueResourcesButton" minWidth="105.0" mnemonicParsing="false" onAction="#overdueResourcesButtonClicked" text="Overdue Copies">
+                  <Button fx:id="overdueResourcesButton" minWidth="105.0" mnemonicParsing="false" onAction="#overdueResourcesButtonClicked" prefHeight="57.0" prefWidth="120.0" text="Overdue Copies">
                      <HBox.margin>
                         <Insets right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="copyHistoryButton" minWidth="90.0" mnemonicParsing="false" onAction="#copyHistoryButtonClicked" text="Copy History">
+                  <Button fx:id="copyHistoryButton" minWidth="90.0" mnemonicParsing="false" onAction="#copyHistoryButtonClicked" prefHeight="57.0" prefWidth="120.0" text="Copy History">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                   </Button>
                </children>
             </HBox>
-            <HBox prefHeight="59.0" prefWidth="700.0">
+            <HBox prefHeight="102.0" prefWidth="1001.0">
                <children>
-                  <Button fx:id="createEditResourcesButton" mnemonicParsing="false" onAction="#createEditButtonClicked" prefHeight="53.0" prefWidth="114.0" text="Create/Edit Resources" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="createEditResourcesButton" mnemonicParsing="false" onAction="#createEditButtonClicked" prefHeight="57.0" prefWidth="120.0" text="Create/Edit Resources" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets left="10.0" right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="manageResourcesButton" minWidth="86.0" mnemonicParsing="false" onAction="#manageResourcesButtonClicked" prefHeight="54.0" prefWidth="98.0" text="Manage Resources" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="manageResourcesButton" minWidth="86.0" mnemonicParsing="false" onAction="#manageResourcesButtonClicked" prefHeight="57.0" prefWidth="120.0" text="Manage Resources" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseButtonClicked" prefHeight="58.0" prefWidth="96.0" text="Browse Resources" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseButtonClicked" prefHeight="57.0" prefWidth="120.0" text="Browse Resources" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets right="15.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="statisticsButton" mnemonicParsing="false" onAction="#statisticsButtonClicked" prefHeight="26.0" prefWidth="92.0" text="Statistics" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="statisticsButton" mnemonicParsing="false" onAction="#statisticsButtonClicked" prefHeight="57.0" prefWidth="120.0" text="Statistics" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets left="20.0" right="20.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="eventButton" mnemonicParsing="false" onAction="#eventButtonClicked" prefHeight="26.0" prefWidth="79.0" text="Events" textAlignment="CENTER" wrapText="true">
+                  <Button fx:id="eventButton" mnemonicParsing="false" onAction="#eventButtonClicked" prefHeight="57.0" prefWidth="120.0" text="Events" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin></Button>
-                  <Button fx:id="finesStaticsButton" layoutX="557.0" layoutY="10.0" mnemonicParsing="false" onAction="#finesStaticsButtonClicked" prefHeight="26.0" prefWidth="69.0" text="Fines" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="finesStaticsButton" layoutX="557.0" layoutY="10.0" mnemonicParsing="false" onAction="#finesStaticsButtonClicked" prefHeight="57.0" prefWidth="120.0" text="Fines" textAlignment="CENTER" wrapText="true" />
                </children>
             </HBox>
          </children>
@@ -170,7 +174,7 @@
                   <Insets top="7.0" />
                </VBox.margin>
                <children>
-                  <Button fx:id="editAccountButton" mnemonicParsing="false" onAction="#editAccountButtonClicked" prefHeight="57.0" prefWidth="110.0" text="Edit Account">
+                  <Button fx:id="editAccountButton" mnemonicParsing="false" onAction="#editAccountButtonClicked" prefHeight="57.0" prefWidth="120.0" text="Edit Account">
                      <HBox.margin>
                         <Insets right="15.0" top="20.0" />
                      </HBox.margin>
@@ -182,6 +186,9 @@
             <Insets top="35.0" />
          </padding>
       </VBox>
-      <ImageView fx:id="librarianImage" fitHeight="237.0" fitWidth="310.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+      <ImageView fx:id="librarianImage" fitHeight="340.0" fitWidth="435.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+         <GridPane.margin>
+            <Insets left="12.0" />
+         </GridPane.margin></ImageView>
    </children>
 </GridPane>

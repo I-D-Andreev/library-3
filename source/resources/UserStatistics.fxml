@@ -11,38 +11,39 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserStatisticsController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserStatisticsController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="587.8" minWidth="10.0" prefWidth="581.3999755859375" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="296.0" minWidth="10.0" prefWidth="55.80002441406248" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="1000.0" minWidth="10.0" prefWidth="894.2000732421875" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="18.60001220703125" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="362.399951171875" minHeight="10.0" prefHeight="362.399951171875" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="200.0" minHeight="10.0" prefHeight="44.00004882812499" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="64.33331985473633" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="706.6666931152345" minHeight="10.0" prefHeight="601.5999633789063" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="437.8667297363281" minHeight="0.0" prefHeight="234.4000366210937" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Label text="TaweLib">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
+         <font>
+            <Font size="16.0" />
+         </font>
       </Label>
-      <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" text="OK" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
-         <GridPane.margin>
-            <Insets right="20.0" />
-         </GridPane.margin>
-      </Button>
       <HBox prefHeight="302.0" prefWidth="583.0" GridPane.rowIndex="1">
          <children>
-            <VBox prefHeight="302.0" prefWidth="489.0">
+            <VBox prefHeight="706.0" prefWidth="713.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" text="Resources Borrowed" textAlignment="CENTER">
                      <VBox.margin>
-                        <Insets left="70.0" />
+                        <Insets left="70.0" top="59.0" />
                      </VBox.margin>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
                   </Label>
-                  <LineChart fx:id="statisticsLineChart" animated="false" prefHeight="337.0" prefWidth="490.0">
+                  <LineChart fx:id="statisticsLineChart" animated="false" prefHeight="389.0" prefWidth="714.0">
                     <xAxis>
                       <CategoryAxis animated="false" side="BOTTOM" fx:id="xAxis" />
                     </xAxis>
@@ -55,14 +56,17 @@
                   </LineChart>
                </children>
             </VBox>
-            <VBox prefHeight="302.0" prefWidth="91.0" spacing="20.0">
+            <VBox prefHeight="646.0" prefWidth="252.0" spacing="20.0">
                <HBox.margin>
-                  <Insets top="60.0" />
+                  <Insets left="20.0" top="60.0" />
                </HBox.margin>
                <children>
-                  <Button fx:id="dailyButton" mnemonicParsing="false" onAction="#dailyButtonClicked" text="Per Day" />
-                  <Button fx:id="weeklyButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#weeklyButtonClicked" text="Per Week" />
-                  <Button fx:id="monthlyButton" layoutX="10.0" layoutY="36.0" mnemonicParsing="false" onAction="#monthlyButtonClicked" prefHeight="26.0" prefWidth="99.0" text="Per Month" />
+                  <Button fx:id="dailyButton" mnemonicParsing="false" onAction="#dailyButtonClicked" prefHeight="30.0" prefWidth="100.0" text="Per Day">
+                     <VBox.margin>
+                        <Insets top="70.0" />
+                     </VBox.margin></Button>
+                  <Button fx:id="weeklyButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#weeklyButtonClicked" prefHeight="30.0" prefWidth="100.0" text="Per Week" />
+                  <Button fx:id="monthlyButton" layoutX="10.0" layoutY="36.0" mnemonicParsing="false" onAction="#monthlyButtonClicked" prefHeight="30.0" prefWidth="100.0" text="Per Month" />
                </children>
             </VBox>
          </children>
@@ -74,7 +78,7 @@
          <children>
             <Label text="Total Resources Borrowed:">
                <HBox.margin>
-                  <Insets left="20.0" top="20.0" />
+                  <Insets left="44.0" top="20.0" />
                </HBox.margin>
             </Label>
             <Label fx:id="totalBorrowedLabel" text="Total">
@@ -82,6 +86,11 @@
                   <Insets left="10.0" top="20.0" />
                </HBox.margin>
             </Label>
+            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="55.0" prefWidth="155.0" text="Back">
+               <HBox.margin>
+                  <Insets left="574.0" top="95.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
    </children>

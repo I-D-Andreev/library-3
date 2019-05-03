@@ -14,41 +14,47 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EditAccountController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EditAccountController">
    <children>
-      <HBox prefHeight="50.0" prefWidth="702.0">
+      <HBox prefHeight="74.0" prefWidth="1004.0">
          <children>
             <Label text="TaweLib">
                <HBox.margin>
                   <Insets left="30.0" right="30.0" top="10.0" />
                </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
             </Label>
             <Label text="Edit Account">
                <HBox.margin>
                   <Insets left="30.0" right="30.0" top="10.0" />
                </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
             </Label>
-            <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="24.0" prefWidth="80.0" text="Back">
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="43.0" prefWidth="106.0" text="Back">
                <HBox.margin>
-                  <Insets left="280.0" top="10.0" />
+                  <Insets left="580.0" top="14.0" />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <TabPane fx:id="tabPane" layoutY="46.0" prefHeight="554.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="tabPane" layoutY="74.0" prefHeight="758.0" prefWidth="1002.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Edit account">
                <content>
                   <BorderPane prefHeight="589.0" prefWidth="701.0">
                      <center>
-                        <VBox prefHeight="414.0" prefWidth="642.0" BorderPane.alignment="CENTER">
+                        <VBox prefHeight="582.0" prefWidth="1002.0" BorderPane.alignment="CENTER">
                            <children>
-                              <HBox prefHeight="9.0" prefWidth="622.0" />
-                              <HBox layoutX="10.0" layoutY="12.0" prefHeight="33.0" prefWidth="622.0">
+                              <HBox prefHeight="138.0" prefWidth="1002.0" />
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="12.0" prefHeight="33.0" prefWidth="622.0">
                                  <children>
                                     <Label minWidth="120.0" text="Username">
                                        <HBox.margin>
-                                          <Insets left="190.0" top="9.0" />
+                                          <Insets top="9.0" />
                                        </HBox.margin>
                                     </Label>
                                     <TextField fx:id="usernameTextField" disable="true">
@@ -58,11 +64,11 @@
                                     </TextField>
                                  </children>
                               </HBox>
-                              <HBox layoutX="10.0" layoutY="30.0" prefHeight="33.0" prefWidth="622.0">
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="30.0" prefHeight="33.0" prefWidth="622.0">
                                  <children>
                                     <Label minWidth="120.0" text="First name">
                                        <HBox.margin>
-                                          <Insets left="190.0" top="9.0" />
+                                          <Insets top="9.0" />
                                        </HBox.margin>
                                     </Label>
                                     <TextField fx:id="firstNameTextField">
@@ -72,11 +78,11 @@
                                     </TextField>
                                  </children>
                               </HBox>
-                              <HBox layoutX="10.0" layoutY="68.0" prefHeight="33.0" prefWidth="622.0">
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="68.0" prefHeight="33.0" prefWidth="622.0">
                                  <children>
                                     <Label minWidth="120.0" text="Last name">
                                        <HBox.margin>
-                                          <Insets left="190.0" top="9.0" />
+                                          <Insets top="9.0" />
                                        </HBox.margin>
                                     </Label>
                                     <TextField fx:id="lastNameTextField">
@@ -86,11 +92,11 @@
                                     </TextField>
                                  </children>
                               </HBox>
-                              <HBox layoutX="10.0" layoutY="107.0" prefHeight="33.0" prefWidth="622.0">
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="107.0" prefHeight="33.0" prefWidth="622.0">
                                  <children>
                                     <Label maxHeight="18.0" maxWidth="99.0" minHeight="18.0" minWidth="120.0" prefHeight="18.0" prefWidth="97.0" text="Phone number">
                                        <HBox.margin>
-                                          <Insets left="190.0" top="9.0" />
+                                          <Insets top="9.0" />
                                        </HBox.margin>
                                     </Label>
                                     <TextField fx:id="phoneNumberTextField">
@@ -100,11 +106,11 @@
                                     </TextField>
                                  </children>
                               </HBox>
-                              <HBox layoutX="10.0" layoutY="145.0" prefHeight="33.0" prefWidth="622.0">
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="145.0" prefHeight="33.0" prefWidth="622.0">
                                  <children>
                                     <Label minWidth="120.0" text="Address Line 1">
                                        <HBox.margin>
-                                          <Insets left="190.0" top="9.0" />
+                                          <Insets top="9.0" />
                                        </HBox.margin>
                                     </Label>
                                     <TextField fx:id="addressLine1TextField">
@@ -114,11 +120,11 @@
                                     </TextField>
                                  </children>
                               </HBox>
-                              <HBox layoutX="10.0" layoutY="184.0" prefHeight="33.0" prefWidth="622.0">
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="184.0" prefHeight="33.0" prefWidth="622.0">
                                  <children>
                                     <Label minWidth="120.0" text="Address Line 2*">
                                        <HBox.margin>
-                                          <Insets left="190.0" top="9.0" />
+                                          <Insets top="9.0" />
                                        </HBox.margin>
                                     </Label>
                                     <TextField fx:id="addressLine2TextField">
@@ -128,11 +134,11 @@
                                     </TextField>
                                  </children>
                               </HBox>
-                              <HBox layoutX="10.0" layoutY="222.0" prefHeight="33.0" prefWidth="634.0">
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="222.0" prefHeight="33.0" prefWidth="634.0">
                                  <children>
                                     <Label minWidth="120.0" text="City">
                                        <HBox.margin>
-                                          <Insets left="190.0" top="9.0" />
+                                          <Insets top="9.0" />
                                        </HBox.margin>
                                     </Label>
                                     <TextField fx:id="cityTextField">
@@ -142,11 +148,11 @@
                                     </TextField>
                                  </children>
                               </HBox>
-                              <HBox layoutX="10.0" layoutY="260.0" prefHeight="33.0" prefWidth="622.0">
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="260.0" prefHeight="33.0" prefWidth="622.0">
                                  <children>
                                     <Label minWidth="120.0" text="Country">
                                        <HBox.margin>
-                                          <Insets left="190.0" top="9.0" />
+                                          <Insets top="9.0" />
                                        </HBox.margin>
                                     </Label>
                                     <TextField fx:id="countryTextField">
@@ -156,11 +162,11 @@
                                     </TextField>
                                  </children>
                               </HBox>
-                              <HBox layoutX="10.0" layoutY="299.0" prefHeight="33.0" prefWidth="622.0">
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="299.0" prefHeight="33.0" prefWidth="622.0">
                                  <children>
                                     <Label minWidth="120.0" text="Postcode">
                                        <HBox.margin>
-                                          <Insets left="190.0" top="9.0" />
+                                          <Insets top="9.0" />
                                        </HBox.margin>
                                     </Label>
                                     <TextField fx:id="postcodeTextField">
@@ -170,11 +176,11 @@
                                     </TextField>
                                  </children>
                               </HBox>
-                              <HBox layoutX="10.0" layoutY="290.0" prefHeight="33.0" prefWidth="622.0">
+                              <HBox alignment="CENTER" layoutX="10.0" layoutY="290.0" prefHeight="33.0" prefWidth="622.0">
                                  <children>
                                     <Label minWidth="120.0" text="Email">
                                        <HBox.margin>
-                                          <Insets left="190.0" top="9.0" />
+                                          <Insets left="92.0" top="9.0" />
                                        </HBox.margin>
                                     </Label>
                                     <TextField fx:id="emailTextField" disable="true" prefHeight="26.0" prefWidth="243.0">
@@ -184,11 +190,11 @@
                                     </TextField>
                                  </children>
                               </HBox>
-                              <HBox prefHeight="48.0" prefWidth="570.0">
+                              <HBox alignment="CENTER" prefHeight="48.0" prefWidth="570.0">
                                  <children>
                                     <Button fx:id="chooseProfileImageButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#chooseProfileImageButtonClicked" prefHeight="27.0" prefWidth="167.0" text="Choose Profile Image">
                                        <HBox.margin>
-                                          <Insets left="40.0" right="10.0" top="10.0" />
+                                          <Insets left="70.0" top="10.0" />
                                        </HBox.margin>
                                     </Button>
                                     <TextField fx:id="imagePathTextField" disable="true">
@@ -206,25 +212,23 @@
                                     <Insets top="20.0" />
                                  </VBox.margin>
                               </HBox>
+                              <HBox alignment="CENTER" prefHeight="78.0" prefWidth="1002.0">
+                                 <children>
+                                    <Button fx:id="deleteAccountButton" mnemonicParsing="false" onAction="#deleteAccountButtonClicked" prefHeight="38.0" prefWidth="147.0" text="Delete Account">
+                                       <HBox.margin>
+                                          <Insets left="-239.0" right="86.0" top="15.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                    <Button fx:id="editAccountButton" alignment="CENTER" mnemonicParsing="false" onAction="#editAccountButtonClicked" prefHeight="38.0" prefWidth="350.0" text="Edit account">
+                                       <HBox.margin>
+                                          <Insets left="60.0" top="15.0" />
+                                       </HBox.margin>
+                                    </Button>
+                                 </children>
+                              </HBox>
                            </children>
                         </VBox>
                      </center>
-                     <bottom>
-                        <HBox prefHeight="70.0" prefWidth="642.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <Button fx:id="deleteAccountButton" mnemonicParsing="false" onAction="#deleteAccountButtonClicked" text="Delete Account">
-                                 <HBox.margin>
-                                    <Insets left="25.0" top="15.0" />
-                                 </HBox.margin>
-                              </Button>
-                              <Button fx:id="editAccountButton" alignment="CENTER" mnemonicParsing="false" onAction="#editAccountButtonClicked" prefHeight="38.0" prefWidth="350.0" text="Edit account">
-                                 <HBox.margin>
-                                    <Insets left="60.0" top="15.0" />
-                                 </HBox.margin>
-                              </Button>
-                           </children>
-                        </HBox>
-                     </bottom>
                   </BorderPane>
                </content>
             </Tab>
@@ -232,7 +236,7 @@
                <content>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <VBox prefHeight="522.0" prefWidth="700.0">
+                        <VBox layoutX="142.0" layoutY="79.0" prefHeight="569.0" prefWidth="735.0">
                            <children>
                               <PasswordField fx:id="oldPasswordTextfield" alignment="CENTER" promptText="Old Password">
                                  <VBox.margin>
@@ -249,7 +253,7 @@
                                     <Insets left="20.0" right="20.0" top="10.0" />
                                  </VBox.margin>
                               </PasswordField>
-                              <HBox alignment="CENTER" prefHeight="58.0" prefWidth="700.0">
+                              <HBox alignment="CENTER" prefHeight="91.0" prefWidth="735.0">
                                  <VBox.margin>
                                     <Insets top="20.0" />
                                  </VBox.margin>
@@ -267,7 +271,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <VBox layoutY="2.0" prefHeight="521.0" prefWidth="700.0">
+                        <VBox layoutX="126.0" layoutY="76.0" prefHeight="576.0" prefWidth="761.0">
                            <children>
                               <TextField fx:id="newEmailTextfield" alignment="CENTER" promptText="New Email Address">
                                  <VBox.margin>
@@ -289,7 +293,7 @@
                                     <Insets top="10.0" />
                                  </VBox.margin>
                                  <children>
-                                    <Button fx:id="changeEmailButton" mnemonicParsing="false" onAction="#changeEmailButtonClicked" prefHeight="50.0" prefWidth="170.0" text="Change email" />
+                                    <Button fx:id="changeEmailButton" mnemonicParsing="false" onAction="#changeEmailButtonClicked" prefHeight="48.0" prefWidth="180.0" text="Change email" />
                                  </children>
                               </HBox>
                            </children>
@@ -302,32 +306,32 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="148.0" layoutY="42.0" prefHeight="26.0" prefWidth="466.0" text="Tick the boxes for which you would like to receive emails:">
+                        <Label layoutX="346.0" layoutY="153.0" prefHeight="26.0" prefWidth="466.0" text="Tick the boxes for which you would like to receive emails:">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <CheckBox fx:id="returnResourceCheckbox" disable="true" layoutX="148.0" layoutY="80.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="254.0" selected="true" style="-fx-text-fill: black;" text="Prompt To Return A Resource">
+                        <CheckBox fx:id="returnResourceCheckbox" disable="true" layoutX="346.0" layoutY="191.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="254.0" selected="true" style="-fx-text-fill: black;" text="Prompt To Return A Resource">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="newResourceAddedCheckbox" layoutX="148.0" layoutY="130.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="220.0" style="-fx-text-fill: black;" text="New Resources Added">
+                        <CheckBox fx:id="newResourceAddedCheckbox" layoutX="346.0" layoutY="241.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="220.0" style="-fx-text-fill: black;" text="New Resources Added">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="newReservedResourceCheckbox" layoutX="148.0" layoutY="180.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="265.0" style="-fx-text-fill: black;" text="New Reserved Resource For You">
+                        <CheckBox fx:id="newReservedResourceCheckbox" layoutX="346.0" layoutY="291.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="265.0" style="-fx-text-fill: black;" text="New Reserved Resource For You">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </CheckBox>
-                        <CheckBox fx:id="newEventCheckbox" layoutX="148.0" layoutY="230.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="265.0" style="-fx-text-fill: black;" text="New Event/Change In Events">
+                        <CheckBox fx:id="newEventCheckbox" layoutX="346.0" layoutY="341.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="265.0" style="-fx-text-fill: black;" text="New Event/Change In Events">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </CheckBox>
-                        <Button fx:id="savePreferencesButton" layoutX="189.0" layoutY="300.0" mnemonicParsing="false" onAction="#savePreferencesButtonClicked" prefHeight="62.0" prefWidth="159.0" text="Save preferences" />
+                        <Button fx:id="savePreferencesButton" layoutX="387.0" layoutY="411.0" mnemonicParsing="false" onAction="#savePreferencesButtonClicked" prefHeight="48.0" prefWidth="180.0" text="Save preferences" />
                      </children>
                   </AnchorPane>
                </content>

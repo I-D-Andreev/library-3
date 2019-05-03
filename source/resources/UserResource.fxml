@@ -12,15 +12,15 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="698.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserResourceController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UserResourceController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="355.199951171875" minWidth="10.0" prefWidth="281.5999755859375" />
-    <ColumnConstraints hgrow="SOMETIMES" maxWidth="377.60002441406255" minWidth="10.0" prefWidth="377.60002441406255" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="733.5999999999999" minWidth="10.0" prefWidth="591.53330078125" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="964.6667213439941" minWidth="0.0" prefWidth="408.06669921874993" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="130.0" minHeight="0.0" prefHeight="55.200006866455084" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="452.79999313354494" minHeight="10.0" prefHeight="425.5999877929687" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="257.0" minHeight="6.0" prefHeight="101.60001220703123" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="130.0" minHeight="0.0" prefHeight="29.066671752929693" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="743.7333862304688" minHeight="10.0" prefHeight="584.8000366210938" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="257.0" minHeight="6.0" prefHeight="228.79996337890623" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2">
@@ -32,26 +32,29 @@
             </Label>
          </children>
       </HBox>
-      <VBox prefHeight="208.0" prefWidth="300.0" GridPane.rowIndex="1">
+      <VBox prefHeight="500.0" prefWidth="572.0" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="20.0" />
          </GridPane.margin>
          <children>
-            <ImageView fx:id="resourceImage" fitHeight="202.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true" />
-            <TableView fx:id="ratingReviewTable" prefHeight="200.0" prefWidth="200.0">
+            <ImageView fx:id="resourceImage" fitHeight="262.0" fitWidth="279.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="51.0" />
+               </VBox.margin></ImageView>
+            <TableView fx:id="ratingReviewTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="273.0" prefWidth="546.0">
               <columns>
-                <TableColumn fx:id="ratingsColumn" prefWidth="62.0" style="-fx-alignment: CENTER;" text="Ratings" />
-                <TableColumn fx:id="reviewsColumn" prefWidth="217.0" style="-fx-alignment: CENTER;" text="Reviews" />
+                <TableColumn fx:id="ratingsColumn" prefWidth="83.73332214355469" style="-fx-alignment: CENTER;" text="Ratings" />
+                <TableColumn fx:id="reviewsColumn" prefWidth="462.66663360595703" style="-fx-alignment: CENTER;" text="Reviews" />
               </columns>
                <VBox.margin>
-                  <Insets right="20.0" top="20.0" />
+                  <Insets right="20.0" top="35.0" />
                </VBox.margin>
             </TableView>
          </children>
       </VBox>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <children>
-            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="54.0" prefWidth="82.0" text="OK">
+            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="55.0" prefWidth="155.0" text="Back">
                <HBox.margin>
                   <Insets right="60.0" />
                </HBox.margin>
@@ -60,7 +63,7 @@
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <TableView fx:id="tableView" prefHeight="414.0" prefWidth="351.0">
+            <TableView fx:id="tableView" prefHeight="453.0" prefWidth="367.0">
                <columns>
                   <TableColumn fx:id="uniqueIDColumn" prefWidth="175.19994509220123" text="Copy ID" />
                   <TableColumn fx:id="isAvailableColumn" prefWidth="184.800048828125" text="Availability" />
@@ -68,12 +71,12 @@
             </TableView>
          </children>
       </HBox>
-      <Button fx:id="trailerButton" disable="false" mnemonicParsing="false" onAction="#trailerButtonClicked" text="Trailer" GridPane.rowIndex="2">
+      <Button fx:id="trailerButton" disable="false" mnemonicParsing="false" onAction="#trailerButtonClicked" prefHeight="55.0" prefWidth="155.0" text="Watch Trailer" GridPane.rowIndex="2">
          <GridPane.margin>
             <Insets left="40.0" />
          </GridPane.margin>
       </Button>
-      <Button fx:id="reviewButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#reviewPressed" text="Review &amp; Rate" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+      <Button fx:id="reviewButton" alignment="CENTER" mnemonicParsing="false" onAction="#reviewPressed" prefHeight="55.0" prefWidth="155.0" text="Review &amp; Rate" GridPane.halignment="RIGHT" GridPane.rowIndex="2" GridPane.valignment="TOP">
          <GridPane.margin>
             <Insets right="20.0" />
          </GridPane.margin>

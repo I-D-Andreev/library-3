@@ -9,32 +9,32 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ReservedResourcesController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ReservedResourcesController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="476.79999389648435" minHeight="10.0" prefHeight="463.4" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="195.0" minHeight="10.0" prefHeight="109.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="748.7999877929688" minHeight="10.0" prefHeight="748.7999877929688" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="195.0" minHeight="0.0" prefHeight="118.4000122070313" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <HBox alignment="CENTER_RIGHT" prefHeight="152.0" prefWidth="700.0" GridPane.rowIndex="1">
          <children>
-            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="49.0" prefWidth="74.0" text="OK">
+            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="89.0" prefWidth="131.0" text="Back">
                <HBox.margin>
                   <Insets right="60.0" />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
-      <TableView fx:id="reservedResourcesTable" prefHeight="442.0" prefWidth="660.0">
+      <TableView fx:id="reservedResourcesTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="776.0">
          <GridPane.margin>
-            <Insets left="20.0" right="20.0" top="20.0" />
+            <Insets left="106.0" right="20.0" top="20.0" />
          </GridPane.margin>
          <columns>
-            <TableColumn fx:id="copyIDColumn" prefWidth="176.79999351501465" text="Copy ID" />
-            <TableColumn fx:id="resourceNameColumn" prefWidth="239.20001220703125" text="Resource Name" />
-            <TableColumn fx:id="resourceTypeColumn" prefWidth="243.99990844726562" text="Resource Type" />
+            <TableColumn fx:id="copyIDColumn" prefWidth="266.4000358581543" text="Copy ID" />
+            <TableColumn fx:id="resourceNameColumn" prefWidth="265.5999755859375" text="Resource Name" />
+            <TableColumn fx:id="resourceTypeColumn" prefWidth="242.4000244140625" text="Resource Type" />
          </columns>
       </TableView>
    </children>

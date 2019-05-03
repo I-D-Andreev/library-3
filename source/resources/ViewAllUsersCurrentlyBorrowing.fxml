@@ -9,32 +9,36 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="597.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewAllUsersCurrentlyBorrowingController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewAllUsersCurrentlyBorrowingController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="129.0" minHeight="0.0" prefHeight="38.39998016357421" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="483.20001182556155" minHeight="10.0" prefHeight="404.8000183105469" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="116.19998168945312" minHeight="0.0" prefHeight="116.19998168945312" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="542.400033569336" minHeight="0.0" prefHeight="103.73334808349614" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="709.5999862670899" minHeight="10.0" prefHeight="594.9333984375" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="201.06660156249995" minHeight="0.0" prefHeight="201.06660156249995" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <HBox prefHeight="100.0" prefWidth="200.0">
          <children>
             <Label text="TaweLib">
                <HBox.margin>
-                  <Insets left="20.0" top="20.0" />
+                  <Insets left="46.0" top="39.0" />
                </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
             </Label>
          </children>
       </HBox>
-      <TableView fx:id="userTable" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+      <TableView fx:id="userTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="468.0" prefWidth="930.0" GridPane.rowIndex="1">
         <columns>
-            <TableColumn fx:id="copyIDColumn" prefWidth="130.3999900817871" text="Copy ID" />
-            <TableColumn fx:id="copyNameColumn" prefWidth="149.59999084472656" text="Name" />
-          <TableColumn fx:id="usernameColumn" prefWidth="157.5999755859375" text="Username" />
-            <TableColumn fx:id="borrowedOnColumn" prefWidth="224.0" text="Borrowed On" />
+            <TableColumn fx:id="copyIDColumn" prefWidth="157.06664657592773" text="Copy ID" />
+            <TableColumn fx:id="copyNameColumn" prefWidth="215.4666290283203" text="Name" />
+          <TableColumn fx:id="usernameColumn" prefWidth="248.53335571289062" text="Username" />
+            <TableColumn fx:id="borrowedOnColumn" prefWidth="325.6000061035156" text="Borrowed On" />
         </columns>
          <GridPane.margin>
             <Insets left="20.0" right="20.0" />
@@ -42,7 +46,7 @@
       </TableView>
       <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
          <children>
-            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="43.0" prefWidth="95.0" text="OK">
+            <Button fx:id="okButton" mnemonicParsing="false" onAction="#okButtonClicked" prefHeight="59.0" prefWidth="169.0" text="Back">
                <HBox.margin>
                   <Insets right="60.0" />
                </HBox.margin>

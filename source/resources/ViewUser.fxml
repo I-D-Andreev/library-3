@@ -13,18 +13,19 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.control.TextArea?>
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="698.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewUserController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1000.0" stylesheets="@form-styles.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ViewUserController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
       <RowConstraints />
-    <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="54.399993896484375" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="748.8000076293945" minHeight="10.0" prefHeight="746.4000061035156" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="86.13332672119141" minHeight="10.0" prefHeight="86.13332672119141" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="748.8000076293945" minHeight="10.0" prefHeight="718.6666732788086" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" GridPane.columnSpan="2" GridPane.rowIndex="2">
@@ -164,11 +165,11 @@
                               <Insets left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <HBox layoutX="10.0" layoutY="318.0" prefHeight="29.0" prefWidth="698.0">
+                        <HBox alignment="CENTER" layoutX="10.0" layoutY="318.0" prefHeight="29.0" prefWidth="698.0">
                            <children>
                               <RadioButton fx:id="librarianRadioButton" mnemonicParsing="false" onAction="#librarianRadioButtonSelected" text="librarian">
                                  <HBox.margin>
-                                    <Insets left="160.0" right="50.0" top="2.0" />
+                                    <Insets top="2.0" />
                                  </HBox.margin>
                               </RadioButton>
                               <RadioButton fx:id="userRadioButton" mnemonicParsing="false" onAction="#userRadioButtonSelected" text="user">
@@ -178,14 +179,14 @@
                               </RadioButton>
                            </children>
                         </HBox>
-                        <HBox prefHeight="42.0" prefWidth="698.0">
+                        <HBox alignment="CENTER" prefHeight="42.0" prefWidth="698.0">
                            <children>
                               <Button fx:id="chooseProfileImageButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#chooseProfileImageButtonClicked" prefHeight="27.0" prefWidth="167.0" text="Choose Profile Image">
                                  <HBox.margin>
                                     <Insets left="140.0" right="10.0" top="5.0" />
                                  </HBox.margin>
                               </Button>
-                              <TextField fx:id="imagePathTextField" disable="true">
+                              <TextField fx:id="imagePathTextField" disable="true" prefHeight="26.0" prefWidth="196.0">
                                  <HBox.margin>
                                     <Insets left="40.0" right="40.0" top="5.0" />
                                  </HBox.margin>
@@ -200,9 +201,9 @@
                               <Insets top="-1.0" />
                            </VBox.margin>
                         </HBox>
-                        <Button fx:id="addUserButton" mnemonicParsing="false" onAction="#addUserButtonClicked" prefHeight="10.0" prefWidth="462.0" text="Add User">
+                        <Button fx:id="addUserButton" alignment="CENTER" mnemonicParsing="false" onAction="#addUserButtonClicked" prefHeight="42.0" prefWidth="462.0" text="Add User">
                            <VBox.margin>
-                              <Insets bottom="20.0" left="130.0" right="60.0" top="5.0" />
+                              <Insets bottom="20.0" left="319.0" right="60.0" top="26.0" />
                            </VBox.margin>
                         </Button>
                      </children>
@@ -217,11 +218,17 @@
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
             </Label>
             <Label text="View User">
                <HBox.margin>
                   <Insets left="20.0" />
                </HBox.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
             </Label>
          </children>
       </HBox>
@@ -231,7 +238,7 @@
             <Insets />
          </opaqueInsets>
          <children>
-            <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="26.0" prefWidth="63.0" text="Back">
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="43.0" prefWidth="121.0" text="Back">
                <HBox.margin>
                   <Insets right="40.0" />
                </HBox.margin>
