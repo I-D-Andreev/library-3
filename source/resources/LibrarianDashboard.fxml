@@ -164,7 +164,7 @@
                   <Label text="Employment Date:" />
                   <Label fx:id="employmentDateLabel" text="Refresh to load">
                      <HBox.margin>
-                        <Insets left="60.0" />
+                        <Insets left="136.0" />
                      </HBox.margin>
                   </Label>
                </children>

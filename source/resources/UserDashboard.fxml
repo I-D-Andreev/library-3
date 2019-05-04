@@ -157,7 +157,7 @@
                   <Label text="Account Creation Date:" />
                   <Label fx:id="accountCreationLabel" text="Refresh to load">
                      <HBox.margin>
-                        <Insets left="20.0" />
+                        <Insets left="127.0" />
                      </HBox.margin>
                   </Label>
                </children>
