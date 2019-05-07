@@ -225,15 +225,33 @@ public class UserDashboardController extends Controller {
     @Override
     public void onStart() {
         this.loadUserInformation();
+        this.colorButtons();
+    }
+
+    /**
+     * Changes colors of some buttons depending on the state of the account.
+     */
+    private void colorButtons(){
         NormalUser currentUser = (NormalUser) getLibrary().getCurrentUserLoggedIn();
         if(currentUser.getNewAdditions().size() > 0){
-            newAdditionsButton.setStyle("-fx-background-color : ##11dd18");
+            newAdditionsButton.setStyle("-fx-background-color : #11dd18");
         }
 
         if(getLibrary().getResourceManager().getReservedCopiesFor(currentUser).size()>0){
-            reservedResourcesButton.setStyle("-fx-background-color : ##11dd18");
+            reservedResourcesButton.setStyle("-fx-background-color : #11dd18");
         }
 
+        boolean hasOverdueCopies = false;
+        for(Copy copy : currentUser.getBorrowedCopies()){
+            if(copy.isOverdue()){
+                hasOverdueCopies = true;
+                break;
+            }
+        }
+
+        if(hasOverdueCopies){
+            overdueResourcesButton.setStyle("-fx-background-color : #ea593c");
+        }
     }
 
     /**
