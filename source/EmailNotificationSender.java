@@ -27,10 +27,11 @@ public class EmailNotificationSender {
      *
      * @param recipient The user that will receive the notification.
      * @param event     The new event.
+     * @return True if message sent successfully, false - if not.
      */
-    public static void sendNewEventNotification(NormalUser recipient, Event event) {
+    public static boolean sendNewEventNotification(NormalUser recipient, Event event) {
         if (!recipient.getNotificationPreferences().getReceiveEventNotification()) {
-            return;
+            return true;
         }
 
         String message = hello + "A new event has been added. More details below: " + newLine
@@ -40,7 +41,7 @@ public class EmailNotificationSender {
                 + "Start time (year/month/day hour:minute):  " + event.getStartDate() + " " + event.getStartTime()
                 + newLine + bestRegards + unsubscribeInfo;
 
-        MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Event", message);
+        return MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Event", message);
     }
 
     /**
@@ -50,13 +51,14 @@ public class EmailNotificationSender {
      * @param recipient The user that will receive the notification.
      * @param oldEvent  The old information about the event.
      * @param newEvent  The new information about the event.
+     * @return True if message sent successfully, false - if not.
      */
-    public static void sendEventChangedNotification(NormalUser recipient, Event oldEvent, Event newEvent) {
+    public static boolean sendEventChangedNotification(NormalUser recipient, Event oldEvent, Event newEvent) {
         // This notification about event changes goes in the same preference as New Events, so users
         // do not miss out on an event in case of a change in the time/date.
 
         if (!recipient.getNotificationPreferences().getReceiveEventNotification()) {
-            return;
+            return true;
         }
 
         String message = hello + "An existing event has been changed. More details below: " + newLine
@@ -67,8 +69,7 @@ public class EmailNotificationSender {
                 + "  --> " + newEvent.getStartDate() + " " + newEvent.getStartTime() + newLine
                 + bestRegards + unsubscribeInfo;
 
-        MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib Event Changed", message);
-
+        return MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib Event Changed", message);
     }
 
     /**
@@ -77,10 +78,11 @@ public class EmailNotificationSender {
      *
      * @param recipient   The user that will receive the notification.
      * @param newResource The newly added resource.
+     * @return True if message sent successfully, false - if not.
      */
-    public static void sendNewResourceAddedNotification(NormalUser recipient, Resource newResource) {
+    public static boolean sendNewResourceAddedNotification(NormalUser recipient, Resource newResource) {
         if (!recipient.getNotificationPreferences().getReceiveNewAdditionsNotification()) {
-            return;
+            return true;
         }
 
         String message = hello + "A new resource has been added. More details below: " + newLine
@@ -88,7 +90,7 @@ public class EmailNotificationSender {
                 + "Type: " + newResource.getType() + newLine
                 + bestRegards + unsubscribeInfo;
 
-        MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Resource Added", message);
+        return MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Resource Added", message);
     }
 
     /**
@@ -97,10 +99,11 @@ public class EmailNotificationSender {
      *
      * @param recipient        The user that will receive the notification.
      * @param reservedResource The newly reserved resource.
+     * @return True if message sent successfully, false - if not.
      */
-    public static void sendNewResourceReservedNotification(NormalUser recipient, Resource reservedResource) {
+    public static boolean sendNewResourceReservedNotification(NormalUser recipient, Resource reservedResource) {
         if (!recipient.getNotificationPreferences().getReceiveNewReservedResourceNotification()) {
-            return;
+            return true;
         }
 
         String message = hello
@@ -109,7 +112,7 @@ public class EmailNotificationSender {
                 + "Type: " + reservedResource.getType() + newLine
                 + bestRegards + unsubscribeInfo;
 
-        MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Resource Reserved For You", message);
+        return MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib New Resource Reserved For You", message);
     }
 
 
@@ -119,10 +122,11 @@ public class EmailNotificationSender {
      *
      * @param recipient  The user that will receive the notification.
      * @param returnCopy The copy that should be returned.
+     * @return True if message sent successfully, false - if not.
      */
-    public static void sendNewReturnAResourceNotification(NormalUser recipient, Copy returnCopy) {
+    public static boolean sendNewReturnAResourceNotification(NormalUser recipient, Copy returnCopy) {
         if (!recipient.getNotificationPreferences().getReceiveReturnResourceNotification()) {
-            return;
+            return true;
         }
 
         // format the due date nicely
@@ -143,7 +147,7 @@ public class EmailNotificationSender {
                 + " pounds total." + newLine
                 + bestRegards;
 
-        MailSender.sendEmail(recipient.getEmail(),
+        return MailSender.sendEmail(recipient.getEmail(),
                 "Tawe-Lib A Resource Should Be Returned By " + dueDate,
                 message);
     }

@@ -2,6 +2,7 @@ import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.util.ArrayList;
 import java.util.Properties;
 
 /**
@@ -10,13 +11,22 @@ import java.util.Properties;
  * @author Ivan Andreev
  */
 public class MailSender {
+
+    /**
+     * List of all messages which were not sent.
+     */
+    public static ArrayList<MimeMessage> NOT_SENT_MESSAGES = new ArrayList<>();
+
+
     /**
      * Sends an email.
-     * @param recipient The email address of the recipient. (xxxxx@xxxx.xxx)
-     * @param subject The subject of the email.
-     * @param message The message of the email.
+     *
+     * @param recipient The email address of the recipient. (aaaa@bbbb.ccc)
+     * @param subject   The subject of the email.
+     * @param message   The message of the email.
+     * @return True if message sent successfully, false - if not.
      */
-    public static void sendEmail(String recipient, String subject, String message) {
+    public static boolean sendEmail(String recipient, String subject, String message) {
         String SENDER_NAME = "tawelib2019@gmail.com";
         String PASSWORD = "tawelib955058@";
 
@@ -38,19 +48,22 @@ public class MailSender {
                     }
                 });
 
-
-        try{
-            MimeMessage mimeMessage = new MimeMessage(session);
+        MimeMessage mimeMessage = null;
+        try {
+            mimeMessage = new MimeMessage(session);
             mimeMessage.addRecipients(Message.RecipientType.TO, recipient);
             mimeMessage.setFrom(new InternetAddress(SENDER_NAME));
             mimeMessage.setSubject(subject);
-            mimeMessage.setText(message,"utf-8", "html");
+            mimeMessage.setText(message, "utf-8", "html");
 
             // send message
             Transport.send(mimeMessage);
+
+            return true;
         } catch (MessagingException e) {
-            System.out.println("Error sending message.");
-            e.printStackTrace();
+            System.out.println("Message was added to the list of unsent messages.");
+            NOT_SENT_MESSAGES.add(mimeMessage);
+            return false;
         }
     }
 }
