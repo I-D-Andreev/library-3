@@ -225,6 +225,15 @@ public class UserDashboardController extends Controller {
     @Override
     public void onStart() {
         this.loadUserInformation();
+        NormalUser currentUser = (NormalUser) getLibrary().getCurrentUserLoggedIn();
+        if(currentUser.getNewAdditions().size() > 0){
+            newAdditionsButton.setStyle("-fx-background-color : ##11dd18");
+        }
+
+        if(getLibrary().getResourceManager().getReservedCopiesFor(currentUser).size()>0){
+            reservedResourcesButton.setStyle("-fx-background-color : ##11dd18");
+        }
+
     }
 
     /**
