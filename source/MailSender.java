@@ -65,6 +65,7 @@ public class MailSender {
 
             return true;
         } catch (MessagingException e) {
+            System.out.println("Message not sent correctly!");
             NOT_SENT_MESSAGES.add(mimeMessage);
             return false;
         }

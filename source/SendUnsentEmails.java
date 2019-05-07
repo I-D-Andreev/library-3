@@ -11,7 +11,7 @@ public class SendUnsentEmails extends TimerTask {
     @Override
     public void run() {
         System.out.println("Try to send unsent messages");
-        System.out.println(MailSender.NOT_SENT_MESSAGES.size());
+        System.out.println("Number of emails - " + MailSender.NOT_SENT_MESSAGES.size());
 
         // if no messages, just do nothing
         if(MailSender.NOT_SENT_MESSAGES.size() == 0){
@@ -33,6 +33,8 @@ public class SendUnsentEmails extends TimerTask {
 
             // remove the messages that we have sent
             MailSender.NOT_SENT_MESSAGES.removeAll(toRemove);
+
+            System.out.println("Number of remaining emails - " + MailSender.NOT_SENT_MESSAGES.size());
         }
     }
 }
