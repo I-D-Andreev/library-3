@@ -72,7 +72,6 @@ public class NewAdditionsController extends Controller {
     @Override
     public void onStart() {
         data = FXCollections.observableArrayList();
-        System.out.println("Test");
         idColumn.setCellValueFactory(
                 new PropertyValueFactory<Resource, String>("uniqueID"));
         nameColumn.setCellValueFactory(
