@@ -45,7 +45,7 @@
                <children>
                   <Button fx:id="viewUserButton" minWidth="120.0" mnemonicParsing="false" onAction="#viewUserButtonClicked" prefHeight="58.0" prefWidth="168.0" text="Create/Check User">
                      <HBox.margin>
-                        <Insets left="30.0" right="15.0" />
+                        <Insets left="20.0" right="15.0" />
                      </HBox.margin>
                   </Button>
                   <Button fx:id="usersBorrowing" mnemonicParsing="false" onAction="#usersBorrowingButtonClicked" prefHeight="58.0" prefWidth="195.0" text="Users Currently Borrowing">
@@ -60,7 +60,12 @@
                   </Button>
                   <Button fx:id="copyHistoryButton" minWidth="90.0" mnemonicParsing="false" onAction="#copyHistoryButtonClicked" prefHeight="57.0" prefWidth="140.0" text="Copy History">
                      <HBox.margin>
-                        <Insets />
+                        <Insets right="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseButtonClicked" prefHeight="57.0" prefWidth="140.0" text="Browse Resources" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets right="20.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -69,15 +74,10 @@
                <children>
                   <Button fx:id="createEditResourcesButton" mnemonicParsing="false" onAction="#createEditButtonClicked" prefHeight="57.0" prefWidth="140.0" text="Create/Edit Resources" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
-                        <Insets left="30.0" right="20.0" />
+                        <Insets left="20.0" right="20.0" />
                      </HBox.margin>
                   </Button>
                   <Button fx:id="manageResourcesButton" minWidth="86.0" mnemonicParsing="false" onAction="#manageResourcesButtonClicked" prefHeight="57.0" prefWidth="140.0" text="Manage Resources" textAlignment="CENTER" wrapText="true">
-                     <HBox.margin>
-                        <Insets right="20.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="browseResourcesButton" mnemonicParsing="false" onAction="#browseButtonClicked" prefHeight="57.0" prefWidth="140.0" text="Browse Resources" textAlignment="CENTER" wrapText="true">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
@@ -91,7 +91,11 @@
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin></Button>
-                  <Button fx:id="finesStaticsButton" layoutX="557.0" layoutY="10.0" mnemonicParsing="false" onAction="#finesStaticsButtonClicked" prefHeight="57.0" prefWidth="140.0" text="Fines" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="finesStaticsButton" layoutX="557.0" layoutY="10.0" mnemonicParsing="false" onAction="#finesStaticsButtonClicked" prefHeight="57.0" prefWidth="140.0" text="Fines" textAlignment="CENTER" wrapText="true">
+                     <HBox.margin>
+                        <Insets right="15.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="notSentMessagesButton" layoutX="680.0" layoutY="10.0" mnemonicParsing="false" onAction="#notSentMessagesButtonClicked" prefHeight="58.0" prefWidth="152.0" text="Not Sent Messages" textAlignment="CENTER" wrapText="true" />
                </children>
             </HBox>
          </children>

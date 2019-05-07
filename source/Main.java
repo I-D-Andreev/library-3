@@ -36,6 +36,7 @@ public class Main extends Application {
 //        Library l = new Library();
 //        l.save();
         task.cancel();
+        timer.purge();
         timer.cancel();
         System.exit(0);
     }

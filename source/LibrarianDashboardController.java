@@ -73,6 +73,12 @@ public class LibrarianDashboardController extends Controller {
     private Button editAccountButton;
 
     /**
+     * Button for messages that are not sent.
+     */
+    @FXML
+    private Button notSentMessagesButton;
+
+    /**
      * The label that displays the username.
      */
     @FXML
@@ -307,7 +313,6 @@ public class LibrarianDashboardController extends Controller {
     public void usersBorrowingButtonClicked(ActionEvent event) {
         new NewWindow("resources/ViewAllUsersCurrentlyBorrowing.fxml", event,
                 "View All Users Currently Borrowing", getLibrary());
-
     }
 
     /**
@@ -319,5 +324,16 @@ public class LibrarianDashboardController extends Controller {
     public void finesStaticsButtonClicked(ActionEvent event) {
         new NewWindow("resources/FineStatistics.fxml", event,
                 "Fines Statistics", getLibrary());
+    }
+
+    /**
+     * The not sent messages button being clicked.
+     *
+     * @param event The button is clicked.
+     */
+    @FXML
+    public void notSentMessagesButtonClicked(ActionEvent event) {
+        new NewWindow("resources/NotSentMessages.fxml", event,
+                "Not sent messages", getLibrary());
     }
 }
