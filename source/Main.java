@@ -28,7 +28,6 @@ public class Main extends Application {
         // librarian - lib
         // password across all accounts - 1
 
-
 //        if you want to run the program and there are errors
 //        you might need to run this code
 //        more in the README file
