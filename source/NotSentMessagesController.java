@@ -67,6 +67,7 @@ public class NotSentMessagesController extends Controller {
                 new PropertyValueFactory<MimeMessageTableRepresentation, String>("subject"));
 
         this.fillInData();
+        notSentMessagesTable.getItems().addAll(data);
     }
 
     /**
@@ -85,9 +86,9 @@ public class NotSentMessagesController extends Controller {
                         ButtonType.OK);
                 alert.showAndWait();
             }
-
-
         }
     }
+
+
 
 }
