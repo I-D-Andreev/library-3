@@ -387,7 +387,8 @@ public class EditAccountController extends Controller {
                 alert.showAndWait();
 
                 getLibrary().save();
-                Platform.exit();
+                new NewWindow("resources/Login.fxml", event,
+                        "TaweLib - Login", getLibrary());
             }
         }
     }

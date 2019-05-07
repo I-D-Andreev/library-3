@@ -1,9 +1,12 @@
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -54,9 +57,19 @@ public class NewWindow {
             stage.show();
             ((Node) (event.getSource())).getScene().getWindow().hide();
 
+            Platform.setImplicitExit(false);
             // save data on stage close
             stage.setOnCloseRequest(eventHandler -> {
-                library.save();
+                // no unsent messages
+                if(MailSender.NOT_SENT_MESSAGES.size() == 0) {
+                    library.save();
+                } else {
+                    eventHandler.consume();
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "Can't exit the program while there are" +
+                            " emails that are not sent. Try logging out!",
+                            ButtonType.OK);
+                    alert.show();
+                }
             });
 
         } catch (IOException e) {
