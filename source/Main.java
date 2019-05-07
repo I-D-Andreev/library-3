@@ -5,6 +5,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Main class.
@@ -14,8 +16,14 @@ import java.io.IOException;
 public class Main extends Application {
 
     public static void main(String[] args) {
+        // Try to send the not-sent emails every 15 seconds
+        Timer timer = new Timer();
+        TimerTask task = new SendUnsentEmails();
+        timer.schedule(task, 10000, 15000);
+
         //Launches the application - do not remove.
         launch(args);
+
         // users - 1, ivan
         // librarian - lib
         // password across all accounts - 1

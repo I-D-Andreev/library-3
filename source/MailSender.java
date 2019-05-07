@@ -6,6 +6,8 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -18,8 +20,7 @@ public class MailSender {
     /**
      * List of all messages which were not sent.
      */
-    public static ArrayList<MimeMessage> NOT_SENT_MESSAGES = new ArrayList<>();
-
+    public static List<MimeMessage> NOT_SENT_MESSAGES = Collections.synchronizedList(new ArrayList<>());
 
     /**
      * Sends an email.
@@ -64,13 +65,24 @@ public class MailSender {
 
             return true;
         } catch (MessagingException e) {
-//            System.out.println("Message was added to the list of unsent messages.");
-//            Alert alert = new Alert(Alert.AlertType.ERROR, "Message was not sent. Message was added to the list of not sent messages.",
-//                    ButtonType.OK);
-//            alert.show();
-
             NOT_SENT_MESSAGES.add(mimeMessage);
             return false;
         }
     }
+
+    /**
+     * Sends an email.
+     * @param mimeMessage The message.
+     * @return True if sent, false if not sent.
+     */
+    public static boolean sendEmail(MimeMessage mimeMessage){
+        try{
+            Transport.send(mimeMessage);
+            return true;
+        } catch (MessagingException e) {
+            return false;
+        }
+    }
+
+
 }
