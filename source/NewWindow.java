@@ -63,6 +63,7 @@ public class NewWindow {
                 // no unsent messages
                 if(MailSender.NOT_SENT_MESSAGES.size() == 0) {
                     library.save();
+                    System.exit(0);
                 } else {
                     eventHandler.consume();
                     Alert alert = new Alert(Alert.AlertType.ERROR, "Can't exit the program while there are" +
