@@ -219,17 +219,20 @@ public class CopyManager implements Serializable {
      * Reserves a copy for a user.
      *
      * @param forUser The user the copy is being reserved for.
+     * @return True if email was sent for a user to return a copy, false - otherwise.
      */
-    public void reserveCopy(NormalUser forUser) {
+    public boolean reserveCopy(NormalUser forUser) {
         this.requestQueue.add(forUser);
-        this.setDueDateOfOldestBorrowedCopy();
+        return this.setDueDateOfOldestBorrowedCopy();
     }
 
     /**
      * Find the oldest borrowed copy with no due date set
      * and set its due date. Sends notification to the borrower to return the copy.
+     *
+     * @return True if email was sent for a user to return a copy, false - otherwise.
      */
-    private void setDueDateOfOldestBorrowedCopy() {
+    private boolean setDueDateOfOldestBorrowedCopy() {
         Copy oldestCopy = null;
         for (Copy copy : listOfAllCopies) {
             // we are only interested in copies with unset due dates
@@ -254,12 +257,13 @@ public class CopyManager implements Serializable {
             oldestCopy.setDueDate();
 
             // send email to the borrower to return the copy
-            if(oldestCopy.getBorrowedBy() instanceof NormalUser){
-                EmailNotificationSender.sendNewReturnAResourceNotification(
+            if (oldestCopy.getBorrowedBy() instanceof NormalUser) {
+                return EmailNotificationSender.sendNewReturnAResourceNotification(
                         ((NormalUser) oldestCopy.getBorrowedBy()), oldestCopy);
             }
-
         }
+
+        return true;
     }
 
 

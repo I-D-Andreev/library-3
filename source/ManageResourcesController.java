@@ -206,11 +206,18 @@ public class ManageResourcesController extends Controller {
                     ButtonType.OK);
             alert.show();
         } else {
-            getLibrary().getResourceManager().reserveCopy(resource, user);
+            boolean sentEMail = getLibrary().getResourceManager().reserveCopy(resource, user);
             Alert alert = new Alert(Alert.AlertType.INFORMATION, "User " + user.getUsername()
                     + " has been put on the waiting list.",
                     ButtonType.OK);
-            alert.show();
+            alert.showAndWait();
+
+            if (!sentEMail) {
+                Alert alert2 = new Alert(Alert.AlertType.ERROR, "Email was not sent. Email added to " +
+                        "list of not sent emails.",
+                        ButtonType.OK);
+                alert2.show();
+            }
 
             // clear fields
             reserveUserUsernameTextField.clear();

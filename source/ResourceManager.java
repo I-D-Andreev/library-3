@@ -141,11 +141,11 @@ public class ResourceManager implements Serializable {
         this.updateNewAdditions(resource);
 
         // send notifications
-        for(User user : library.getUserManager().getAllUsers()){
-                if(user instanceof NormalUser){
-                    NormalUser normalUser = (NormalUser) user;
-                    EmailNotificationSender.sendNewResourceAddedNotification(normalUser, resource);
-                }
+        for (User user : library.getUserManager().getAllUsers()) {
+            if (user instanceof NormalUser) {
+                NormalUser normalUser = (NormalUser) user;
+                EmailNotificationSender.sendNewResourceAddedNotification(normalUser, resource);
+            }
         }
     }
 
@@ -403,9 +403,10 @@ public class ResourceManager implements Serializable {
      *
      * @param resource The resource the copy should be.
      * @param forUser  The user requesting it.
+     * @return True if email was sent for a user to return a copy, false - otherwise.
      */
-    public void reserveCopy(Resource resource, User forUser) {
-        resource.getCopyManager().reserveCopy((NormalUser) forUser);
+    public boolean reserveCopy(Resource resource, User forUser) {
+        return resource.getCopyManager().reserveCopy((NormalUser) forUser);
     }
 
     /**

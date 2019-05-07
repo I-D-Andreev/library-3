@@ -1,3 +1,6 @@
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+
 import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -61,7 +64,11 @@ public class MailSender {
 
             return true;
         } catch (MessagingException e) {
-            System.out.println("Message was added to the list of unsent messages.");
+//            System.out.println("Message was added to the list of unsent messages.");
+//            Alert alert = new Alert(Alert.AlertType.ERROR, "Message was not sent. Message was added to the list of not sent messages.",
+//                    ButtonType.OK);
+//            alert.show();
+
             NOT_SENT_MESSAGES.add(mimeMessage);
             return false;
         }
