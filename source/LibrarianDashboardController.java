@@ -151,6 +151,10 @@ public class LibrarianDashboardController extends Controller {
     @Override
     public void onStart() {
         this.loadLibrarianInformation();
+
+        if(MailSender.NOT_SENT_MESSAGES.size() > 0){
+            notSentMessagesButton.setStyle("-fx-background-color : #ea593c");
+        }
     }
 
     /**
