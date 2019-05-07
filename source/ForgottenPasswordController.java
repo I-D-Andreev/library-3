@@ -60,9 +60,9 @@ public class ForgottenPasswordController extends Controller {
     @FXML
     public void emailPasswordButtonClicked(ActionEvent event) {
         // check if the secret answer matches (secret answer is saved as a password)
-        User user =  getLibrary().getUserManager().getUserByUsername(usernameTextfield.getText());
-        if(!Security.checkPassword(secretAnswerTextfield.getText(),
-                user.getSecuritySalting(), user.getSecretAnswer())){
+        User user = getLibrary().getUserManager().getUserByUsername(usernameTextfield.getText());
+        if (!Security.checkPassword(secretAnswerTextfield.getText(),
+                user.getSecuritySalting(), user.getSecretAnswer())) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong security answer!",
                     ButtonType.OK);
             alert.show();
@@ -78,15 +78,22 @@ public class ForgottenPasswordController extends Controller {
             String newLine = "<br>";
             // send the email to the user with the new password
             String messageText = "Hello." + newLine + "Your new password is: " + newPassword
-                    + newLine +  "Best regards, " + newLine + "TaweLib team";
+                    + newLine + "Best regards, " + newLine + "TaweLib team";
 
-            MailSender.sendEmail(user.getEmail(), "Tawe-Lib new password", messageText);
+            boolean messageSent = MailSender.sendEmail(user.getEmail(), "Tawe-Lib new password", messageText);
 
+            if (messageSent) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION, "New password sent to email " +
+                        user.getEmail() + " !",
+                        ButtonType.OK);
+                alert.show();
+            } else {
+                String text = "Password was generated successfully, but there was an error sending the email to "
+                        + user.getEmail() + " ! Please wait for the message to arrive.";
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION, "New password sent to email " +
-                    user.getEmail() + " !",
-                    ButtonType.OK);
-            alert.show();
+                Alert alert = new Alert(Alert.AlertType.ERROR, text, ButtonType.OK);
+                alert.show();
+            }
 
             //  clear the fields
             usernameTextfield.clear();
