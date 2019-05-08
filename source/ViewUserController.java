@@ -1,6 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -421,5 +422,18 @@ public class ViewUserController extends Controller {
             repeatPasswordTextField.styleProperty().setValue("-fx-background-color : #ea593c");
         }
     }
+
+    /**
+     * What happens when any key is pressed
+     * @param event Any key pressed.
+     */
+    @FXML
+    public void keyPressed(KeyEvent event) {
+    // if pressed key is enter
+        if(event.getCode().compareTo(KeyCode.ENTER) == 0){
+        addUserButtonClicked(new ActionEvent(event.getSource(), event.getTarget()));
+    }
+    }
+
 }
 
