@@ -62,11 +62,13 @@ public class EmailNotificationSender {
         }
 
         String message = hello + "An existing event has been changed. More details below: " + newLine
-                + "Title: " + oldEvent.getTitle() + "  --> " + newEvent.getTitle() + newLine
-                + "Description: " + oldEvent.getDescription() + "  --> " + newEvent.getDescription() + newLine
-                + "Max number of attendees: " + oldEvent.getMaxAttendees() + "  --> " + newEvent.getMaxAttendees() + newLine
+                + "Title: " + oldEvent.getTitle() + "  -->  <b>" + newEvent.getTitle() + newLine + "</b>"
+                + "Description: " + oldEvent.getDescription() + "  --> <b>" + newEvent.getDescription() + "</b>"
+                + newLine
+                + "Max number of attendees: " + oldEvent.getMaxAttendees() + "  -->  <b>" + newEvent.getMaxAttendees()
+                + "</b>" + newLine
                 + "Start time (year/month/day hour:minute): " + oldEvent.getStartDate() + " " + oldEvent.getStartTime()
-                + "  --> " + newEvent.getStartDate() + " " + newEvent.getStartTime() + newLine
+                + "  --> <b>" + newEvent.getStartDate() + " " + newEvent.getStartTime() + "</b>" + newLine
                 + bestRegards + unsubscribeInfo;
 
         return MailSender.sendEmail(recipient.getEmail(), "Tawe-Lib Event Changed", message);
