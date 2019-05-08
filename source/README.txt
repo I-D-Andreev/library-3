@@ -18,13 +18,15 @@ That is what I have been following to get it to load from the ZIP file from scra
 7. From the top menu, select Run -> Run... and choose Main
 
 
-You can now enter in the library with librarian "librarian1" or user "sianspike".
+You can now enter in the library with:
+   librarian "lib" and password "1"
+   user "1" and password "1"
+   user "ivan" and password "1"
 
 * The program is given to you in the state that it was when the video started (not after the video ended). It only has the
 most basic data inside.
 ** Obviously, the images will not work because of the absolute path they are stored with (also the dummy data has no images)
 You can set them on your own and then they will work.
-
 
 
 // POTENTIAL PROBLEM
