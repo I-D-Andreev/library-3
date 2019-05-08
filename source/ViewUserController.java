@@ -1,6 +1,7 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -393,6 +394,32 @@ public class ViewUserController extends Controller {
         DrawAvatar drawAvatar = new DrawAvatar(this.imagePathTextField);
         Stage newerStage = new Stage();
         drawAvatar.start(newerStage);
+    }
+
+    /**
+     * When a key is pressed in the repeat email field.
+     * @param event Pressing a key.
+     */
+    @FXML
+    public void repeatEmailKeyPressed(KeyEvent event) {
+        if(repeatEmailTextField.getText().equals(emailTextField.getText())){
+            repeatEmailTextField.styleProperty().setValue("-fx-background-color : #11dd18");
+        } else {
+            repeatEmailTextField.styleProperty().setValue("-fx-background-color : #ea593c");
+        }
+    }
+
+    /**
+     * When a key is pressed in the repeat password field.
+     * @param event Pressing a key.
+     */
+    @FXML
+    public void repeatPasswordKeyPressed(KeyEvent event) {
+        if(repeatPasswordTextField.getText().equals(passwordTextField.getText())){
+            repeatPasswordTextField.styleProperty().setValue("-fx-background-color : #11dd18");
+        } else {
+            repeatPasswordTextField.styleProperty().setValue("-fx-background-color : #ea593c");
+        }
     }
 }
 
