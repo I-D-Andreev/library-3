@@ -2,6 +2,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.util.Optional;
@@ -470,6 +471,32 @@ public class EditAccountController extends Controller {
 
     }
 
+
+    /**
+     * Pressing a key when writing in new email.
+     * @param event Pressing a key.
+     */
+    @FXML
+    public void newEmailKeyPressed(KeyEvent event) {
+        if(newEmailTextfield.getText().equals(repeatNewEmailTextfield.getText())){
+            repeatNewEmailTextfield.styleProperty().setValue("-fx-background-color : #11dd18");
+        } else {
+            repeatNewEmailTextfield.styleProperty().setValue("-fx-background-color : #ea593c");
+        }
+    }
+
+    /**
+     * Pressing a key when writing a new password.
+     * @param event Pressing a key.
+     */
+    @FXML
+    public void newPasswordKeyPressed(KeyEvent event) {
+        if(newPasswordTextfield.getText().equals(repeatNewPasswordTextfield.getText())){
+            repeatNewPasswordTextfield.styleProperty().setValue("-fx-background-color : #11dd18");
+        } else {
+            repeatNewPasswordTextfield.styleProperty().setValue("-fx-background-color : #ea593c");
+        }
+    }
 
     /**
      * Saves the user's new notification preferences.
