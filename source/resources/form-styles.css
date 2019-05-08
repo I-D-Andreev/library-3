@@ -7,9 +7,10 @@ Button {
     -fx-background-color :  #fff7a0;
 }
 
-Label, RadioButton, CheckBox, Text, TextArea {
+Label, RadioButton, Text, TextArea {
     -fx-font-weight : bold;
 }
+
 
 .tab-pane *.tab-header-background {
         -fx-background-color: #c45ae8;

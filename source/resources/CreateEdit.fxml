@@ -35,14 +35,14 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="699.0" prefWidth="1000.0">
                      <children>
-                        <TextField fx:id="titleBookTextField" layoutX="381.0" layoutY="149.0" />
-                        <TextField fx:id="yearBookTextField" layoutX="381.0" layoutY="191.0" />
-                        <TextField fx:id="imagePathBookTextField" disable="true" layoutX="382.0" layoutY="240.0" />
-                        <TextField fx:id="authorBookTextField" layoutX="381.0" layoutY="278.0" />
-                        <TextField fx:id="publisherBookTextField" layoutX="381.0" layoutY="320.0" />
-                        <TextField fx:id="genreBookTextField" layoutX="381.0" layoutY="363.0" />
-                        <TextField fx:id="isbnBookTextField" layoutX="381.0" layoutY="413.0" />
-                        <TextField fx:id="languageBookTextField" layoutX="381.0" layoutY="457.0" />
+                        <TextField fx:id="titleBookTextField" layoutX="396.0" layoutY="149.0" />
+                        <TextField fx:id="yearBookTextField" layoutX="396.0" layoutY="191.0" />
+                        <TextField fx:id="imagePathBookTextField" disable="true" layoutX="397.0" layoutY="240.0" />
+                        <TextField fx:id="authorBookTextField" layoutX="396.0" layoutY="278.0" />
+                        <TextField fx:id="publisherBookTextField" layoutX="396.0" layoutY="320.0" />
+                        <TextField fx:id="genreBookTextField" layoutX="396.0" layoutY="363.0" />
+                        <TextField fx:id="isbnBookTextField" layoutX="396.0" layoutY="413.0" />
+                        <TextField fx:id="languageBookTextField" layoutX="396.0" layoutY="457.0" />
                         <Button fx:id="createBookButton" layoutX="618.0" layoutY="548.0" mnemonicParsing="false" onAction="#createBookButtonClicked" prefHeight="72.0" prefWidth="124.0" text="Create" />
                         <Text layoutX="222.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
                         <Text layoutX="222.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre (Optional)" />
@@ -52,8 +52,8 @@
                         <Text layoutX="222.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
                         <Text layoutX="222.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN (Optional)" />
                         <Text layoutX="222.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language (Optional)" />
-                        <Button fx:id="createBookFindImageButton" layoutX="540.0" layoutY="240.0" mnemonicParsing="false" onAction="#createBookFindImageButtonClicked" text="......" />
-                        <Button fx:id="drawButtonCreateBook" layoutX="599.0" layoutY="243.0" mnemonicParsing="false" onAction="#drawButtonCreateBookClicked" text="Draw" />
+                        <Button fx:id="createBookFindImageButton" layoutX="555.0" layoutY="240.0" mnemonicParsing="false" onAction="#createBookFindImageButtonClicked" text="......" />
+                        <Button fx:id="drawButtonCreateBook" layoutX="614.0" layoutY="243.0" mnemonicParsing="false" onAction="#drawButtonCreateBookClicked" text="Draw" />
                      </children>
                   </AnchorPane>
             </content>
@@ -62,13 +62,13 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="562.0" prefWidth="618.0">
                      <children>
-                        <TextField fx:id="titleDVDTextField" layoutX="357.0" layoutY="130.0" />
-                        <TextField fx:id="yearDVDTextField" layoutX="357.0" layoutY="172.0" />
-                        <TextField fx:id="imagePathDVDTextField" disable="true" layoutX="357.0" layoutY="210.0" />
-                        <TextField fx:id="directorDVDTextField" layoutX="357.0" layoutY="245.0" />
-                        <TextField fx:id="runtimeDVDTextField" layoutX="357.0" layoutY="287.0" />
-                        <TextField fx:id="languageDVDTextField" layoutX="357.0" layoutY="330.0" />
-                        <TextField fx:id="languageSubtitlesDVDTextField" layoutX="366.0" layoutY="404.0" prefHeight="56.0" prefWidth="366.0" />
+                        <TextField fx:id="titleDVDTextField" layoutX="371.0" layoutY="130.0" />
+                        <TextField fx:id="yearDVDTextField" layoutX="371.0" layoutY="172.0" />
+                        <TextField fx:id="imagePathDVDTextField" disable="true" layoutX="371.0" layoutY="210.0" />
+                        <TextField fx:id="directorDVDTextField" layoutX="371.0" layoutY="245.0" />
+                        <TextField fx:id="runtimeDVDTextField" layoutX="371.0" layoutY="287.0" />
+                        <TextField fx:id="languageDVDTextField" layoutX="371.0" layoutY="330.0" />
+                        <TextField fx:id="languageSubtitlesDVDTextField" layoutX="380.0" layoutY="404.0" prefHeight="56.0" prefWidth="366.0" />
                         <Button fx:id="createDVDButton" layoutX="619.0" layoutY="495.0" mnemonicParsing="false" onAction="#createDVDButtonClicked" prefHeight="78.0" prefWidth="145.0" text="Create" />
                         <Text layoutX="198.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language Subtitles (Optional)" />
                         <Text layoutX="198.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
@@ -77,9 +77,9 @@
                         <Text layoutX="198.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Runtime" />
                         <Text layoutX="198.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language (Optional)" />
                         <Text layoutX="199.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
-                        <Text layoutX="366.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Subtitle languages should be comma separated)" />
-                        <Button fx:id="createDvdFindImageButton" layoutX="511.0" layoutY="210.0" mnemonicParsing="false" onAction="#createDvdFindImageButtonClicked" text="......" />
-                        <Button fx:id="drawButtonCreateDVD" layoutX="562.0" layoutY="210.0" mnemonicParsing="false" onAction="#drawButtonCreateDVDClicked" text="Draw" />
+                        <Text layoutX="380.0" layoutY="479.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(Subtitle languages should be comma separated)" />
+                        <Button fx:id="createDvdFindImageButton" layoutX="525.0" layoutY="210.0" mnemonicParsing="false" onAction="#createDvdFindImageButtonClicked" text="......" />
+                        <Button fx:id="drawButtonCreateDVD" layoutX="576.0" layoutY="210.0" mnemonicParsing="false" onAction="#drawButtonCreateDVDClicked" text="Draw" />
                      </children>
                   </AnchorPane>
                </content>
@@ -88,12 +88,12 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="388.0" prefWidth="600.0">
                      <children>
-                        <TextField fx:id="titleLaptopTextField" layoutX="376.0" layoutY="184.0" />
-                        <TextField fx:id="yearLaptopTextField" layoutX="376.0" layoutY="226.0" />
-                        <TextField fx:id="imagePathLaptopTextField" disable="true" layoutX="376.0" layoutY="267.0" />
-                        <TextField fx:id="manufacturerLaptopTextField" layoutX="376.0" layoutY="309.0" />
-                        <TextField fx:id="modelLaptopTextField" layoutX="376.0" layoutY="351.0" />
-                        <TextField fx:id="operatingSystemLaptopTextField" layoutX="376.0" layoutY="394.0" />
+                        <TextField fx:id="titleLaptopTextField" layoutX="387.0" layoutY="184.0" />
+                        <TextField fx:id="yearLaptopTextField" layoutX="387.0" layoutY="226.0" />
+                        <TextField fx:id="imagePathLaptopTextField" disable="true" layoutX="387.0" layoutY="267.0" />
+                        <TextField fx:id="manufacturerLaptopTextField" layoutX="387.0" layoutY="309.0" />
+                        <TextField fx:id="modelLaptopTextField" layoutX="387.0" layoutY="351.0" />
+                        <TextField fx:id="operatingSystemLaptopTextField" layoutX="387.0" layoutY="394.0" />
                         <Button fx:id="createLaptopButton" layoutX="622.0" layoutY="508.0" mnemonicParsing="false" onAction="#createLaptopButtonClicked" prefHeight="73.0" prefWidth="135.0" text="Create" />
                         <Text layoutX="217.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
                         <Text layoutX="217.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
@@ -101,8 +101,8 @@
                         <Text layoutX="222.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model" />
                         <Text layoutX="222.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operating System" />
                         <Text layoutX="217.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
-                        <Button fx:id="createLaptopFindImageButton" layoutX="535.0" layoutY="267.0" mnemonicParsing="false" onAction="#createLaptopFindImageButtonClicked" text="....." />
-                        <Button fx:id="drawButtonCreateLaptop" layoutX="584.0" layoutY="267.0" mnemonicParsing="false" onAction="#drawButtonCreateLaptopClicked" text="Draw" />
+                        <Button fx:id="createLaptopFindImageButton" layoutX="546.0" layoutY="267.0" mnemonicParsing="false" onAction="#createLaptopFindImageButtonClicked" text="....." />
+                        <Button fx:id="drawButtonCreateLaptop" layoutX="595.0" layoutY="267.0" mnemonicParsing="false" onAction="#drawButtonCreateLaptopClicked" text="Draw" />
                      </children>
                   </AnchorPane>
                </content>
@@ -111,20 +111,20 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Text layoutX="261.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
-                        <Text layoutX="260.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
+                        <Text layoutX="206.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
+                        <Text layoutX="206.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
                         <Text layoutX="206.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image Path" />
-                        <Text layoutX="245.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Publisher" />
-                        <Text layoutX="260.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" />
-                        <Text layoutX="225.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certificate Rating" />
-                        <Text layoutX="218.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Multiplayer Support" />
-                        <TextField fx:id="createGameTitleTextField" layoutX="370.0" layoutY="150.0" />
-                        <TextField fx:id="createGameYearTextField" layoutX="370.0" layoutY="200.0" />
-                        <TextField fx:id="createGameImagePathTextField" disable="true" layoutX="370.0" layoutY="249.0" />
-                        <Button fx:id="createGameFindImageButton" layoutX="537.0" layoutY="249.0" mnemonicParsing="false" onAction="#createGameFindImageButtonClicked" text="..." />
-                        <Button fx:id="createGameDrawButton" layoutX="583.0" layoutY="249.0" mnemonicParsing="false" onAction="#createGameDrawButtonClicked" text="Draw" />
-                        <TextField fx:id="createGamePublisherTextField" layoutX="370.0" layoutY="305.0" />
-                        <TextField fx:id="createGameGenreTextField" layoutX="370.0" layoutY="359.0" />
+                        <Text layoutX="206.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Publisher" />
+                        <Text layoutX="206.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" />
+                        <Text layoutX="206.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certificate Rating" />
+                        <Text layoutX="206.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Multiplayer Support" />
+                        <TextField fx:id="createGameTitleTextField" layoutX="379.0" layoutY="150.0" />
+                        <TextField fx:id="createGameYearTextField" layoutX="379.0" layoutY="200.0" />
+                        <TextField fx:id="createGameImagePathTextField" disable="true" layoutX="379.0" layoutY="249.0" />
+                        <Button fx:id="createGameFindImageButton" layoutX="546.0" layoutY="249.0" mnemonicParsing="false" onAction="#createGameFindImageButtonClicked" text="..." />
+                        <Button fx:id="createGameDrawButton" layoutX="592.0" layoutY="249.0" mnemonicParsing="false" onAction="#createGameDrawButtonClicked" text="Draw" />
+                        <TextField fx:id="createGamePublisherTextField" layoutX="379.0" layoutY="305.0" />
+                        <TextField fx:id="createGameGenreTextField" layoutX="379.0" layoutY="359.0" />
                          <ChoiceBox fx:id="createGameCertRatingChoiceBox" layoutX="379.0" layoutY="413.0" prefWidth="150.0">
                              <items>
                                  <FXCollections fx:factory="observableArrayList">
@@ -137,7 +137,7 @@
                                  </FXCollections>
                              </items>
                          </ChoiceBox>
-                         <ChoiceBox fx:id="createGameMultiplayerChoiceBox" layoutX="379.0" layoutY="471.0" prefWidth="150.0">
+                         <ChoiceBox fx:id="createGameMultiplayerChoiceBox" layoutX="370.0" layoutY="471.0" prefWidth="150.0">
                              <items>
                                  <FXCollections fx:factory="observableArrayList">
                                      <String fx:value="Yes" />
@@ -155,15 +155,15 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="388.0" prefWidth="600.0">
                      <children>
                         <TextField fx:id="uniqueIDSearchEditBookTextField" layoutX="383.0" layoutY="33.0" />
-                        <TextField fx:id="titleEditBookTextField" layoutX="385.0" layoutY="212.0" />
-                        <TextField fx:id="yearEditBookTextField" layoutX="385.0" layoutY="254.0" />
-                        <TextField fx:id="authorEditBookTextField" layoutX="385.0" layoutY="296.0" />
-                        <TextField fx:id="imagePathEditBook" disable="true" layoutX="384.0" layoutY="335.0" />
-                        <TextField fx:id="publisherEditBookTextField" layoutX="384.0" layoutY="374.0" />
-                        <TextField fx:id="genreEditBookTextField" layoutX="384.0" layoutY="415.0" />
-                        <TextField fx:id="isbnEditBookTextField" layoutX="384.0" layoutY="455.0" />
-                        <TextField fx:id="languageEditBookTextField" layoutX="383.0" layoutY="498.0" />
-                        <Button fx:id="editBookButton" layoutX="649.0" layoutY="520.0" mnemonicParsing="false" onAction="#editBookButtonClicked" prefHeight="70.0" prefWidth="129.0" text="Edit" />
+                        <TextField fx:id="titleEditBookTextField" layoutX="399.0" layoutY="212.0" />
+                        <TextField fx:id="yearEditBookTextField" layoutX="399.0" layoutY="254.0" />
+                        <TextField fx:id="authorEditBookTextField" layoutX="399.0" layoutY="296.0" />
+                        <TextField fx:id="imagePathEditBook" disable="true" layoutX="398.0" layoutY="335.0" />
+                        <TextField fx:id="publisherEditBookTextField" layoutX="398.0" layoutY="374.0" />
+                        <TextField fx:id="genreEditBookTextField" layoutX="398.0" layoutY="415.0" />
+                        <TextField fx:id="isbnEditBookTextField" layoutX="398.0" layoutY="455.0" />
+                        <TextField fx:id="languageEditBookTextField" layoutX="397.0" layoutY="498.0" />
+                        <Button fx:id="editBookButton" layoutX="649.0" layoutY="548.0" mnemonicParsing="false" onAction="#editBookButtonClicked" prefHeight="62.0" prefWidth="120.0" text="Edit" />
                         <Text layoutX="223.0" layoutY="513.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language (Optional)" />
                         <Text layoutX="226.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN (Optional)" />
                         <Text layoutX="230.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
@@ -176,8 +176,8 @@
                         <Line endX="898.9999389648438" layoutX="121.0" layoutY="84.0" startX="-122.0" />
                         <Text layoutX="230.0" layoutY="352.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
                         <Button fx:id="bookDeleteButton" layoutX="229.0" layoutY="548.0" mnemonicParsing="false" onAction="#bookDeleteButtonClicked" prefHeight="62.0" prefWidth="120.0" text="Delete" />
-                        <Button fx:id="editBookFindImageButton" layoutX="547.0" layoutY="335.0" mnemonicParsing="false" onAction="#editBookFindImageButtonClicked" text="....." />
-                        <Button fx:id="drawButtonEditBook" layoutX="586.0" layoutY="335.0" mnemonicParsing="false" onAction="#drawButtonEditBookClicked" text="Draw" />
+                        <Button fx:id="editBookFindImageButton" layoutX="561.0" layoutY="335.0" mnemonicParsing="false" onAction="#editBookFindImageButtonClicked" text="....." />
+                        <Button fx:id="drawButtonEditBook" layoutX="600.0" layoutY="335.0" mnemonicParsing="false" onAction="#drawButtonEditBookClicked" text="Draw" />
                      </children>
                   </AnchorPane>
                </content>
@@ -187,14 +187,14 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="611.0" prefWidth="600.0">
                      <children>
                         <TextField fx:id="uniqueIDSearchEditDVDTextField" layoutX="435.0" layoutY="34.0" />
-                        <TextField fx:id="titleEditDVDTextField" layoutX="437.0" layoutY="181.0" />
-                        <TextField fx:id="yearEditDVDTextField" layoutX="437.0" layoutY="223.0" />
-                        <TextField fx:id="imagePathEditDVD" disable="true" layoutX="437.0" layoutY="258.0" />
-                        <TextField fx:id="directorEditDVDTextField" layoutX="437.0" layoutY="293.0" />
-                        <TextField fx:id="runtimeEditDVDTextField" layoutX="437.0" layoutY="332.0" />
-                        <TextField fx:id="languageEditDVDTextField" layoutX="437.0" layoutY="372.0" />
-                        <TextField fx:id="languageSubtitlesEditDVDTextField" layoutX="482.0" layoutY="427.0" prefHeight="49.0" prefWidth="322.0" />
-                        <Button fx:id="editDVDButton" layoutX="731.0" layoutY="520.0" mnemonicParsing="false" onAction="#editDVDButtonClicked" prefHeight="62.0" prefWidth="120.0" text="Edit" />
+                        <TextField fx:id="titleEditDVDTextField" layoutX="453.0" layoutY="181.0" />
+                        <TextField fx:id="yearEditDVDTextField" layoutX="453.0" layoutY="223.0" />
+                        <TextField fx:id="imagePathEditDVD" disable="true" layoutX="453.0" layoutY="258.0" />
+                        <TextField fx:id="directorEditDVDTextField" layoutX="453.0" layoutY="293.0" />
+                        <TextField fx:id="runtimeEditDVDTextField" layoutX="453.0" layoutY="332.0" />
+                        <TextField fx:id="languageEditDVDTextField" layoutX="453.0" layoutY="372.0" />
+                        <TextField fx:id="languageSubtitlesEditDVDTextField" layoutX="498.0" layoutY="427.0" prefHeight="49.0" prefWidth="322.0" />
+                        <Button fx:id="editDVDButton" layoutX="731.0" layoutY="521.0" mnemonicParsing="false" onAction="#editDVDButtonClicked" prefHeight="62.0" prefWidth="120.0" text="Edit" />
                         <Button fx:id="editDVDSearchButton" layoutX="660.0" layoutY="34.0" mnemonicParsing="false" onAction="#editDVDSearchButtonClicked" text="Search" />
                         <Text layoutX="280.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Language Subtitles (Optional)" />
                         <Text layoutX="285.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
@@ -205,9 +205,9 @@
                         <Text layoutX="307.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Unique ID Search" />
                         <Line endX="909.4000244140625" layoutX="101.0" layoutY="78.0" startX="-122.0" />
                         <Text layoutX="285.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
-                        <Button fx:id="dvdDeleteButton" layoutX="293.0" layoutY="521.0" mnemonicParsing="false" onAction="#dvdDeleteButtonClicked" prefHeight="62.0" prefWidth="113.0" text="Delete" />
-                        <Button fx:id="editDvdFindImageButton" layoutX="593.0" layoutY="258.0" mnemonicParsing="false" onAction="#editDvdFindImageButtonClicked" text="....." />
-                        <Button fx:id="drawButtonEditDVD" layoutX="633.0" layoutY="258.0" mnemonicParsing="false" onAction="#drawButtonEditDVDClicked" text="Draw" />
+                        <Button fx:id="dvdDeleteButton" layoutX="293.0" layoutY="521.0" mnemonicParsing="false" onAction="#dvdDeleteButtonClicked" prefHeight="62.0" prefWidth="120.0" text="Delete" />
+                        <Button fx:id="editDvdFindImageButton" layoutX="609.0" layoutY="258.0" mnemonicParsing="false" onAction="#editDvdFindImageButtonClicked" text="....." />
+                        <Button fx:id="drawButtonEditDVD" layoutX="649.0" layoutY="258.0" mnemonicParsing="false" onAction="#drawButtonEditDVDClicked" text="Draw" />
                      </children>
                   </AnchorPane>
                </content>
@@ -217,12 +217,12 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="388.0" prefWidth="600.0">
                      <children>
                         <TextField fx:id="uniqueIDSearchEditLaptopTextField" layoutX="430.0" layoutY="36.0" />
-                        <TextField fx:id="titleEditLaptopTextField" layoutX="434.0" layoutY="192.0" />
-                        <TextField fx:id="yearEditLaptopTextField" layoutX="434.0" layoutY="234.0" />
-                        <TextField fx:id="manufacturerEditLaptopTextField" layoutX="434.0" layoutY="313.0" />
-                        <TextField fx:id="modelEditLaptopTextField" layoutX="434.0" layoutY="355.0" />
-                        <TextField fx:id="operatingSystemEditLaptopTextField" layoutX="434.0" layoutY="398.0" />
-                        <Button fx:id="editLaptopButton" layoutX="699.0" layoutY="480.0" mnemonicParsing="false" onAction="#editLaptopButtonClicked" prefHeight="73.0" prefWidth="109.0" text="Edit" />
+                        <TextField fx:id="titleEditLaptopTextField" layoutX="441.0" layoutY="192.0" />
+                        <TextField fx:id="yearEditLaptopTextField" layoutX="441.0" layoutY="234.0" />
+                        <TextField fx:id="manufacturerEditLaptopTextField" layoutX="441.0" layoutY="313.0" />
+                        <TextField fx:id="modelEditLaptopTextField" layoutX="441.0" layoutY="355.0" />
+                        <TextField fx:id="operatingSystemEditLaptopTextField" layoutX="441.0" layoutY="398.0" />
+                        <Button fx:id="editLaptopButton" layoutX="699.0" layoutY="488.0" mnemonicParsing="false" onAction="#editLaptopButtonClicked" prefHeight="62.0" prefWidth="99.0" text="Edit" />
                         <Text layoutX="275.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Title" />
                         <Text layoutX="275.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year" />
                         <Text layoutX="275.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manufacturer" />
@@ -232,10 +232,10 @@
                         <Line endX="908.3333129882812" layoutX="101.0" layoutY="78.0" startX="-122.0" />
                         <Button fx:id="editLaptopSearchButton" layoutX="655.0" layoutY="36.0" mnemonicParsing="false" onAction="#editLaptopSearchButtonClicked" text="Search" />
                         <Text layoutX="275.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thumbnail Image path" />
-                        <TextField fx:id="imagePathEditLaptop" disable="true" layoutX="434.0" layoutY="274.0" />
+                        <TextField fx:id="imagePathEditLaptop" disable="true" layoutX="441.0" layoutY="274.0" />
                         <Button fx:id="laptopDeleteButton" layoutX="284.0" layoutY="488.0" mnemonicParsing="false" onAction="#laptopDeleteButtonClicked" prefHeight="62.0" prefWidth="99.0" text="Delete" />
-                        <Button fx:id="editLaptopFindImageButton" layoutX="597.0" layoutY="274.0" mnemonicParsing="false" onAction="#editLaptopFindImageButtonClicked" text="....." />
-                        <Button fx:id="drawButtonEditLaptop" layoutX="654.0" layoutY="275.0" mnemonicParsing="false" onAction="#drawButtonEditLaptopClicked" prefHeight="26.0" prefWidth="59.0" text="Draw" />
+                        <Button fx:id="editLaptopFindImageButton" layoutX="604.0" layoutY="274.0" mnemonicParsing="false" onAction="#editLaptopFindImageButtonClicked" text="....." />
+                        <Button fx:id="drawButtonEditLaptop" layoutX="661.0" layoutY="275.0" mnemonicParsing="false" onAction="#drawButtonEditLaptopClicked" prefHeight="26.0" prefWidth="59.0" text="Draw" />
                      </children>
                   </AnchorPane>
                </content>
@@ -254,12 +254,12 @@
                         <Text layoutX="276.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genre" />
                         <Text layoutX="243.0" layoutY="419.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Certificate Rating" />
                         <Text layoutX="236.0" layoutY="462.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Multiplayer Support" wrappingWidth="120.70068359375" />
-                        <TextField fx:id="editGameTitleTextField" layoutX="404.0" layoutY="192.0" />
-                        <TextField fx:id="editGameYearTextField" layoutX="404.0" layoutY="227.0" />
-                        <TextField fx:id="editGameImagePathTextField" disable="true" layoutX="404.0" layoutY="270.0" />
-                        <TextField fx:id="editGamePublisherTextField" layoutX="404.0" layoutY="310.0" />
-                        <TextField fx:id="editGameGenreTextField" layoutX="404.0" layoutY="356.0" />
-                        <ChoiceBox fx:id="editGameCertRatingChoiceBox" layoutX="413.0" layoutY="401.0" prefWidth="150.0">
+                        <TextField fx:id="editGameTitleTextField" layoutX="421.0" layoutY="192.0" />
+                        <TextField fx:id="editGameYearTextField" layoutX="421.0" layoutY="227.0" />
+                        <TextField fx:id="editGameImagePathTextField" disable="true" layoutX="421.0" layoutY="270.0" />
+                        <TextField fx:id="editGamePublisherTextField" layoutX="421.0" layoutY="310.0" />
+                        <TextField fx:id="editGameGenreTextField" layoutX="421.0" layoutY="356.0" />
+                        <ChoiceBox fx:id="editGameCertRatingChoiceBox" layoutX="420.0" layoutY="401.0" prefWidth="150.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Early Childhood" />
@@ -271,7 +271,7 @@
                                 </FXCollections>
                             </items>
                         </ChoiceBox>
-                        <ChoiceBox fx:id="editGameMultiplayerChoiceBox" layoutX="413.0" layoutY="444.0" prefWidth="150.0">
+                        <ChoiceBox fx:id="editGameMultiplayerChoiceBox" layoutX="420.0" layoutY="444.0" prefWidth="150.0">
                             <items>
                                 <FXCollections fx:factory="observableArrayList">
                                     <String fx:value="Yes" />
@@ -279,8 +279,8 @@
                                 </FXCollections>
                             </items>
                         </ChoiceBox>
-                        <Button fx:id="editGameImagePathButton" layoutX="571.0" layoutY="270.0" mnemonicParsing="false" onAction="#editGameImagePathButtonClicked" text="..." />
-                        <Button fx:id="editGameDrawButton" layoutX="619.0" layoutY="270.0" mnemonicParsing="false" onAction="#editGameDrawButtonClicked" text="Draw" />
+                        <Button fx:id="editGameImagePathButton" layoutX="588.0" layoutY="270.0" mnemonicParsing="false" onAction="#editGameImagePathButtonClicked" text="..." />
+                        <Button fx:id="editGameDrawButton" layoutX="636.0" layoutY="270.0" mnemonicParsing="false" onAction="#editGameDrawButtonClicked" text="Draw" />
                         <Button fx:id="editGameDeleteButton" layoutX="265.0" layoutY="501.0" mnemonicParsing="false" onAction="#editGameDeleteButtonClicked" prefHeight="62.0" prefWidth="106.0" text="Delete" />
                         <Button fx:id="editGameEditButton" layoutX="735.0" layoutY="501.0" mnemonicParsing="false" onAction="#editGameEditButtonClicked" prefHeight="62.0" prefWidth="106.0" text="Edit" />
                         <Line endX="908.7333374023438" layoutX="107.0" layoutY="86.0" startX="-122.0" />

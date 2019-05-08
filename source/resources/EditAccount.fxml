@@ -306,11 +306,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="346.0" layoutY="153.0" prefHeight="26.0" prefWidth="466.0" text="Tick the boxes for which you would like to receive emails:">
-                           <font>
-                              <Font size="16.0" />
-                           </font>
-                        </Label>
+                        <Label layoutX="346.0" layoutY="153.0" prefHeight="26.0" prefWidth="466.0" text="Tick the boxes for which you would like to receive emails:" />
                         <CheckBox fx:id="returnResourceCheckbox" disable="true" layoutX="346.0" layoutY="191.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="254.0" selected="true" style="-fx-text-fill: black;" text="Prompt To Return A Resource">
                            <font>
                               <Font name="System Bold" size="14.0" />
