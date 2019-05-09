@@ -411,6 +411,11 @@ public class EditAccountController extends Controller {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Wrong password!",
                     ButtonType.OK);
             alert.show();
+        } else if (!Security.checkPasswordStrength(newPasswordTextfield.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "A password must contain at least 6 characters, " +
+                    "a digit, a letter and a symbol!",
+                    ButtonType.OK);
+            alert.show();
         } else if (newPasswordTextfield.getText().equals("")) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Password can't be empty!",
                     ButtonType.OK);
@@ -426,13 +431,15 @@ public class EditAccountController extends Controller {
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "New password set successfully!",
                     ButtonType.OK);
-            alert.show();
+            alert.showAndWait();
+
+            // clear fields
+            oldPasswordTextfield.clear();
+            newPasswordTextfield.clear();
+            repeatNewPasswordTextfield.clear();
         }
 
-        // clear fields
-        oldPasswordTextfield.clear();
-        newPasswordTextfield.clear();
-        repeatNewPasswordTextfield.clear();
+
 
     }
 
@@ -451,6 +458,10 @@ public class EditAccountController extends Controller {
             Alert alert = new Alert(Alert.AlertType.ERROR, "All fields must be filled in!",
                     ButtonType.OK);
             alert.show();
+        } else if (!MailSender.checkCorrectEmail(newEmailTextfield.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Incorrect email!",
+                    ButtonType.OK);
+            alert.show();
         } else if (!newEmailTextfield.getText().equals(repeatNewEmailTextfield.getText())) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Emails must match!",
                     ButtonType.OK);
@@ -461,24 +472,24 @@ public class EditAccountController extends Controller {
 
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "New email set successfully!",
                     ButtonType.OK);
-            alert.show();
+            alert.showAndWait();
+
+            // clear fields
+            passwordTextfield.clear();
+            newEmailTextfield.clear();
+            repeatNewEmailTextfield.clear();
         }
-
-        // clear fields
-        passwordTextfield.clear();
-        newEmailTextfield.clear();
-        repeatNewEmailTextfield.clear();
-
     }
 
 
     /**
      * Pressing a key when writing in new email.
+     *
      * @param event Pressing a key.
      */
     @FXML
     public void newEmailKeyPressed(KeyEvent event) {
-        if(newEmailTextfield.getText().equals(repeatNewEmailTextfield.getText())){
+        if (newEmailTextfield.getText().equals(repeatNewEmailTextfield.getText())) {
             repeatNewEmailTextfield.styleProperty().setValue("-fx-background-color : #11dd18");
         } else {
             repeatNewEmailTextfield.styleProperty().setValue("-fx-background-color : #ea593c");
@@ -487,14 +498,48 @@ public class EditAccountController extends Controller {
 
     /**
      * Pressing a key when writing a new password.
+     *
      * @param event Pressing a key.
      */
     @FXML
     public void newPasswordKeyPressed(KeyEvent event) {
-        if(newPasswordTextfield.getText().equals(repeatNewPasswordTextfield.getText())){
+        if (newPasswordTextfield.getText().equals(repeatNewPasswordTextfield.getText())) {
             repeatNewPasswordTextfield.styleProperty().setValue("-fx-background-color : #11dd18");
         } else {
             repeatNewPasswordTextfield.styleProperty().setValue("-fx-background-color : #ea593c");
+        }
+    }
+
+
+    /**
+     * Handles when fillin in the text field to choose a new email.
+     *
+     * @param event Pressing a key.
+     */
+    @FXML
+    public void emailKeyPressed(KeyEvent event) {
+        if (MailSender.checkCorrectEmail(newEmailTextfield.getText())) {
+            // green color
+            newEmailTextfield.styleProperty().setValue("-fx-background-color : #11dd18");
+        } else {
+            // red color
+            newEmailTextfield.styleProperty().setValue("-fx-background-color : #ea593c");
+        }
+    }
+
+    /**
+     * Handles when filling in the text field to choose a new password.
+     *
+     * @param event Pressing a key.
+     */
+    @FXML
+    public void passwordKeyPressed(KeyEvent event) {
+        if (Security.checkPasswordStrength(newPasswordTextfield.getText())) {
+            // green color
+            newPasswordTextfield.styleProperty().setValue("-fx-background-color : #11dd18");
+        } else {
+            // red color
+            newPasswordTextfield.styleProperty().setValue("-fx-background-color : #ea593c");
         }
     }
 
