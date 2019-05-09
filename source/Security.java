@@ -91,4 +91,30 @@ public class Security {
     }
 
 
+    /**
+     * Checks whether a password is strong enough. A strong password has at least 6 characters,
+     * a letter, a number and a symbol.
+     * @param password The plain text password.
+     * @return True if password is strong enough, false - otherwise.
+     */
+    public static boolean checkPasswordStrength(String password){
+        boolean atLeast6Characters = (password.length()>=6);
+        boolean hasLetter = false;
+        boolean hasNumber = false;
+        boolean hasSymbol = false;
+
+        for(char character : password.toCharArray()){
+            if(Character.isDigit(character)){
+                hasNumber = true;
+            } else if(Character.isLetter(character)){
+                hasLetter = true;
+            } else {
+                hasSymbol = true;
+            }
+       }
+
+        return (atLeast6Characters && hasLetter && hasNumber && hasSymbol);
+    }
+
+
 }
