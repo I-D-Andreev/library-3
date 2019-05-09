@@ -78,7 +78,8 @@ public class ForgottenPasswordController extends Controller {
             String newLine = "<br>";
             // send the email to the user with the new password
             String messageText = "Hello." + newLine + "Your new password is: " + newPassword
-                    + newLine + "Best regards, " + newLine + "TaweLib team";
+                    + newLine + "<b> Don't forget to change your password! </b>" + newLine
+                    + "Best regards, " + newLine + "TaweLib team";
 
             boolean messageSent = MailSender.sendEmail(user.getEmail(), "Tawe-Lib new password", messageText);
 
