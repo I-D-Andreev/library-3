@@ -95,7 +95,7 @@
                               <Insets left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <PasswordField fx:id="passwordTextField" alignment="CENTER" promptText="Password">
+                        <PasswordField fx:id="passwordTextField" alignment="CENTER" onKeyReleased="#passwordKeyPressed" promptText="Password">
                            <VBox.margin>
                               <Insets left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
@@ -105,7 +105,7 @@
                               <Insets left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>
                         </PasswordField>
-                        <TextField fx:id="emailTextField" alignment="CENTER" layoutX="10.0" layoutY="514.0" promptText="Email Address">
+                        <TextField fx:id="emailTextField" alignment="CENTER" layoutX="10.0" layoutY="514.0" onKeyReleased="#emailKeyPressed" promptText="Email Address">
                            <VBox.margin>
                               <Insets left="20.0" right="20.0" top="10.0" />
                            </VBox.margin>

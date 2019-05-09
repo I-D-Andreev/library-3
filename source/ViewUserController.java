@@ -237,8 +237,8 @@ public class ViewUserController extends Controller {
         // gather info
         String username = usernameTextField.getText();
         // passwords are stored encoded so we don't have them in their plain text format at any time
-        String encodedPassword = Security.generatePassword(passwordTextField.getText(),accountSalt);
-        String encodedRepeatPassword = Security.generatePassword(passwordTextField.getText(),accountSalt);
+        String encodedPassword = Security.generatePassword(passwordTextField.getText(), accountSalt);
+        String encodedRepeatPassword = Security.generatePassword(passwordTextField.getText(), accountSalt);
         String emailAddress = emailTextField.getText();
         String repeatEmailAddress = repeatEmailTextField.getText();
         String secretQuestion = secretQuestionTextField.getText();
@@ -272,11 +272,20 @@ public class ViewUserController extends Controller {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Username already taken.",
                     ButtonType.OK);
             alert.show();
-        } else if (!encodedPassword.equals(encodedRepeatPassword)){
+        } else if (!Security.checkPasswordStrength(passwordTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "A password must contain at least 6 characters, " +
+                    "a digit, a letter and a symbol!",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!MailSender.checkCorrectEmail(emailTextField.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Incorrect email.",
+                    ButtonType.OK);
+            alert.show();
+        } else if (!encodedPassword.equals(encodedRepeatPassword)) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Passwords must match.",
                     ButtonType.OK);
             alert.show();
-        } else if(!emailAddress.equals(repeatEmailAddress)){
+        } else if (!emailAddress.equals(repeatEmailAddress)) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Emails must match.",
                     ButtonType.OK);
             alert.show();
@@ -398,12 +407,45 @@ public class ViewUserController extends Controller {
     }
 
     /**
+     * When a key is pressed in the email text field.
+     *
+     * @param event Pressing a key in the email text field.
+     */
+    @FXML
+    public void emailKeyPressed(KeyEvent event) {
+        if (MailSender.checkCorrectEmail(emailTextField.getText())) {
+            // green color
+            emailTextField.styleProperty().setValue("-fx-background-color : #11dd18");
+        } else {
+            // red color
+            emailTextField.styleProperty().setValue("-fx-background-color : #ea593c");
+        }
+    }
+
+    /**
+     * When a key is pressed in the password field.
+     *
+     * @param event Pressing a key.
+     */
+    @FXML
+    public void passwordKeyPressed(KeyEvent event) {
+        if (Security.checkPasswordStrength(passwordTextField.getText())) {
+            // green color
+            passwordTextField.styleProperty().setValue("-fx-background-color : #11dd18");
+        } else {
+            // red color
+            passwordTextField.styleProperty().setValue("-fx-background-color : #ea593c");
+        }
+    }
+
+    /**
      * When a key is pressed in the repeat email field.
+     *
      * @param event Pressing a key.
      */
     @FXML
     public void repeatEmailKeyPressed(KeyEvent event) {
-        if(repeatEmailTextField.getText().equals(emailTextField.getText())){
+        if (repeatEmailTextField.getText().equals(emailTextField.getText())) {
             repeatEmailTextField.styleProperty().setValue("-fx-background-color : #11dd18");
         } else {
             repeatEmailTextField.styleProperty().setValue("-fx-background-color : #ea593c");
@@ -412,27 +454,30 @@ public class ViewUserController extends Controller {
 
     /**
      * When a key is pressed in the repeat password field.
+     *
      * @param event Pressing a key.
      */
     @FXML
     public void repeatPasswordKeyPressed(KeyEvent event) {
-        if(repeatPasswordTextField.getText().equals(passwordTextField.getText())){
+        if (repeatPasswordTextField.getText().equals(passwordTextField.getText())) {
             repeatPasswordTextField.styleProperty().setValue("-fx-background-color : #11dd18");
         } else {
             repeatPasswordTextField.styleProperty().setValue("-fx-background-color : #ea593c");
         }
     }
 
+
     /**
      * What happens when any key is pressed
+     *
      * @param event Any key pressed.
      */
     @FXML
     public void keyPressed(KeyEvent event) {
-    // if pressed key is enter
-        if(event.getCode().compareTo(KeyCode.ENTER) == 0){
-        addUserButtonClicked(new ActionEvent(event.getSource(), event.getTarget()));
-    }
+        // if pressed key is enter
+        if (event.getCode().compareTo(KeyCode.ENTER) == 0) {
+            addUserButtonClicked(new ActionEvent(event.getSource(), event.getTarget()));
+        }
     }
 
 }
