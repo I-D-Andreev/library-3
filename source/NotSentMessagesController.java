@@ -8,6 +8,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 import javax.mail.Message;
 import javax.mail.internet.MimeMessage;
+import java.util.ArrayList;
 
 /**
  * Controller class for the Not sent messages screen.
@@ -74,7 +75,14 @@ public class NotSentMessagesController extends Controller {
      * Fills the data in the table.
      */
     private void fillInData() {
-        for (MimeMessage m : MailSender.NOT_SENT_MESSAGES) {
+        ArrayList<MimeMessage> notSentMessages = null;
+
+        // copy the array so that we can iterate over it
+        synchronized (MailSender.NOT_SENT_MESSAGES){
+            notSentMessages = new ArrayList<>(MailSender.NOT_SENT_MESSAGES);
+        }
+
+        for (MimeMessage m : notSentMessages) {
 
             try {
                 String email = m.getRecipients(Message.RecipientType.TO)[0].toString();
