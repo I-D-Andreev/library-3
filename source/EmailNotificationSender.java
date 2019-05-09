@@ -150,7 +150,7 @@ public class EmailNotificationSender {
                 + bestRegards;
 
         return MailSender.sendEmail(recipient.getEmail(),
-                "Tawe-Lib A Resource Should Be Returned By " + dueDate,
+                "Tawe-Lib Resource " + returnCopy.getUniqueCopyID()+  " Should Be Returned By " + dueDate,
                 message);
     }
 
