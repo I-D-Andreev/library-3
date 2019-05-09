@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Properties;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * A class to deal with sending emails.
@@ -83,6 +85,20 @@ public class MailSender {
         } catch (MessagingException e) {
             return false;
         }
+    }
+
+
+    /**
+     * Checks if an email is correct.
+     * @param email The email.
+     * @return True if email is of type aaa@bbb.cc, false - otherwise.
+     */
+    public static boolean checkCorrectEmail(String email){
+        Pattern validEmailPattern =
+                Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
+
+        Matcher matcher = validEmailPattern.matcher(email);
+        return matcher.find();
     }
 
 
