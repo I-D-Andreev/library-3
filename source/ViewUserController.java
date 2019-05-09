@@ -338,6 +338,11 @@ public class ViewUserController extends Controller {
         librarianRadioButton.setSelected(false);
         userRadioButton.setSelected(false);
         imagePathTextField.setText("No File Chosen.");
+
+        passwordTextField.styleProperty().setValue("-fx-background-color:white");
+        repeatPasswordTextField.styleProperty().setValue("-fx-background-color:white");
+        emailTextField.styleProperty().setValue("-fx-background-color:white");
+        repeatEmailTextField.styleProperty().setValue("-fx-background-color:white");
     }
 
     /**

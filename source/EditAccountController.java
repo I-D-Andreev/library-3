@@ -437,6 +437,10 @@ public class EditAccountController extends Controller {
             oldPasswordTextfield.clear();
             newPasswordTextfield.clear();
             repeatNewPasswordTextfield.clear();
+
+            newPasswordTextfield.styleProperty().setValue("-fx-background-color:white");
+            repeatNewPasswordTextfield.styleProperty().setValue("-fx-background-color:white");
+
         }
 
 
@@ -478,6 +482,10 @@ public class EditAccountController extends Controller {
             passwordTextfield.clear();
             newEmailTextfield.clear();
             repeatNewEmailTextfield.clear();
+
+            newEmailTextfield.styleProperty().setValue("-fx-background-color:white");
+            repeatNewEmailTextfield.styleProperty().setValue("-fx-background-color:white");
+
         }
     }
 
