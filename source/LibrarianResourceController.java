@@ -116,6 +116,7 @@ public class LibrarianResourceController extends Controller {
      * Opens the trailer for the DVD resource.
      *
      * @param event When the trailer button is clicked.
+     * @throws Exception
      */
     @FXML
     void trailerButtonClicked(ActionEvent event) throws Exception {

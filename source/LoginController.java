@@ -34,6 +34,7 @@ public class LoginController extends Controller {
     /**
      * When the login button is clicked, this method retrieves the text from the usernameTextField and checks,
      * whether the user exists.
+     * @param event The login button being clicked.
      */
     @FXML
     private void loginButtonClicked(ActionEvent event) {

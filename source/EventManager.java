@@ -23,6 +23,7 @@ public class EventManager implements Serializable {
 
     /**
      * Initializes the event manager.
+     * @param library The library the event manager is a manager of.
      */
     public EventManager(Library library) {
         this.library = library;
@@ -102,6 +103,7 @@ public class EventManager implements Serializable {
 
     /**
      * Get a file to read/write or create it if it doesn't exist.
+     * @return The file.
      */
     private File fileToReadWrite() {
         File file = null;

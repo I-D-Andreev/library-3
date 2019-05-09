@@ -195,6 +195,7 @@ public class SaveStaticVariables implements Serializable {
 
     /**
      * Get a file to read/write or create it if it doesn't exist.
+     * @return The file.
      */
     private File fileToReadWrite() {
         File file = null;
